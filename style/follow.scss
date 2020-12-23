@@ -1,0 +1,173 @@
+.followers {
+    padding: 20px 20px 0px;
+
+    .friend-item{
+        width: 100%;
+        margin-right: 0;
+        display: flex;
+        align-items: center;
+        margin-bottom: 30px;
+
+        .tab__main-item__block-img{
+            margin-right: 20px;
+            position: relative;
+
+            .tab__main-item__img{
+                display: inline-block;
+                width: 70px;
+                height: 70px;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                border-radius: 50%;
+            }
+        }
+
+        .tab__main-item__block-info{
+            width: calc(100% - 80px);
+
+            .tab__main-item__block-info__name{
+                line-height: 1;
+                margin-bottom: 5px;
+
+                .tab__main-item__block-info__name-link{
+                    display: inline-block;
+                    width: 100%;
+                    color: #3F4548;
+                    text-decoration: none;
+                    font-size: 14px;
+                    font-family: 'NotoSans-SemiBold';
+                    line-height: 1;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                }
+            }
+
+            .tab__main-item__block-info__country{
+                display: block;
+                text-decoration: none;
+                color: #ADADAD;
+                font-family: 'NotoSans-SemiBold';
+                font-size: 12px;
+                line-height: 1;
+                margin-bottom: 10px;
+            }
+        }
+
+        .block-btns{
+            display: flex;
+            align-items: center;
+            
+            .follow-btn__item{  //для всех кнопок общие стили
+                display: inline-block;
+                text-decoration: none;
+                border-radius: 5px;
+                font-size: 12px;
+                font-family: 'NotoSans-SemiBold';
+                padding: 7px 9px;
+                line-height: 1;
+                white-space: nowrap;
+                margin-right: 12px;
+                
+                transition: all .3s linear;
+                
+                :hover {
+                    color: #ffffff;
+                    cursor: pointer;
+                    transition: all .3s linear;
+                }
+
+
+            }
+            .tab__main-item__block-info__add{ // стили для кнопки Добавить
+                color: #669774;
+                border: 1px solid #669774;
+
+                :hover {
+                    background-color: #669774;
+                }
+            }
+
+            .follow-btn__item.tab__main-item__block-info__msg{ //стили для кнопки Написать
+                color: #5574B0;
+                border: 1px solid #5574B0;
+
+                :hover {
+                    background-color: #5574B0;
+                }
+            }
+
+            .tab__main-item__block-info__del{ //стили для кнопки удалить
+                width: 22px;
+                height: 22px;
+                padding: 0;
+                opacity: .8;
+                margin-right: 0;
+                background-size: contain;
+                background-position: center;
+
+                :hover{
+                    opacity: 1;
+                }
+
+                svg {
+                    width: 100%;
+                    height: auto;
+                }
+            }
+            
+
+            
+        }
+    }
+
+    .follow__fixed {
+        position: sticky;
+        bottom: 0;
+        background-color: #fff;
+        padding: 20px 0;
+        border-top: 1px solid #F2F2F2;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+
+        .text {
+            color: #7C7474;
+            text-transform: uppercase;
+            font-family: 'NotoSans-ExtraBold';
+            font-size: 12px;
+            margin-right: 20px;
+        }
+
+        .tab__main-item__block-info__add{
+            color: #ffffff;
+            background-color: #669774;
+            display: flex;
+            align-items: center;
+
+            ::before {
+                content: "+";
+                color: #669774;
+                background-color: #fff;
+                border-radius: 50%;
+                width: 15px;
+                height: 15px;
+                margin-right: 10px;
+                display: inline-block;
+                text-align: center;
+                line-height: 15px;
+                font-family: 'NotoSans-ExtraBold';
+            }
+        }
+
+        .tab__main-item__block-info__msg{
+            color: #ffffff;
+            background-color: #5574B0;
+        }
+
+        .tab__main-item__block-info__del{
+            opacity: 1;
+        }
+    }
+}
