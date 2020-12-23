@@ -1,0 +1,206 @@
+.f_pets {
+  &__container {
+    padding: 0 20px 0;
+    background-color: #fff;
+    border-radius: 5px;
+  }
+  &__header {
+    padding-top: 10px;
+    margin-bottom: 20px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #f2f2f2;
+    padding-bottom: 10px;
+
+    &-left {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 12px;
+      line-height: 120%;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      position: relative;
+      height: 100%;
+      &::after {
+        content: '';
+        position: absolute;
+        background: #669774;
+        border-radius: 4px;
+        height: 5px;
+        width: 100%;
+        bottom: -11px;
+        left: 0;
+      }
+      p {
+        padding-left: 10px;
+        color: #3f4548;
+        text-transform: uppercase;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 800;
+        font-size: 12px;
+        line-height: 120%;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        span {
+          margin-left: 5px;
+          color: #adadad;
+        }
+      }
+    }
+    &-right {
+      cursor: pointer;
+      div {
+        width: 30px;
+        height: 30px;
+        border: 1px solid #e3e3e3;
+        box-sizing: border-box;
+        border-radius: 5px;
+        padding: 6px;
+      }
+    }
+  }
+  &__main {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  &__item {
+    min-height: 315px;
+    min-width: 270px;
+    margin-bottom: 30px;
+    margin-right: 15px;
+    &:nth-child(3n) {
+      margin-right: 0;
+    }
+    &-header {
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    &-title {
+      font-size: 13px;
+      line-height: 120%;
+      max-width: 170px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      span {
+      }
+    }
+    &-reward {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      min-width: 56px;
+      color: #3f4548;
+      div {
+        margin-top: -20px;
+        margin-right: 5px;
+      }
+
+      p {
+        min-width: 25px;
+        // max-width: 30px;
+        height: 25px;
+        padding: 5px 2px;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 110%;
+        background: rgba($color: #f5f4f2, $alpha: 0.7);
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        span {
+          display: block;
+          margin-left: 3px;
+        }
+        svg {
+          width: 4px;
+        }
+      }
+    }
+    &-img {
+      width: 100%;
+      height: 190px;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      margin-bottom: 15px;
+    }
+    &-about {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 15px;
+      p {
+        font-weight: 800;
+        font-size: 12px;
+        line-height: 120%;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: #bdbdbd;
+        max-width: 170px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+      &-right {
+        display: flex;
+        svg {
+          cursor: pointer;
+        }
+        span {
+          font-weight: 600;
+          font-size: 14px;
+          line-height: 110%;
+          color: #7c7474;
+          margin-right: 5px;
+          max-width: 45px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+      }
+    }
+    &-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    &-logo {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+    &-btn {
+      cursor: pointer;
+      border-radius: 5px;
+      background: #7c7474;
+      padding: 8.5px 10px;
+      color: #fff;
+      font-weight: 600;
+      font-size: 12px;
+      line-height: 110%;
+      transition: 0.2s;
+      &:hover {
+        background-color: rgba($color: #7c7474, $alpha: 0.8);
+      }
+    }
+  }
+  &__main {
+  }
+  &__main {
+  }
+}

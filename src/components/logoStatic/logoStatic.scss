@@ -1,0 +1,24 @@
+.logo__static {
+  z-index: 1;
+  width: 34px;
+  background-color: #fff;
+  height: 100%;
+  position: fixed;
+  left: 90px;
+  top: 0;
+  svg {
+    margin-bottom: 65px;
+  }
+  p {
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 110%;
+    color: #669774;
+    transform: rotate(-90deg);
+  }
+}
+@media (max-width: 1500px) {
+  .logo__static {
+    left: 10px;
+  }
+}

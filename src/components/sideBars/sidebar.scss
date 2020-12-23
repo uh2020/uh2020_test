@@ -1,0 +1,125 @@
+.bar {
+  max-width: 280px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  left: 0;
+  top: 0;
+  &__container {
+    width: 100%;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #d3d3d3;
+    border-radius: 5px;
+  }
+  &__fr {
+    cursor: pointer;
+    font-weight: 900;
+    font-size: 14px;
+    line-height: 110%;
+    text-align: center;
+    width: 100%;
+    border-radius: 4px;
+    padding: 15px 0;
+    color: #fff;
+    background-color: #669774;
+    transition: 0.5s;
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+  &__ln {
+    cursor: pointer;
+    width: 100%;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 10px 10px 15px;
+    position: relative;
+    &-dis {
+      display: none;
+    }
+    &-active {
+      height: 100%;
+      content: '';
+      width: 5px;
+      background-color: #669774;
+      position: absolute;
+      left: -1px;
+      top: 0;
+    }
+    &.bar__active {
+      background-color: #f2f2f2;
+      &::before {
+        height: 100%;
+        content: '';
+        width: 5px;
+        background-color: #669774;
+        position: absolute;
+        left: -1px;
+        top: 0;
+      }
+    }
+    &-ln {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+    }
+    &:nth-last-child(1) {
+      border-radius: 0 0 5px 5px;
+    }
+    &:hover {
+      background-color: #f9f9f9;
+    }
+    &-inner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    &-img {
+      width: 27px;
+      height: 27px;
+      margin-right: 10px;
+      img {
+      }
+    }
+    &-title {
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 110%;
+    }
+    &-info {
+      color: #7c7474;
+      &-new {
+        color: #e5635b;
+      }
+      &-ls {
+      }
+    }
+  }
+  &__about {
+    padding-top: 10px;
+    margin-top: 60px;
+    border-top: 1px solid #d3d3d3;
+    &-lns {
+    }
+    &-ln {
+      color: #828282;
+      margin-right: 15px;
+      margin-bottom: 10px;
+      display: inline-block;
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 110%;
+    }
+  }
+}
