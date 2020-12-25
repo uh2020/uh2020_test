@@ -11,7 +11,7 @@ import EyeFormIcon from '../icons/bar/EyeFormIcon';
 import EyeslashIcon from '../icons/bar/EyeslashIcon';
 
 const Auth = () => {
-  let dispatch = useDispatch();
+  const dispatch = useDispatch();
   const regDone = useSelector((state) => state.auth.regDone);
   const authSub = (values) => {
     dispatch(setAuthData(values));
@@ -38,7 +38,7 @@ const Auth = () => {
   );
 };
 
-let AuthForm = (props) => {
+const AuthForm = (props) => {
   const [pass, setPass] = React.useState('password');
   const checkPass = (val, state) => {
     const g = val === 'password' ? state('text') : state('password');

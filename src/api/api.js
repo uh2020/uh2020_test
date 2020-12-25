@@ -17,23 +17,51 @@ let instance = axios.create({
   baseURL: 'http://testsset.000webhostapp.com',
   // baseURL: 'https://white-dune-027d98003.azurestaticapps.net/',
   // baseURL: 'https://uh202020.documents.azure.com:443/',
-
-  // headers: {
-  //   'API-KEY': '32c312ed-08c9-4f97-86fe-0ce7144e486e',
-  // },
 });
-
-export const isAuth = {
-  checkAuth(data) {
-    const proc = sessid();
-    return axios
-      .get(`https://white-dune-027d98003.azurestaticapps.net`)
+export const friendsApi = {
+  friendsSearch(data) {
+    const proc = 'userssearch';
+    return instance
+      .post(`/ajindex.php/?sessid=${sessId}&proc=${proc}&val=${data}`)
       .then((data) => {
-        console.log(data);
+        // console.log(data);
+        return data;
+      });
+  },
+  addFriend(id) {
+    const proc = 'fradd';
+    id = id ? id : '50';
+    return instance
+      .post(`/ajindex.php/?sessid=${sessId}&proc=${proc}&id=${id}`)
+      .then((data) => {
+        // console.log(data);
+        return data;
+      });
+  },
+
+  friendsRecom(data) {
+    const proc = 'rekusers';
+    const country = 'RU';
+    return instance
+      .post(`/ajindex.php/?sessid=${sessId}&proc=${proc}&country=${country}`)
+      .then((data) => {
+        // console.log(data);
         return data;
       });
   },
 };
+
+// export const isAuth = {
+//   checkAuth(data) {
+//     const proc = sessid();
+//     return axios
+//       .get(`https://white-dune-027d98003.azurestaticapps.net`)
+//       .then((data) => {
+//         console.log(data);
+//         return data;
+//       });
+//   },
+// };
 
 export const auth = {
   sendReg(data) {

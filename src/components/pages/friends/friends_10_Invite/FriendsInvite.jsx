@@ -1,4 +1,5 @@
 import React from 'react';
+import UserPlus from '../../../icons/bar/UserPlusIcon';
 import '../Friends.scss';
 import FriendsHeaderMenu from '../friendsCommon/FriendsHeaderMenu';
 
@@ -6,10 +7,12 @@ const FriendsInvite = () => {
   return (
     <div>
       <section class="main-container friends">
-        <FriendsHeaderMenu />
+        {/* <FriendsHeaderMenu /> */}
         <div class="main__block invite">
           <div class="main__header">
-            <h2 class="main__title not-after">Приглашение друзей</h2>
+            <h2 class="main__title f_invite-title not-after">
+              <UserPlus /> Приглашение друзей
+            </h2>
           </div>
           <div class="content">
             <p class="content__text">

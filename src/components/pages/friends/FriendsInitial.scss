@@ -3,3 +3,21 @@
   background: #ffffff;
   border-radius: 5px;
 }
+.f-search__header-item {
+  cursor: pointer;
+  margin-left: 10px;
+  min-width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  border: 1px solid #e3e3e3;
+  background-color: #fff;
+  box-sizing: border-box;
+  border-radius: 5px;
+  padding: 6px;
+  // margin-right: 10px;
+  &:nth-last-child(1) {
+    margin-right: 0;
+  }
+}

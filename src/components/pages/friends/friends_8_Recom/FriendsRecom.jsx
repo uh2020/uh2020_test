@@ -1,47 +1,23 @@
 import React from 'react';
 import New from '../../../icons/bar/NewIcon';
 import RecommendationIcon from '../../../icons/bar/RecommendationIcon';
-import TrendingIcon from '../../../icons/bar/TrendingIcon';
-import EarthIcon from '../../../icons/friends/EarthIcon';
-import FilterIcon from '../../../icons/friends/FilterIcon';
-import FSortIcon from '../../../icons/friends/FSortIcon';
-import '../friendsNew_6/FriendsNew.scss';
+import FriendsTopMenuSF from '../friendsCommon/FriendsTopMenuSF';
+import '../friends_6_New/FriendsNew.scss';
 
-const FriendsPopular = () => {
+const FriendsRecom = () => {
   const items = [{}, {}, {}, {}, {}, {}, {}, {}, {}];
   return (
     <div>
       <div className="f_new">
         <div className="f-container f_new__container">
-          <div class="main__top f_new__header">
-            <div class="main__top-input f_new__title-inner">
-              <div class="main__top-input-search">
-                <TrendingIcon />
-              </div>
-              <div className="f_new__header-title">популярные люди</div>
-            </div>
-            <div class="main__top-select">
-              <EarthIcon />
-              <select>
-                <option>Все страны</option>
-              </select>
-            </div>
-            <div class="main__top-select">
-              <select>
-                <option>Все города</option>
-              </select>
-            </div>
-            <div className="f_new__header-item">
-              <FilterIcon />
-            </div>
-            <div className="f_new__header-item">
-              <FSortIcon />
-            </div>
-          </div>
+          <FriendsTopMenuSF Icon={RecommendationIcon} text="РЕКОМЕНДАЦИИ" />
           <div className="f_new__items">
             {items.map((i) => {
-              return <FriendsPopularItem />;
+              return <FriendsRecomItem />;
             })}
+          </div>
+          <div className="f_list__more">
+            <span>Показать еще</span>
           </div>
         </div>
       </div>
@@ -49,7 +25,7 @@ const FriendsPopular = () => {
   );
 };
 
-const FriendsPopularItem = () => {
+const FriendsRecomItem = () => {
   return (
     <div className="f_new__item">
       <div
@@ -87,4 +63,4 @@ const FriendsPopularItem = () => {
   );
 };
 
-export default FriendsPopular;
+export default FriendsRecom;

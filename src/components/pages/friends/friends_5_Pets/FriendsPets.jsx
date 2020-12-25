@@ -26,6 +26,7 @@ const FriendsPets = () => {
               </div>
             </div>
           </div>
+
           <div className="f_pets__main">
             {' '}
             {items.map((i) => {
@@ -55,6 +56,7 @@ const FriendsPetsItem = () => {
           </p>
         </div>
       </div>
+
       <div
         className="f_pets__item-img"
         style={{

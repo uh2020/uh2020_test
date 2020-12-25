@@ -7,7 +7,7 @@ const SET_AUTHDATA = 'AUTH/SET_AUTHDATA';
 
 let initialState = {
   reg: {},
-  regDone: 0,
+  regDone: 1,
   error: '',
   auth: {},
 };

@@ -2,8 +2,10 @@ import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import thunkMiddleware from 'redux-thunk';
 import { reducer as formReducer } from 'redux-form';
 import AuthReducer from './auth_reducer';
+import FriendsReducer from './friends_reducer';
 let reducers = combineReducers({
   auth: AuthReducer,
+  friends: FriendsReducer,
   form: formReducer,
 });
 

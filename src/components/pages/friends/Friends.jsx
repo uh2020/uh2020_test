@@ -5,13 +5,17 @@ import SideBarFriends from '../../sideBars/SideBarFriends';
 import { Redirect, Route, Switch, withRouter } from 'react-router-dom';
 import { setFile } from '../../../redux/auth_reducer';
 import { useDispatch } from 'react-redux';
-import FriendsList from './friendsList_1/FriendsList';
+import FriendsList from './friends_1_List/FriendsList';
 import { WithAuthRedirect } from '../../hoc/WithAuthRedirect';
-import FriendsInvite from './friendsInvite/FriendsInvite';
-import FriendsPets from './friendsPets_5/FriendsPets';
-import FriendsNew from './friendsNew_6/FriendsNew';
-import FriendsRecom from './friendsRecom_8/FriendsRecom';
-import FriendsPopular from './friendsPopular_7/FriendsPopular';
+import FriendsInvite from './friends_10_Invite/FriendsInvite';
+import FriendsPets from './friends_5_Pets/FriendsPets';
+import FriendsNew from './friends_6_New/FriendsNew';
+import FriendsRecom from './friends_8_Recom/FriendsRecom';
+import FriendsPopular from './friends_7_Popular/FriendsPopular';
+import FriendsSearch from './friends_11_Search/FriendsSearch';
+import FriendsBlackList from './friends_9_BlackList/FriendsBlackList';
+import FriendsSubscribers from './friends_2_subscribers/FriendsSubscribers';
+import FriendsSubscriptions from './friends_3_subscriptions/FriendsSubscriptions';
 const Friends = (props) => {
   const dispatch = useDispatch();
   const MainPhotoSelected = (e) => {
@@ -29,7 +33,6 @@ const Friends = (props) => {
         <div className="app__main-right friends-page">
           <Switch>
             <Route
-              exact
               path="/friends/list"
               render={() => (
                 <div>
@@ -40,17 +43,17 @@ const Friends = (props) => {
                     type="file"
                     multiple
                   /> */}
-                  <FriendsList />
+                  <FriendsList location={props.location} />
                 </div>
               )}
             />
             <Route
               path="/friends/subscribers"
-              render={() => <h1>Мои подписчики</h1>}
+              render={() => <FriendsSubscribers location={props.location} />}
             />
             <Route
               path="/friends/subscriptions"
-              render={() => <h1>Мои подписки</h1>}
+              render={() => <FriendsSubscriptions location={props.location} />}
             />
             <Route path="/friends/messages" render={() => <h1>Сообщения</h1>} />
             <Route path="/friends/pets" render={() => <FriendsPets />} />
@@ -59,13 +62,10 @@ const Friends = (props) => {
             <Route path="/friends/recomm" render={() => <FriendsRecom />} />
             <Route
               path="/friends/blackList"
-              render={() => <h1>Черный список</h1>}
+              render={() => <FriendsBlackList />}
             />
             <Route path="/friends/invite" render={() => <FriendsInvite />} />
-            <Route
-              path="/friends/search"
-              render={() => <h1>Искать друзей</h1>}
-            />
+            <Route path="/friends/search" render={() => <FriendsSearch />} />
           </Switch>
         </div>
       </div>

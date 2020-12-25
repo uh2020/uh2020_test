@@ -1,8 +1,6 @@
 import React from 'react';
 import New from '../../../icons/bar/NewIcon';
-import EarthIcon from '../../../icons/friends/EarthIcon';
-import FilterIcon from '../../../icons/friends/FilterIcon';
-import FSortIcon from '../../../icons/friends/FSortIcon';
+import FriendsTopMenuSF from '../friendsCommon/FriendsTopMenuSF';
 import './FriendsNew.scss';
 
 const FriendsNew = () => {
@@ -11,35 +9,15 @@ const FriendsNew = () => {
     <div>
       <div className="f_new">
         <div className="f-container f_new__container">
-          <div class="main__top f_new__header">
-            <div class="main__top-input f_new__title-inner">
-              <div class="main__top-input-search">
-                <New />
-              </div>
-              <div className="f_new__header-title">новые пользователи</div>
-            </div>
-            <div class="main__top-select">
-              <EarthIcon />
-              <select>
-                <option>Все страны</option>
-              </select>
-            </div>
-            <div class="main__top-select">
-              <select>
-                <option>Все города</option>
-              </select>
-            </div>
-            <div className="f_new__header-item">
-              <FilterIcon />
-            </div>
-            <div className="f_new__header-item">
-              <FSortIcon />
-            </div>
-          </div>
+          <FriendsTopMenuSF Icon={New} text="новые пользователи" />
+
           <div className="f_new__items">
             {items.map((i) => {
               return <FriendNewItem />;
             })}
+          </div>
+          <div className="f_list__more">
+            <span>Показать еще</span>
           </div>
         </div>
       </div>
@@ -47,13 +25,13 @@ const FriendsNew = () => {
   );
 };
 
-const FriendNewItem = () => {
+export const FriendNewItem = () => {
   return (
     <div className="f_new__item">
       <div
         className="f_new__item-img"
         style={{
-          backgroundImage: `url("https://www.pinclipart.com/picdir/middle/49-490443_avatar-icon-tlcharger-avatar-icon-clipart.png")`,
+          backgroundImage: `url("https://zbulvar.ru/wp-content/uploads/2018/10/ohotnik_ohota_fotobank9-e1538579459614.jpg")`,
         }}
       ></div>
       <div className="f_new__item-right">

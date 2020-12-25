@@ -65,7 +65,6 @@ function App(props) {
   return (
     <div className="app__inner">
       <div className="app__container">
-        {console.log(regDone)}
         {AuthHows ? null : (
           <div className="">
             <LogoStatic />
@@ -86,7 +85,7 @@ function App(props) {
           <Route path="/market" render={() => <Market />} />
           <Route path="/library" render={() => <Library />} />
           <Route path="/search" render={() => <Search />} />
-          <Route exact path="*" render={() => <div>404 NOT FOUND</div>} />
+          <Route exact path="*" render={() => <div>404 NOT FOUND </div>} />
         </Switch>
       </div>
     </div>

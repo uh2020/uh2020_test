@@ -1,5 +1,30 @@
 $friends-color: #669774;
 
+@font-face {
+  font-family: Noto Sans;
+  src: url('../fonts/NotoSans-Regular.ttf') format('truetype');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: Noto Sans;
+  src: url('../fonts/NotoSans-Medium.ttf') format('truetype');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: Noto Sans;
+  src: url('../fonts/NotoSans-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: Noto Sans;
+  src: url('../fonts/NotoSans-ExtraBold.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 800;
+}
+
 html {
   box-sizing: border-box;
   scroll-behavior: smooth;
@@ -14,8 +39,9 @@ img {
   box-sizing: inherit;
 }
 body {
-  // font-family: Noto Sans;
-  font-weight: 500;
+  font-family: Noto Sans;
+  font-weight: 600;
+  font-size: 14px;
   color: #3f4548;
   background-color: #e5e5e5;
   &.dis {
@@ -60,7 +86,7 @@ h5,
 h6,
 p {
   margin: 0;
-  font-weight: 500;
+  font-weight: 600;
 }
 textarea {
   resize: none;

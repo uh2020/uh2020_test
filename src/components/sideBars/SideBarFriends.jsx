@@ -147,6 +147,14 @@ const SideBarItem = (props) => {
         activeClassName={'bar__active'}
         className="bar__ln"
       >
+        <div
+          className={
+            props.location === props.to ? '  bar__ln-active' : 'bar__ln-dis'
+          }
+          style={{
+            backgroundColor: FriendsColor,
+          }}
+        ></div>
         <div className="bar__ln-inner">
           <div className="bar__ln-img">
             <props.Icon
