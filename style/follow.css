@@ -1,0 +1,190 @@
+.followers {
+  padding: 20px 20px 0px;
+}
+
+.followers .friend-item {
+  width: 100%;
+  margin-right: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 30px;
+}
+
+.followers .friend-item .tab__main-item__block-img {
+  margin-right: 20px;
+  position: relative;
+}
+
+.followers .friend-item .tab__main-item__block-img .tab__main-item__img {
+  display: inline-block;
+  width: 70px;
+  height: 70px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 50%;
+}
+
+.followers .friend-item .tab__main-item__block-info {
+  width: calc(100% - 80px);
+}
+
+.followers .friend-item .tab__main-item__block-info .tab__main-item__block-info__name {
+  line-height: 1;
+  margin-bottom: 5px;
+}
+
+.followers .friend-item .tab__main-item__block-info .tab__main-item__block-info__name .tab__main-item__block-info__name-link {
+  display: inline-block;
+  width: 100%;
+  color: #3F4548;
+  text-decoration: none;
+  font-size: 14px;
+  font-family: 'NotoSans-SemiBold';
+  line-height: 1;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.followers .friend-item .tab__main-item__block-info .tab__main-item__block-info__country {
+  display: block;
+  text-decoration: none;
+  color: #ADADAD;
+  font-family: 'NotoSans-SemiBold';
+  font-size: 12px;
+  line-height: 1;
+  margin-bottom: 10px;
+}
+
+.followers .friend-item .block-btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.followers .friend-item .block-btns .follow-btn__item {
+  display: inline-block;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 12px;
+  font-family: 'NotoSans-SemiBold';
+  padding: 7px 9px;
+  line-height: 1;
+  white-space: nowrap;
+  margin-right: 12px;
+  -webkit-transition: all .3s linear;
+  transition: all .3s linear;
+}
+
+.followers .friend-item .block-btns .follow-btn__item :hover {
+  color: #ffffff;
+  cursor: pointer;
+  -webkit-transition: all .3s linear;
+  transition: all .3s linear;
+}
+
+.followers .friend-item .block-btns .tab__main-item__block-info__add {
+  color: #669774;
+  border: 1px solid #669774;
+}
+
+.followers .friend-item .block-btns .tab__main-item__block-info__add :hover {
+  background-color: #669774;
+}
+
+.followers .friend-item .block-btns .follow-btn__item.tab__main-item__block-info__msg {
+  color: #5574B0;
+  border: 1px solid #5574B0;
+}
+
+.followers .friend-item .block-btns .follow-btn__item.tab__main-item__block-info__msg :hover {
+  background-color: #5574B0;
+}
+
+.followers .friend-item .block-btns .tab__main-item__block-info__del {
+  width: 22px;
+  height: 22px;
+  padding: 0;
+  opacity: .8;
+  margin-right: 0;
+  background-size: contain;
+  background-position: center;
+}
+
+.followers .friend-item .block-btns .tab__main-item__block-info__del :hover {
+  opacity: 1;
+}
+
+.followers .friend-item .block-btns .tab__main-item__block-info__del svg {
+  width: 100%;
+  height: auto;
+}
+
+.followers .follow__fixed {
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 0;
+  background-color: #fff;
+  padding: 20px 0;
+  border-top: 1px solid #F2F2F2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.followers .follow__fixed .text {
+  color: #7C7474;
+  text-transform: uppercase;
+  font-family: 'NotoSans-ExtraBold';
+  font-size: 12px;
+  margin-right: 20px;
+}
+
+.followers .follow__fixed .tab__main-item__block-info__add {
+  color: #ffffff;
+  background-color: #669774;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.followers .follow__fixed .tab__main-item__block-info__add ::before {
+  content: "+";
+  color: #669774;
+  background-color: #fff;
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  margin-right: 10px;
+  display: inline-block;
+  text-align: center;
+  line-height: 15px;
+  font-family: 'NotoSans-ExtraBold';
+}
+
+.followers .follow__fixed .tab__main-item__block-info__msg {
+  color: #ffffff;
+  background-color: #5574B0;
+}
+
+.followers .follow__fixed .tab__main-item__block-info__del {
+  opacity: 1;
+}
+/*# sourceMappingURL=follow.css.map */

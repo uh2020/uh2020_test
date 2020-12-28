@@ -1,0 +1,150 @@
+@charset "UTF-8";
+.aside__list-item.active {
+  cursor: pointer;
+  background-color: #F2F2F2;
+}
+
+.aside__list-item.active ::before {
+  content: '';
+  position: absolute;
+  width: 5px;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-color: #608AA1;
+}
+
+.aside__list-item.active path {
+  fill: #608AA1;
+}
+
+/*в общие стили*/
+.main__block {
+  background-color: #ffffff;
+  border-radius: 5px;
+}
+
+.main__block .main__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 11px 20px;
+  position: relative;
+}
+
+.main__block .main__header .main__header-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+
+.main__block .main__header .main__header-title .main__header-svg {
+  margin-right: 10px;
+}
+
+.main__block .main__header .main__header-title .main__title {
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 12px;
+  line-height: 1.2;
+  letter-spacing: .5px;
+  margin-right: 10px;
+  position: relative;
+}
+
+.main__block .main__header .main__header-title .main__header-count {
+  color: #ADADAD;
+  font-weight: 900;
+  font-size: 12px;
+  line-height: 1.2;
+}
+
+.main__block .main__header .main__header-btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.count-incoming.viewed {
+  background-color: #ADADAD;
+}
+
+.main__tab-items__link-text {
+  color: #7C7474;
+}
+
+.hover-line-fr {
+  font-weight: bold;
+}
+
+.main__header-btns .btn {
+  margin-left: 10px;
+  border: 1px solid #F2F2F2;
+  background-color: transparent;
+  padding: 5px 5px;
+  line-height: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.btn.btn-new-g {
+  background-color: #F2F2F2;
+  padding: 8px 14px;
+  color: #E3E3E3;
+  border: none;
+}
+
+.content {
+  padding: 45px 20px 40px;
+  text-align: center;
+}
+
+.content .title {
+  margin-bottom: 28px;
+  font-size: 22px;
+  line-height: 1.4;
+  font-weight: 600;
+}
+
+.btn {
+  border-radius: 5px;
+}
+
+/*в общие стили*/
+.main__header-title::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 38px;
+  width: 100%;
+  border: 2.5px solid #608AA1;
+  border-radius: 4px;
+  z-index: 1;
+  background-color: #608AA1;
+}
+
+.not-groups .content .btn-new {
+  background-color: #608AA1;
+  color: #ffffff;
+  font-weight: 900;
+  font-size: 12px;
+  line-height: 1.1;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 16px;
+}
+/*# sourceMappingURL=not-groups.css.map */
