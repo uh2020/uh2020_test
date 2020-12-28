@@ -22,6 +22,9 @@ const FriendsListInn = () => {
         </div>
 
         <div className="f_list__inn-del">
+          <b>
+            <span>Отклонить</span>
+          </b>
           <XRedIcon />
         </div>
       </div>
@@ -60,6 +63,9 @@ const FriendsListInnItem = () => {
         </div>
 
         <div className=" f_list__inn-del f_list__inn-del-op">
+          <b>
+            <span>Отклонить</span>
+          </b>
           <XRedIcon />
         </div>
       </div>

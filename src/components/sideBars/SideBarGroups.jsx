@@ -18,10 +18,12 @@ import MessageIcon from '../icons/bar/MessageIcon';
 import UsersIcon from '../icons/bar/UsersIconIcon';
 import QuizIcon from '../icons/bar/QuizIcon';
 import EyeIcon from '../icons/bar/EyeIconIcon';
+import GroupsIcon from '../icons/bar/GroupsIcon';
+import OfficialIcon from '../icons/groups/OfficialIcon';
 const SideBarGroups = (props) => {
   const [Link, setLink] = React.useState(1);
   return (
-    <div className="bar">
+    <div className="bar bar__groups">
       <div className="bar__container">
         <div
           className="bar__fr "
@@ -60,8 +62,16 @@ const SideBarGroups = (props) => {
           title={'Мои группы'}
           new={'4'}
           all={'45'}
-          Icon={UsersIcon}
+          Icon={GroupsIcon}
           to="/groups/my"
+        />
+        <SideBarItem
+          location={props.location.pathname}
+          title={'Официальные'}
+          new={''}
+          all={''}
+          Icon={OfficialIcon}
+          to="/groups/official"
         />
         <SideBarItem
           location={props.location.pathname}
@@ -81,7 +91,7 @@ const SideBarGroups = (props) => {
         />
         <SideBarItem
           location={props.location.pathname}
-          title={'Мои активности'}
+          title={'Активность'}
           new={'4'}
           all={'45'}
           Icon={QuizIcon}
@@ -95,14 +105,14 @@ const SideBarGroups = (props) => {
           Icon={EyeIcon}
           to="/groups/viewed"
         />
-        <SideBarItem
+        {/* <SideBarItem
           location={props.location.pathname}
           title={'Подписки'}
           new={''}
           all={''}
           Icon={UserPlusIcon}
           to="/groups/subscriptions"
-        />
+        /> */}
         <SideBarItem
           location={props.location.pathname}
           title={'Рекомндации'}
@@ -120,32 +130,13 @@ const SideBarGroups = (props) => {
           to="/groups/search"
         />
       </div>
-      <div className="bar__about">
-        <div className="bar__about-lns">
-          <a href="#" className="bar__about-ln">
-            О проекте
-          </a>
-          <a href="#" className="bar__about-ln">
-            Сотрудничество
-          </a>{' '}
-          <br />
-          <a href="#" className="bar__about-ln">
-            Правовая информация
-          </a>
-          <a href="#" className="bar__about-ln">
-            Защита данных
-          </a>
-          <a href="#" className="bar__about-ln">
-            Написать в техподдержку
-          </a>
-        </div>
-      </div>
     </div>
   );
 };
 
 const SideBarItem = (props) => {
   const groupsColor = '#608AA1';
+  const active = props.location.includes(props.to) ? props.to : 0;
   return (
     <>
       <NavLink
@@ -154,16 +145,14 @@ const SideBarItem = (props) => {
         className="bar__ln"
       >
         <div
-          className={
-            props.location === props.to ? '  bar__ln-active' : 'bar__ln-dis'
-          }
+          className={active === props.to ? '  bar__ln-active' : 'bar__ln-dis'}
           style={{
             backgroundColor: groupsColor,
           }}
         ></div>
         <div className="bar__ln-inner">
           <div className="bar__ln-img">
-            <props.Icon color={props.location === props.to ? groupsColor : 0} />
+            <props.Icon color={active === props.to ? groupsColor : 0} />
           </div>
           <div className="bar__ln-title">{props.title}</div>
         </div>

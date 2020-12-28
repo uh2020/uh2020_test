@@ -9,17 +9,21 @@ import { NavLink, Route, Switch } from 'react-router-dom';
 import AddIcon from '../../../icons/friends/AddIcon';
 import XRedIcon from '../../../icons/friends/XRedIcon';
 import UserFollowL from '../../../icons/bar/UserFollowLIcon';
-
+import FilterIcon from '../../../icons/friends/FilterIcon';
+import FSortIcon from '../../../icons/friends/FSortIcon';
 const FriendsSubscriptions = (props) => {
   const items = [{}, {}, {}];
   return (
     <div>
-      <FriendsHeaderMenuIS />
+      {/* <FriendsHeaderMenuIS /> */}
+      <FriendsHeaderMenu />
       <div className="f_list">
-        <div class="f_pets__header">
+        <div className="f_pets__header">
           <NavLink
+            exact
             to="/friends/subscriptions"
-            class="f_list__header-left  f_pets__header-left"
+            className="f_list__header-left  f_pets__header-left"
+            activeClassName="f_list__header-left-active"
           >
             <UserFollowL />
             <p>
@@ -33,6 +37,7 @@ const FriendsSubscriptions = (props) => {
             <NavLink
               to="/friends/subscriptions/outcoming"
               className="f_list__header-middle-inn f_Subins__out "
+              activeClassName="f_list__header-left-active"
             >
               <span>2</span>
               <p>
@@ -47,6 +52,7 @@ const FriendsSubscriptions = (props) => {
             <NavLink
               to="/friends/subscriptions/denied"
               className="f_list__header-middle-out"
+              activeClassName="f_list__header-left-active"
             >
               <p>
                 Отклоненные
@@ -57,16 +63,26 @@ const FriendsSubscriptions = (props) => {
               <span>2</span>
             </NavLink>
           </div>
-          <div
-            className={
-              'f_list__header-btn' +
-              ' ' +
-              (props.location.pathname === '/friends/subscriptions/denied'
-                ? 'f_list__header-btn-op'
-                : '')
-            }
-          >
-            Написать всем
+          <div className="f_list__header-right">
+            <div
+              className={
+                'f_list__header-btn' +
+                ' ' +
+                (props.location.pathname === '/friends/subscriptions/denied'
+                  ? 'f_list__header-btn-op'
+                  : '')
+              }
+            >
+              Написать всем
+            </div>
+            <div className="f_list__header-sort">
+              <div className="f_list__header-sort-item">
+                <FilterIcon />
+              </div>
+              <div className="f_list__header-sort-item">
+                <FSortIcon />
+              </div>
+            </div>
           </div>
         </div>
         <Switch>
@@ -94,10 +110,13 @@ const FriendsSubscriptions = (props) => {
                     <AddIcon color="white" plus="#669774" />
                     Добавить в друзья
                   </div>
-                  <div class="f_list__out-bottom-subs f_list__inn-btn">
+                  <div className="f_list__out-bottom-subs f_list__inn-btn">
                     Написать
                   </div>
                   <div className="f_list__inn-del">
+                    <b>
+                      <span>Отписаться</span>
+                    </b>
                     <XRedIcon />
                   </div>
                 </div>
@@ -136,6 +155,9 @@ const FriendItem = () => {
         </div>
         <div className="f_list__inn-btn f_list__out-subs">Написать</div>
         <div className=" f_list__inn-del f_list__inn-del-op">
+          <b>
+            <span>Отписаться</span>
+          </b>
           <XRedIcon />
         </div>
       </div>

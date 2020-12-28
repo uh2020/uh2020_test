@@ -67,7 +67,7 @@ function App(props) {
       <div className="app__container">
         {AuthHows ? null : (
           <div className="">
-            <LogoStatic />
+            <LogoStatic location={props.location.pathname} />
             <Header />
           </div>
         )}

@@ -1,82 +1,102 @@
 import React from 'react';
 import UserPlus from '../../../icons/bar/UserPlusIcon';
+import FacebookIcon from '../../../icons/friendsSocial/FacebookIcon';
+import GoogleIcon from '../../../icons/friendsSocial/GoogleIcon';
+import InstagramIcon from '../../../icons/friendsSocial/InstagramIcon';
+import LinkedinIcon from '../../../icons/friendsSocial/LinkedinIcon';
+import OdnoklassnikiIcon from '../../../icons/friendsSocial/OdnoklassnikiIcon';
+import TelegramIcon from '../../../icons/friendsSocial/TelegramIcon';
+import TwitterIcon from '../../../icons/friendsSocial/TwitterIcon';
+import ViberIcon from '../../../icons/friendsSocial/ViberIcon';
+import VkIcon from '../../../icons/friendsSocial/VkIcon';
+import WhatsappIcon from '../../../icons/friendsSocial/WhatsappIcon';
 import '../Friends.scss';
+import './FriendsInvite.scss';
 import FriendsHeaderMenu from '../friendsCommon/FriendsHeaderMenu';
 
 const FriendsInvite = () => {
   return (
     <div>
-      <section class="main-container friends">
+      <section className="main-container friends">
         {/* <FriendsHeaderMenu /> */}
-        <div class="main__block invite">
-          <div class="main__header">
-            <h2 class="main__title f_invite-title not-after">
+        <div className="main__block invite">
+          <div className="main__header">
+            <h2 className="main__title f_invite-title not-after">
               <UserPlus /> Приглашение друзей
             </h2>
           </div>
-          <div class="content">
-            <p class="content__text">
+          <div className="content">
+            <p className="content__text">
               Приглашение будет выслано на телефон или email, который Вы
               укажете. Ваши друзья и родственники смогут сразу начать
               пользоваться Uhunt, не совершая дополнительных действий.
             </p>
-            <form class="invite-form">
-              <div class="invite-form__content">
-                <label class="invite-form__label" for="inviteName">
+            <form className="invite-form">
+              <div className="invite-form__content">
+                <label className="invite-form__label" for="inviteName">
                   Имя
                 </label>
                 <input
-                  class="invite-form__input"
+                  className="invite-form__input"
                   id="inviteName"
                   type="text"
                   placeholder="Введите имя"
                 />
               </div>
-              <div class="invite-form__content">
-                <label class="invite-form__label" for="inviteSurname">
+              <div className="invite-form__content">
+                <label className="invite-form__label" for="inviteSurname">
                   Фамилия
                 </label>
                 <input
-                  class="invite-form__input"
+                  className="invite-form__input"
                   id="inviteSurname"
                   type="text"
                   placeholder="Введите фамилию"
                 />
               </div>
-              <div class="invite-form__content">
-                <label class="invite-form__label" for="invitePhone">
+              <div className="invite-form__content">
+                <label className="invite-form__label" for="invitePhone">
                   Мобильный телефон
                 </label>
                 <input
-                  class="invite-form__input"
+                  className="invite-form__input"
                   id="invitePhone"
                   type="number"
                   placeholder="Номер телефона"
                 />
               </div>
-              <div class="invite-form__content">
-                <label class="invite-form__label" for="inviteEmail">
+              <div className="invite-form__content">
+                <label className="invite-form__label" for="inviteEmail">
                   Email:
                 </label>
                 <input
-                  class="invite-form__input"
+                  className="invite-form__input"
                   id="inviteEmail"
                   type="email"
                   placeholder="Введите email:"
                 />
               </div>
-              <button class="btn invite-form__btn">Выслать приглашение</button>
+              <button className="btn invite-form__btn">
+                Выслать приглашение
+              </button>
             </form>
 
-            <div class="invite-social">
-              <p class="title">Пригласить друзей из соцсетей</p>
-              <div class="invite-social__content">
-                <a class="invite-social__link link-vk" href=""></a>
-                <a class="invite-social__link link-facebook" href=""></a>
-                <a class="invite-social__link link-twitter" href=""></a>
-                <a class="invite-social__link link-linkedin" href=""></a>
-                <a class="invite-social__link link-google" href=""></a>
-                <a class="invite-social__link link-instagram" href=""></a>
+            <div className="invite-social">
+              <p className="title">Пригласить друзей из соцсетей</p>
+              <div className="invite-social__content">
+                <FriendInviteIcon Icon={VkIcon} text="Vk" />
+                <FriendInviteIcon Icon={FacebookIcon} text="Facebook" />
+                <FriendInviteIcon Icon={TwitterIcon} text="Twitter" />
+                <FriendInviteIcon Icon={LinkedinIcon} text="Linkedin" />
+                <FriendInviteIcon Icon={GoogleIcon} text="Google" />
+                <FriendInviteIcon Icon={InstagramIcon} text="Instagram" />
+                <FriendInviteIcon
+                  Icon={OdnoklassnikiIcon}
+                  text="Odnoklassniki"
+                />
+                <FriendInviteIcon Icon={WhatsappIcon} text="Whatsapp" />
+                <FriendInviteIcon Icon={ViberIcon} text="Viber" />
+                <FriendInviteIcon Icon={TelegramIcon} text="Telegram" />
               </div>
             </div>
           </div>
@@ -86,32 +106,14 @@ const FriendsInvite = () => {
   );
 };
 
-const FriendItem = () => {
+const FriendInviteIcon = (props) => {
   return (
-    <article className="friend-item">
-      <div className="tab__main-item__block-img">
-        <a
-          style={{
-            backgroundImage: `url(${'https://7sisters.ru/wp-content/uploads/2017/08/2515091748.jpg'})`,
-          }}
-          className="tab__main-item__img"
-          href=""
-        ></a>
-      </div>
-      <div className="tab__main-item__block-info">
-        <h4 className="tab__main-item__block-info__name">
-          <a className="tab__main-item__block-info__name-link" href="">
-            Фамилия Имя
-          </a>
-        </h4>
-        <a className="tab__main-item__block-info__country" href="">
-          <span>Страна</span>, <span>Город</span>
-        </a>
-        <a className="tab__main-item__block-info__msg" href="">
-          Написать
-        </a>
-      </div>
-    </article>
+    <div className="invite-social__link  f_list__inn-del ">
+      <b>
+        <span>{props.text}</span>
+      </b>
+      <props.Icon />
+    </div>
   );
 };
 

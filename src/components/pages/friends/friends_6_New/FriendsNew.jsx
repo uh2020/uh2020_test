@@ -50,8 +50,8 @@ export const FriendNewItem = () => {
           >
             <circle cx="7.5" cy="7.5" r="7.5" fill="#669774" />
             <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
+              fillRule="evenodd"
+              clipRule="evenodd"
               d="M8.125 4.375H6.875V6.875H4.375V8.125H6.875V10.625H8.125V8.125H10.625V6.875H8.125V4.375Z"
               fill="white"
             />

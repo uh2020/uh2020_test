@@ -12,6 +12,7 @@ import UserPlusIcon from '../icons/bar/UserPlusIcon';
 import UsersIconIcon from '../icons/bar/UsersIconIcon';
 import './sidebar.scss';
 import { NavLink } from 'react-router-dom';
+import FriendsPetsIcon from '../icons/friends/FriendsPetsIcon';
 const SideBarFriends = (props) => {
   const [Link, setLink] = React.useState(1);
   return (
@@ -62,7 +63,7 @@ const SideBarFriends = (props) => {
           title={'Животные'}
           new={'4'}
           all={'45'}
-          Icon={PetsIcon}
+          Icon={FriendsPetsIcon}
           to="/friends/pets"
         />
         <SideBarItem
@@ -140,6 +141,7 @@ const SideBarFriends = (props) => {
 
 const SideBarItem = (props) => {
   const FriendsColor = '#669774';
+  const active = props.location.includes(props.to) ? props.to : 0;
   return (
     <>
       <NavLink
@@ -148,18 +150,14 @@ const SideBarItem = (props) => {
         className="bar__ln"
       >
         <div
-          className={
-            props.location === props.to ? '  bar__ln-active' : 'bar__ln-dis'
-          }
+          className={active === props.to ? '  bar__ln-active' : 'bar__ln-dis'}
           style={{
             backgroundColor: FriendsColor,
           }}
         ></div>
         <div className="bar__ln-inner">
           <div className="bar__ln-img">
-            <props.Icon
-              color={props.location === props.to ? FriendsColor : 0}
-            />
+            <props.Icon color={active === props.to ? FriendsColor : 0} />
           </div>
           <div className="bar__ln-title">{props.title}</div>
         </div>

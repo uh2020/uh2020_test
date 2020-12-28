@@ -3,6 +3,7 @@
     padding: 0 20px;
     min-height: 300px;
     background-color: #fff;
+    border-radius: 5px;
   }
   &__header {
     background-color: #fff;
@@ -15,8 +16,8 @@
   &__r-form {
     svg {
       position: absolute;
-      left: 11px;
-      top: 11px;
+      left: 8px;
+      top: 9px;
     }
     position: relative;
   }

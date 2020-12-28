@@ -13,14 +13,10 @@
   }
 
   .main__search-wrapper {
-    display: -webkit-box;
-    display: -ms-flexbox;
+    height: 40px;
     display: flex;
-    align-items: center;
-  }
-
-  .main__search-wrapper {
     margin-bottom: 19px;
+    align-items: center;
   }
 
   .main__search-block {
@@ -52,8 +48,15 @@
     font-weight: 400;
     color: #adadad;
   }
-
+  .main__search-down {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    z-index: 0;
+  }
   .main__search-coutry {
+    position: relative;
+    height: 100%;
     min-width: 170px;
     margin-right: 10px;
     display: flex;
@@ -64,13 +67,19 @@
     overflow: hidden;
     padding-left: 8px;
   }
+  .main__search-city {
+    height: 100%;
+    position: relative;
+  }
 
   .main__search-city select {
     min-width: 170px;
+    padding: 14px 10px 13px 10px;
   }
 
   .main__search-coutry select,
   .main__search-city select {
+    cursor: pointer;
     width: 100%;
     font-size: 12px;
     font-weight: 600;
@@ -79,11 +88,14 @@
     background-color: #fff;
     border: none;
     border-radius: 5px;
-    padding: 14px 30px 13px 11px;
+    padding: 14px 10px 13px 7px;
     transition: box-shadow 0.2s linear;
     outline: none;
     appearance: none;
     position: relative;
+  }
+  .main__search-city select {
+    padding: 14px 10px 13px 10px;
   }
 
   .main__search-coutry,
@@ -542,15 +554,16 @@
   }
 
   .invite .main__header {
-    padding: 18px 20px;
+    padding: 10px 20px;
   }
 
   .invite .content {
-    padding: 25px 20px 40px;
+    padding: 20px;
   }
 
   .content__text {
     font-size: 14px;
+    font-weight: 400;
     line-height: 1.5;
     margin-bottom: 20px;
   }

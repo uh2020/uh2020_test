@@ -6,15 +6,24 @@
   position: fixed;
   left: 90px;
   top: 0;
+  transition: 0.3s;
   svg {
-    margin-bottom: 65px;
+    margin-bottom: 8px;
+    transition: 0.3s;
+    path {
+      transition: 0.3s;
+    }
   }
   p {
+    padding-right: 2px;
+    transition: 0.3s;
     font-weight: 900;
     font-size: 24px;
     line-height: 110%;
     color: #669774;
-    transform: rotate(-90deg);
+    // transform: rotate(-90deg);
+    transform: rotate(180deg);
+    writing-mode: vertical-lr;
   }
 }
 @media (max-width: 1500px) {

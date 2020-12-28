@@ -9,18 +9,37 @@
     &-add {
       margin-right: 0 !important;
     }
-
-    &-left {
-      &-active {
-        p {
-          color: #3f4548;
+    &-sort {
+      display: flex;
+      align-items: center;
+      margin-left: 10px;
+      justify-content: center;
+      &-item {
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #e3e3e3;
+        border-radius: 5px;
+        &:nth-child(1) {
+          margin-right: 10px;
         }
       }
+    }
+
+    &-left {
       &::after {
         display: none;
       }
       p {
-        color: #7c7474;
+        color: #7c7474 !important;
+      }
+      &-active {
+        p {
+          color: #3f4548 !important;
+        }
       }
       b {
         content: '';
@@ -57,6 +76,7 @@
           font-size: 13px;
           position: relative;
           line-height: 120%;
+          color: #7c7474;
           b {
             content: '';
             position: absolute;
@@ -100,6 +120,7 @@
         p {
           font-size: 13px;
           position: relative;
+          color: #7c7474;
           line-height: 120%;
           b {
             content: '';
@@ -115,7 +136,7 @@
       }
     }
     &-right {
-      min-width: 140px;
+      min-width: 216px;
       display: flex;
       align-items: center;
       justify-content: flex-end;
@@ -243,8 +264,61 @@
     &-del {
       cursor: pointer;
       display: flex;
+      position: relative;
+
+      &:hover {
+        &::after {
+          opacity: 1;
+          z-index: 1;
+          transition: 0.4s;
+        }
+        b {
+          opacity: 1;
+          z-index: 1;
+        }
+      }
+      &::after {
+        pointer-events: none;
+        transition: 0.4s;
+        opacity: 0;
+        z-index: 0;
+        content: '';
+        position: absolute;
+        transform: rotate(45deg);
+        border-bottom: 5px solid rgb(255, 255, 255);
+        border-right: 5px solid rgb(255, 255, 255);
+        width: 7px;
+        height: 7px;
+        top: -14px;
+        left: 9px;
+      }
+      b {
+        pointer-events: none;
+        position: absolute;
+        top: -41px;
+        transition: 0.4s;
+        left: -50px;
+        opacity: 0;
+        z-index: 0;
+        width: 125px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        span {
+          font-weight: 500;
+          white-space: nowrap;
+          border-radius: 5px;
+          padding: 7px 10px;
+          background-color: #fff;
+          display: block;
+          font-size: 12px;
+          filter: drop-shadow(0px 2px 10px rgba(0, 0, 0, 0.16));
+        }
+      }
       &-op {
-        opacity: 0.5;
+        svg {
+          opacity: 0.6;
+        }
       }
     }
     &-btn {
@@ -307,8 +381,62 @@
     }
     &-del {
       cursor: pointer;
+      display: flex;
+      position: relative;
+
+      &:hover {
+        &::after {
+          opacity: 1;
+          z-index: 1;
+          transition: 0.4s;
+        }
+        b {
+          opacity: 1;
+          z-index: 1;
+        }
+      }
+      &::after {
+        pointer-events: none;
+        transition: 0.4s;
+        opacity: 0;
+        z-index: 0;
+        content: '';
+        position: absolute;
+        transform: rotate(45deg);
+        border-bottom: 5px solid rgb(255, 255, 255);
+        border-right: 5px solid rgb(255, 255, 255);
+        width: 7px;
+        height: 7px;
+        top: -14px;
+        left: 9px;
+      }
+      b {
+        pointer-events: none;
+        position: absolute;
+        top: -41px;
+        transition: 0.4s;
+        left: -50px;
+        opacity: 0;
+        z-index: 0;
+        width: 125px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        span {
+          font-weight: 500;
+          white-space: nowrap;
+          border-radius: 5px;
+          padding: 7px 10px;
+          background-color: #fff;
+          display: block;
+          font-size: 12px;
+          filter: drop-shadow(0px 2px 10px rgba(0, 0, 0, 0.16));
+        }
+      }
       &-op {
-        opacity: 0.5;
+        svg {
+          opacity: 0.6;
+        }
       }
     }
     &-btn {

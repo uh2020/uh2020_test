@@ -59,7 +59,7 @@
     }
   }
   &__bottom {
-    padding: 20px 0;
+    padding-top: 20px;
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -78,7 +78,6 @@
       background-color: #7c7474;
 
       &-all {
-        cursor: pointer;
         letter-spacing: 0.05em;
         text-transform: uppercase;
         font-weight: 800;

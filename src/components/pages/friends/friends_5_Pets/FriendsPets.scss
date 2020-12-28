@@ -55,6 +55,9 @@
     }
     &-right {
       cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       div {
         width: 30px;
         height: 30px;

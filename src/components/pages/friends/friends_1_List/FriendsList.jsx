@@ -6,17 +6,22 @@ import UsersIcon from '../../../icons/bar/UsersIconIcon';
 import FriendsListInn from './FriendsListInn';
 import FriendsListOut from './FriendsListOut';
 import { NavLink, Route, Switch } from 'react-router-dom';
+import FilterIcon from '../../../icons/friends/FilterIcon';
+import FSortIcon from '../../../icons/friends/FSortIcon';
+import FriendsHeaderMenuSearch from '../friendsCommon/FriendsHeaderMenuSearch';
 
 const FriendsList = (props) => {
   const items = [{}, {}, {}, {}, {}, {}, {}, {}, {}];
   return (
     <div>
-      <FriendsHeaderMenuIS />
+      <FriendsHeaderMenu />
+
       <div className="f_list">
-        <div class="f_pets__header">
+        <div className="f_pets__header">
           <NavLink
+            exact
             to="/friends/list"
-            class="f_list__header-left  f_pets__header-left"
+            className="f_pets__header-left f_list__header-left"
             activeClassName="f_list__header-left-active"
           >
             <UsersIcon />
@@ -29,6 +34,7 @@ const FriendsList = (props) => {
             <NavLink
               to="/friends/list/incoming"
               className="f_list__header-middle-inn"
+              activeClassName="f_list__header-left-active"
             >
               <span>2</span>
               <p>
@@ -42,10 +48,10 @@ const FriendsList = (props) => {
             <NavLink
               to="/friends/list/outcoming"
               className="f_list__header-middle-out"
+              activeClassName="f_list__header-left-active"
             >
               <p>
                 Исходящие
-                {console.log()}
                 {props.location.pathname === '/friends/list/outcoming' ? (
                   <b></b>
                 ) : null}
@@ -71,6 +77,14 @@ const FriendsList = (props) => {
                 Написать всем
               </div>
             )}
+            <div className="f_list__header-sort">
+              <div className="f_list__header-sort-item">
+                <FilterIcon />
+              </div>
+              <div className="f_list__header-sort-item">
+                <FSortIcon />
+              </div>
+            </div>
           </div>
         </div>
         <Switch>
@@ -89,7 +103,7 @@ const FriendsList = (props) => {
               <div className="f_list__items-inner">
                 <div className="f_list__items">
                   {items.map((i) => {
-                    return <FriendItem />;
+                    return <FriendItem name={'Пабло'} surname={'Диего'} />;
                   })}
                 </div>
                 <div className="f_list__more">
@@ -104,7 +118,7 @@ const FriendsList = (props) => {
   );
 };
 
-const FriendItem = () => {
+const FriendItem = (props) => {
   return (
     <article className="friend-item">
       <div className="tab__main-item__block-img">
@@ -117,7 +131,9 @@ const FriendItem = () => {
       </div>
       <div className="tab__main-item__block-info">
         <h4 className="tab__main-item__block-info__name">
-          <a className="tab__main-item__block-info__name-link">Фамилия Имя</a>
+          <a className="tab__main-item__block-info__name-link">
+            {props.surname} {props.name}
+          </a>
         </h4>
         <div className="tab__main-item__block-info__country">
           <span>Страна</span>, <span>Город</span>

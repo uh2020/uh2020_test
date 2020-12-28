@@ -1,0 +1,15 @@
+.invite-social__link {
+  margin-right: 20px;
+  transition: 0.4s;
+  &:hover {
+    filter: drop-shadow(0px 2px 10px rgba(0, 0, 0, 0.16));
+    transform: translateY(-5px);
+  }
+  b {
+    left: -43px;
+    filter: none;
+  }
+  &::after {
+    left: 16px;
+  }
+}

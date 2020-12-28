@@ -18,6 +18,9 @@ const FriendsListOut = () => {
         </div>
         <div className="f_list__out-bottom-subs f_list__inn-btn">Написать</div>
         <div className="f_list__out-del">
+          <b>
+            <span>Отменить заявку</span>
+          </b>
           <XRedIcon />
         </div>
       </div>
@@ -50,6 +53,9 @@ const FriendsListOutItem = () => {
         <div className="f_list__inn-btn f_list__out-plus">Подписаться</div>
         <div className="f_list__inn-btn f_list__out-subs">Написать</div>
         <div className=" f_list__out-del f_list__out-del-op">
+          <b>
+            <span>Отменить заявку</span>
+          </b>
           <XRedIcon />
         </div>
       </div>

@@ -1,11 +1,12 @@
 import React from 'react';
 import './FriendsPets.scss';
 import '../FriendsInitial.scss';
-import PetsIcons from '../../../icons/bar/PetsIcon';
 import XIcon from '../../../icons/friends/XIcon';
 import FLikeIcon from '../../../icons/friends/FLikeIcon';
 import FSortIcon from '../../../icons/friends/FSortIcon';
 import RewardIcon from '../../../icons/friends/RewardIcon';
+import FilterIcon from '../../../icons/friends/FilterIcon';
+import FriendsPetsIcon from '../../../icons/friends/FriendsPetsIcon';
 
 const FriendsPets = () => {
   const items = [{}, {}, {}, {}, {}, {}];
@@ -15,13 +16,16 @@ const FriendsPets = () => {
         <div className="f_pets__container">
           <div className="f_pets__header">
             <div className="f_pets__header-left">
-              <PetsIcons />
+              <FriendsPetsIcon />
               <p>
                 Питомцы друзей <span>87</span>
               </p>
             </div>
             <div className="f_pets__header-right">
-              <div>
+              <div className="f_list__header-sort-item">
+                <FilterIcon />
+              </div>
+              <div className="f_list__header-sort-item">
                 <FSortIcon />
               </div>
             </div>
