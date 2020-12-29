@@ -1,0 +1,27 @@
+.g_Off {
+  &__items {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  &__bottom {
+    padding-top: 20px;
+  }
+  &__item {
+    max-width: 410px;
+    margin-right: 20px;
+    width: 100%;
+    align-items: flex-end;
+    &:nth-child(2n) {
+      margin-right: 0;
+    }
+    &-text {
+      h4 {
+        span {
+          max-width: 200px;
+        }
+      }
+    }
+  }
+}

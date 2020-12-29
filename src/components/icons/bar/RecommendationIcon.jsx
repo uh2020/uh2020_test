@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Recommendation = (props) => {
+const RecommendationIcon = (props) => {
   return (
     <>
       <svg
@@ -21,4 +21,4 @@ const Recommendation = (props) => {
   );
 };
 
-export default Recommendation;
+export default RecommendationIcon;

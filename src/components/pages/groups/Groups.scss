@@ -17,9 +17,12 @@
   }
   &__btn {
     &-blue,
+    &-blue-mess,
     &-green,
     &-blue-line,
-    &-green-line {
+    &-blue-line-mess,
+    &-green-line,
+    &-casual {
       font-size: 12px;
       padding: 8px 10px;
       line-height: 110%;
@@ -32,12 +35,28 @@
       cursor: pointer;
       max-height: 29px;
       min-height: 28px;
+      border: 1px solid transparent;
+      transition: 0.3s;
       svg {
         margin-right: 5px;
       }
     }
+    &-casual {
+      background-color: transparent;
+      color: #3f4548;
+      &:hover {
+        background-color: #f5f4f2;
+      }
+    }
+    &-dis {
+      color: #adadad;
+      pointer-events: none;
+    }
     &-blue {
       background-color: #608aa1;
+      &-mess {
+        background-color: #5574b0;
+      }
     }
     &-green {
       background-color: #669774;
@@ -45,10 +64,17 @@
     &-blue-line {
       color: #608aa1;
       border: 1px solid #608aa1;
+      &-mess {
+        color: #5574b0;
+        border: 1px solid #5574b0;
+      }
     }
     &-green-line {
       color: #669774;
       border: 1px solid #669774;
+    }
+    &-mar {
+      margin-right: 10px;
     }
   }
   &__barB {
@@ -138,7 +164,7 @@
         width: 7px;
         height: 7px;
         top: 6px;
-        left: -15px;
+        left: -15.5px;
         border: 6px solid transparent;
         border-left: 6px solid #608aa1;
       }
@@ -242,6 +268,41 @@
       display: flex;
       align-items: center;
       justify-content: center;
+    }
+    &-my {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #ffffff;
+      box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.13);
+      border-radius: 5px;
+      margin-right: 20px;
+      padding: 5px;
+      cursor: pointer;
+      &-item {
+        margin-right: 7.62px;
+        display: flex;
+        svg {
+        }
+        span {
+          color: #eb5757;
+          letter-spacing: 0.05em;
+          text-transform: uppercase;
+        }
+      }
+      &-den {
+        font-size: 13px;
+        line-height: 140%;
+        font-weight: normal;
+        color: #eb5757;
+        margin-right: 20px;
+      }
+      &-req {
+        font-size: 13px;
+        line-height: 140%;
+        color: #7c7474;
+        margin-right: 20px;
+      }
     }
     &-items {
       display: flex;

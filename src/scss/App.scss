@@ -98,6 +98,7 @@ body {
 .app {
   &__main {
     position: relative;
+    z-index: 2;
     margin: 0 auto;
     display: flex;
     align-items: flex-start;

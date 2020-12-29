@@ -2,15 +2,24 @@ import React from 'react';
 import './Groups.scss';
 import '../../../scss/App.scss';
 import SideBarFriends from '../../sideBars/SideBarFriends';
-import { Route, Switch, withRouter } from 'react-router-dom';
+import { Redirect, Route, Switch, withRouter } from 'react-router-dom';
 import SideBarGroups from '../../sideBars/SideBarGroups';
 import { WithAuthRedirect } from '../../hoc/WithAuthRedirect';
 import GroupsManage from './groups_1_manage/GroupsManage';
 import AddBarIcon from '../../icons/groups/AddBarIcon';
+import GroupsMy from './groups_4_my/GroupsMy';
+import GroupsOfficial from './groups_5_official/GroupsOfficial';
+import GroupsPopular from './groups_6_popular/GroupsPopular';
+import GroupsNew from './groups_7_new/GroupsNew';
+import GroupsViewed from './groups_9_viewed/GroupsViewed';
+import GroupsRecommendations from './groups_10_recommendations/GroupsRecommendations';
 
 const Groups = (props) => {
   return (
     <div>
+      {props.location.pathname === '/groups' ? (
+        <Redirect from="/groups" to="/groups/manage" />
+      ) : null}
       <div className="app__main">
         <div className="g__left">
           <SideBarGroups location={props.location} />
@@ -48,22 +57,25 @@ const Groups = (props) => {
               render={() => <h1>Создать группу</h1>}
             />
             <Route path="/groups/message" render={() => <h1>Сообщения</h1>} />
-            <Route path="/groups/my" render={() => <h1>Мои группы</h1>} />
+            <Route
+              path="/groups/my"
+              render={() => <GroupsMy location={props.location} />}
+            />
             <Route
               path="/groups/official"
-              render={() => <h1>Официальные</h1>}
+              render={() => <GroupsOfficial location={props.location} />}
             />
-            <Route path="/groups/popular" render={() => <h1>Популярные</h1>} />
-            <Route path="/groups/new" render={() => <h1>Новое</h1>} />
+            <Route path="/groups/popular" render={() => <GroupsPopular />} />
+            <Route path="/groups/new" render={() => <GroupsNew />} />
             <Route
               path="/groups/activity"
               render={() => <h1>Мои активности</h1>}
             />
+            <Route path="/groups/viewed" render={() => <GroupsViewed />} />
             <Route
-              path="/groups/viewed"
-              render={() => <h1>Просмотренные</h1>}
+              path="/groups/recommendations"
+              render={() => <GroupsRecommendations />}
             />
-            <Route path="/groups/recom" render={() => <h1>Рекомндации</h1>} />
             <Route path="/groups/search" render={() => <h1>Поиск</h1>} />
           </Switch>
         </div>

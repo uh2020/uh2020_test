@@ -119,7 +119,7 @@ const SideBarGroups = (props) => {
           new={''}
           all={''}
           Icon={RecommendationIcon}
-          to="/groups/recom"
+          to="/groups/recommendations"
         />
         <SideBarItem
           location={props.location.pathname}

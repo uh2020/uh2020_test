@@ -2,8 +2,7 @@ import React from 'react';
 import Search from '../../../icons/bar/SearchIcon';
 import EarthIcon from '../../../icons/friends/EarthIcon';
 import DownIcon from '../../../icons/friends/DownIcon';
-import '../friends_1_List//FriendsList.scss';
-const FriendsHeaderMenu = (props) => {
+const GroupsHeaderMenu = (props) => {
   return (
     <>
       <div className="main__search-wrapper">
@@ -17,7 +16,7 @@ const FriendsHeaderMenu = (props) => {
             name="SearchPeople"
             className="main__search-input"
             type="text"
-            placeholder="Поиск друзей"
+            placeholder="Поиск групп"
           />
         </form>
         <div className="main__search-coutry">
@@ -31,7 +30,7 @@ const FriendsHeaderMenu = (props) => {
         </div>
         <div className="main__search-city">
           <select name="city">
-            <option value="all">Все города</option>
+            <option value="all">Тематика</option>
           </select>
           <div className="main__search-down">
             <DownIcon />
@@ -42,4 +41,4 @@ const FriendsHeaderMenu = (props) => {
   );
 };
 
-export default FriendsHeaderMenu;
+export default GroupsHeaderMenu;
