@@ -112,6 +112,26 @@ body {
     }
   }
 }
+::-webkit-input-placeholder {
+  color: #adadad;
+  font-size: 13px;
+  line-height: 140%;
+}
+::-moz-placeholder {
+  color: #adadad;
+  font-size: 13px;
+  line-height: 140%;
+}
+:-moz-placeholder {
+  color: #adadad;
+  font-size: 13px;
+  line-height: 140%;
+}
+:-ms-input-placeholder {
+  color: #adadad;
+  font-size: 13px;
+  line-height: 140%;
+}
 
 @media (max-width: 1500px) {
   .logo__static {

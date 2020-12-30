@@ -24,10 +24,7 @@ const Pets = (props) => {
               path="/pets/subscriptions"
               render={() => <h1>Подписки</h1>}
             />
-            <Route
-              path="/pets/friends"
-              render={() => <h1>Питомцы друзей</h1>}
-            />
+            <Route path="/pets/friend" render={() => <h1>Питомцы друзей</h1>} />
             <Route
               path="/pets/popular"
               render={() => <h1>Популярные питомцы</h1>}

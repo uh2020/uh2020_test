@@ -50,7 +50,7 @@ const SideBarPets = (props) => {
           new={''}
           all={''}
           Icon={UsersIconIcon}
-          to="/pets/friends"
+          to="/pets/friend"
         />
         <SideBarItem
           location={props.location.pathname}

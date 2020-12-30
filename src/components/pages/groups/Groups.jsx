@@ -13,6 +13,8 @@ import GroupsPopular from './groups_6_popular/GroupsPopular';
 import GroupsNew from './groups_7_new/GroupsNew';
 import GroupsViewed from './groups_9_viewed/GroupsViewed';
 import GroupsRecommendations from './groups_10_recommendations/GroupsRecommendations';
+import GroupsMessage from './groups_3_message/GroupsMessage';
+import GroupsActivity from './groups_8_activity/GroupsActivity';
 
 const Groups = (props) => {
   return (
@@ -56,7 +58,7 @@ const Groups = (props) => {
               path="/groups/create"
               render={() => <h1>Создать группу</h1>}
             />
-            <Route path="/groups/message" render={() => <h1>Сообщения</h1>} />
+            <Route path="/groups/message" render={() => <GroupsMessage />} />
             <Route
               path="/groups/my"
               render={() => <GroupsMy location={props.location} />}
@@ -67,10 +69,7 @@ const Groups = (props) => {
             />
             <Route path="/groups/popular" render={() => <GroupsPopular />} />
             <Route path="/groups/new" render={() => <GroupsNew />} />
-            <Route
-              path="/groups/activity"
-              render={() => <h1>Мои активности</h1>}
-            />
+            <Route path="/groups/activity" render={() => <GroupsActivity />} />
             <Route path="/groups/viewed" render={() => <GroupsViewed />} />
             <Route
               path="/groups/recommendations"

@@ -2,12 +2,13 @@ import React from 'react';
 import './logoStatic.scss';
 const LogoStatic = (props) => {
   let initial = {
-    color: '#669774',
+    color: '#fff',
     title: 'friends',
   };
   const [page, setPage] = React.useState(initial);
   const checkPage = () => {
     let changePAge = (color, title) => {
+      // debugger;
       let page = {
         color,
         title,
@@ -15,44 +16,86 @@ const LogoStatic = (props) => {
       setPage(page);
     };
     const path = props.location;
-    switch (path) {
-      case '/friends': {
-        return path.includes('/friends') ? changePAge('#669774', 'Friends') : 0;
+    const links = [
+      {
+        ln: '/friends',
+        color: '#669774',
+        title: 'Friends',
+      },
+      {
+        ln: '/pets',
+        color: '#7c7474',
+        title: 'Pets',
+      },
+      {
+        ln: '/messenger',
+        color: '#5574b0',
+        title: 'Messenger',
+      },
+      {
+        ln: '/groups',
+        color: '#608aa1',
+        title: 'Groups',
+      },
+      {
+        ln: '/media',
+        color: '#e5925b',
+        title: 'Media',
+      },
+      {
+        ln: '/groups',
+        color: '#608aa1',
+        title: 'Groups',
+      },
+      {
+        ln: '/booking',
+        color: '#d89342',
+        title: 'Booking',
+      },
+      {
+        ln: '/market',
+        color: '#e5635b',
+        title: 'Market',
+      },
+      {
+        ln: '/library',
+        color: '#b28d75',
+        title: 'Library',
+      },
+      {
+        ln: '/search',
+        color: '#7c7474',
+        title: 'Search',
+      },
+    ];
+    for (let i = 0; i < links.length; i++) {
+      const is = path.includes(links[i].ln);
+      if (is) {
+        changePAge(links[i].color, links[i].title);
+        break;
       }
-      case '/pets': {
-        return path.includes('/pets') ? changePAge('#7c7474', 'Pets') : 0;
-      }
-      case '/messenger': {
-        return path.includes('/messenger')
-          ? changePAge('#5574b0', 'Messenger')
-          : 0;
-      }
-      case '/groups': {
-        return path.includes('/groups') ? changePAge('#608aa1', 'Groups') : 0;
-      }
-      case '/media': {
-        return path.includes('/media') ? changePAge('#e5925b', 'Media') : 0;
-      }
-      case '/booking': {
-        return path.includes('/booking') ? changePAge('#d89342', 'Booking') : 0;
-      }
-      case '/market': {
-        return path.includes('/market') ? changePAge('#e5635b', 'Market') : 0;
-      }
-      case '/library': {
-        return path.includes('/library') ? changePAge('#b28d75', 'Library') : 0;
-      }
-      case '/search': {
-        return path.includes('/search') ? changePAge('#7c7474', 'Search') : 0;
-      }
-      // default:
-      //   return ;
     }
+    // switch (path) {
+    //   case '/friends': {
+    //     return path.includes('/friends') ? changePAge('#669774', 'Friends') : 0;
+    //   }
+    //   case '/library': {
+    //     return path.includes('/library') ? changePAge('#b28d75', 'Library') : 0;
+    //   }
+    //   case '/search': {
+    //     return path.includes('/search') ? changePAge('#7c7474', 'Search') : 0;
+    //   }
+    //   // default:
+    //   //   return ;
+    // }
   };
 
   React.useEffect(() => {
     checkPage();
   }, [props.location]);
+  React.useEffect(() => {
+    checkPage();
+  }, []);
   return (
     <div>
       <div className="logo__static">

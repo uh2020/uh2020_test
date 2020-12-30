@@ -172,12 +172,9 @@
       text-align: center;
       cursor: pointer;
       background-color: transparent;
-
       border-radius: 5px;
       transition: 0.3s;
-    }
-    &:hover {
-      span {
+      &:hover {
         background-color: #f5f4f2;
       }
     }

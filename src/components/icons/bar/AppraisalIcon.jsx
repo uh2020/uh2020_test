@@ -4,8 +4,8 @@ const AppraisalIcon = (props) => {
   return (
     <>
       <svg
-        width="27"
-        height="27"
+        width={props.width ? props.width : '27'}
+        height={props.height ? props.height : '27'}
         viewBox="0 0 27 27"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"

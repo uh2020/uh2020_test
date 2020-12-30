@@ -23,7 +23,7 @@ import Booking from './components/pages/booking/Booking';
 import Market from './components/pages/market/Market';
 import Library from './components/pages/lirbrary/Library';
 import Search from './components/pages/search/Search';
-import { auth } from './api/api';
+import { auth, TestApi } from './api/api';
 import { setAuthData } from './redux/auth_reducer';
 function App(props) {
   const [AuthHows, setAuth] = React.useState(false);
@@ -58,8 +58,9 @@ function App(props) {
     checkAuth();
   }, [props.location.pathname]);
   React.useEffect(() => {
-    auth.sesId();
-    setAuthData();
+    TestApi.testApi();
+    // auth.sesId();
+    // setAuthData();
   }, []);
 
   return (

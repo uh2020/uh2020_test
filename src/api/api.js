@@ -14,8 +14,8 @@ const sessId = sessid();
 
 let instance = axios.create({
   // withCredentials: true,
-  baseURL: 'http://testsset.000webhostapp.com',
-  // baseURL: 'https://white-dune-027d98003.azurestaticapps.net/',
+  // baseURL: 'http://testsset.000webhostapp.com',
+  baseURL: 'https://uhserver.azurewebsites.net/',
   // baseURL: 'https://uh202020.documents.azure.com:443/',
 });
 export const friendsApi = {
@@ -51,17 +51,16 @@ export const friendsApi = {
   },
 };
 
-// export const isAuth = {
-//   checkAuth(data) {
-//     const proc = sessid();
-//     return axios
-//       .get(`https://white-dune-027d98003.azurestaticapps.net`)
-//       .then((data) => {
-//         console.log(data);
-//         return data;
-//       });
-//   },
-// };
+export const TestApi = {
+  testApi(data) {
+    return axios
+      .get(`https://uhserver.azurewebsites.net/hostingstart.php`)
+      .then((data) => {
+        console.log(data);
+        return data;
+      });
+  },
+};
 
 export const auth = {
   sendReg(data) {
@@ -77,6 +76,7 @@ export const auth = {
         `/ajindex.php/?sessid=${sessId}&proc=${proc}&contry=${data.contry}&tel=${data.tel}&mail=${data.mail}&pass=${data.pass}&repass=${data.repass}`
       )
       .then((data) => {
+        debugger;
         return data;
       });
   },

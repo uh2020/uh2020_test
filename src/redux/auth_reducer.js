@@ -54,6 +54,7 @@ export const setFile = (file) => async (dispath) => {
 };
 export const setRegData = (data) => async (dispath) => {
   let response = await auth.sendReg(data);
+  console.log(response.data);
   if (response.data.regSuccess) {
     dispath(setRegDone(response.data.regSuccess));
     const dataAuth = {

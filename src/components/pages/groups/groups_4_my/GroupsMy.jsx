@@ -47,7 +47,13 @@ const GroupsMy = (props) => {
                 className="f_list__header-middle-inn"
                 activeClassName="f_list__header-left-active"
               >
-                <span>2</span>
+                <span
+                  style={{
+                    backgroundColor: `#7C7474`,
+                  }}
+                >
+                  2
+                </span>
                 <p>
                   Отправленные
                   {props.location.pathname === '/groups/my/incoming' ? (
