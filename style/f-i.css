@@ -1,0 +1,130 @@
+.main-container {
+  width: calc(100% - 300px);
+  max-width: 880px;
+  padding: 15px 20px 20px;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.f-info__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #F2F2F2;
+  margin-bottom: 20px;
+}
+
+.f-info__svg {
+  line-height: 1;
+  margin-right: 10px;
+}
+
+.f-info__title {
+  color: #3F4548;
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  line-height: 1.2;
+}
+
+.f-info__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.f-info__item:last-child {
+  margin-bottom: 0px;
+}
+
+.f-info__item-left {
+  width: 150px;
+  margin-right: 20px;
+  font-size: 14px;
+  line-height: 1.1;
+  color: #7C7474;
+  font-weight: 600;
+}
+
+.f-info__item-right {
+  width: calc(100% - 150px - 20px);
+  line-height: 1;
+}
+
+.f-info__item-right__text {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.1;
+  color: #3F4548;
+  text-decoration: none;
+}
+
+.f-info__item-right__hobby {
+  font-size: 12px;
+  line-height: 1.1;
+  font-weight: 600;
+  color: #7C7474;
+  display: inline-block;
+  background-color: #F5F4F2;
+  border-radius: 5px;
+  margin-right: 4px;
+  margin-bottom: 4px;
+  padding: 8px 10px;
+}
+
+.f-info__item-right__hobby:last-child {
+  margin-right: 0px;
+}
+
+.f-info__item-right__lang {
+  display: inline-block;
+  margin-right: 20px;
+  padding-left: 25px;
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: contain;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.f-info__item-right__lang:last-child {
+  margin-right: 0px;
+}
+
+.f-info__item-right__text-n {
+  color: #3F4548;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.f-info__item-right__social {
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  margin-right: 20px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+}
+
+.f-info__item-right__social:last-child {
+  margin-right: 0px;
+}
+
+.ai-center {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+/*# sourceMappingURL=f-i.css.map */

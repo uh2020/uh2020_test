@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="media/Union.ico" type="image/x-icon">
     <link rel="stylesheet" href="style/style.css">
-    
+    <link rel="stylesheet" href="style/f-i.css">
     <title>LOGOGO</title>
 </head>
 <body>
@@ -97,6 +97,7 @@
         </div>
         
     </header>
+
     <main class="main">
         <div class="max-witdh-1200">  
             <aside class="aside friends">
@@ -115,14 +116,14 @@
                             </div>
                         </a>
                     </li>
-                    <li class="aside__list-item active">
+                    <li class="aside__list-item">
                         <a class="aside__list-link" href="friends-followers.html">
                             <div class="aside__link-img">
                                 <svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M8.12542 17.4828L5.85645 19.7062H11.1415C11.5471 19.7062 11.8811 20.0293 11.8811 20.4341C11.8811 20.8389 11.5471 21.1619 11.1415 21.1619H5.85645L8.12542 23.3854C8.41572 23.6699 8.41572 24.1324 8.12542 24.4169C7.83682 24.6997 7.37014 24.6997 7.08154 24.4169L3.54355 20.9498C3.25326 20.6653 3.25326 20.2028 3.54355 19.9183L7.08154 16.4513C7.37014 16.1685 7.83682 16.1685 8.12542 16.4513C8.41572 16.7358 8.41572 17.1983 8.12542 17.4828ZM14.0898 14.2278C13.2336 14.2278 12.4186 14.0533 11.68 13.7383L7.89333 15.3253C7.52007 15.4817 7.08546 15.3132 6.92384 14.9429C6.7615 14.5709 6.93888 14.1431 7.31363 13.986L10.1504 12.7971C8.86097 11.7105 8.04314 10.0989 8.04314 8.29941C8.04314 5.02239 10.7532 2.371 14.0898 2.371C17.4264 2.371 20.1364 5.02239 20.1364 8.29941C20.1364 10.1098 19.3087 11.73 18.0057 12.8168L21.8572 14.5324C22.9626 15.0248 23.6744 16.1062 23.6744 17.2997V18.1227C23.6744 19.8041 22.2844 21.1619 20.5761 21.1619H14.6795C14.2738 21.1619 13.9398 20.8389 13.9398 20.4341C13.9398 20.0293 14.2738 19.7062 14.6795 19.7062H20.5761C21.4731 19.7062 22.1951 18.9944 22.1951 18.1227V17.2997C22.1951 16.6804 21.8257 16.1163 21.2471 15.8585L16.4932 13.741C15.7563 14.0543 14.9435 14.2278 14.0898 14.2278ZM9.52247 8.29941C9.52247 10.7668 11.5645 12.7721 14.0898 12.7721C16.6151 12.7721 18.6571 10.7668 18.6571 8.29941C18.6571 5.83204 16.6151 3.82668 14.0898 3.82668C11.5645 3.82668 9.52247 5.83204 9.52247 8.29941Z" fill="#7C7474" stroke="#7C7474" stroke-width="0.3"/>
                                 </svg>                            
                             </div>
-                            <span class="aside__link-name active">Мои подписчики</span>
+                            <span class="aside__link-name">Мои подписчики</span>
                             <div class="aside__count">
                                 <span class="aside__count-item">4</span><span class="aside__count-all">45</span>
                             </div>
@@ -264,149 +265,136 @@
                     </li>
                 </ul>
             </aside>
-            <section class="main-container friends"> 
-                <div class="main__search-wrapper">
-                    <div class="main__search-block"> 
-                        <input class="main__search-input" type="text" placeholder="Поиск друзей">
+
+            <!--нужная часть -->
+
+            <section class="main-container f-info"> 
+                <div class="f-info__header">
+                    <div class="f-info__svg">
+                        <svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4.06099 14.6618L8.51896 12.4714C8.63936 12.418 8.74635 12.3306 8.82181 12.2125C9.02763 11.8904 8.918 11.4728 8.58778 11.2805C7.32952 10.5478 6.55 9.24764 6.55 7.82166C6.55 5.5914 8.44614 3.77166 10.8 3.77166C12.2287 3.77166 13.5341 4.44756 14.3198 5.55105C14.5384 5.85813 14.971 5.93444 15.2877 5.72899C15.6083 5.52094 15.6957 5.09829 15.4739 4.78683C14.4279 3.31769 12.6916 2.42166 10.8 2.42166C7.68624 2.42166 5.15 4.83282 5.15 7.82166C5.15 9.33692 5.80858 10.7426 6.91583 11.7439L3.42524 13.459C2.46058 13.933 1.85 14.8845 1.85 15.9276V16.7467C1.85 18.2858 3.15505 19.5217 4.75008 19.5217C5.13002 19.5217 5.45008 19.2259 5.45008 18.8467C5.45008 18.4674 5.13002 18.1717 4.75008 18.1717C3.91492 18.1717 3.25 17.5272 3.25 16.7467V15.9276C3.25 15.3975 3.56037 14.9078 4.06099 14.6618ZM8.52693 18.9027L12.9583 16.9799C13.6459 17.2642 14.4039 17.4217 15.2 17.4217C15.9961 17.4217 16.7541 17.2642 17.4417 16.9799L21.8731 18.9027C22.4101 19.1357 22.75 19.644 22.75 20.1989V20.9467C22.75 21.7272 22.0851 22.3717 21.25 22.3717H9.15C8.31492 22.3717 7.65 21.7272 7.65 20.9467V20.1989C7.65 19.644 7.98989 19.1357 8.52693 18.9027ZM9.55 12.0217C9.55 13.6637 10.3168 15.1329 11.5234 16.1221L7.95234 17.6716C6.9186 18.1201 6.25 19.1067 6.25 20.1989V20.9467C6.25 22.4857 7.55503 23.7217 9.15 23.7217H21.25C22.845 23.7217 24.15 22.4857 24.15 20.9467V20.1989C24.15 19.1067 23.4814 18.1201 22.4477 17.6716L18.8766 16.1221C20.0832 15.1329 20.85 13.6637 20.85 12.0217C20.85 9.03282 18.3138 6.62165 15.2 6.62165C12.0862 6.62165 9.55 9.03282 9.55 12.0217ZM19.45 12.0217C19.45 14.2519 17.5539 16.0717 15.2 16.0717C12.8461 16.0717 10.95 14.2519 10.95 12.0217C10.95 9.7914 12.8461 7.97166 15.2 7.97166C17.5539 7.97166 19.45 9.7914 19.45 12.0217Z" fill="#7C7474" stroke="#7C7474" stroke-width="0.3"></path>
+                        </svg>
                     </div>
-                    <div class="main__search-coutry">
-                        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M8.04038 16.9596L9.85 18.7692V19.776C5.50566 19.2123 2.15 15.498 2.15 11C2.15 10.1111 2.28101 9.25302 2.52468 8.44392L5.04038 10.9596C5.29422 11.2135 5.70578 11.2135 5.95962 10.9596L6.95962 9.95962C7.08152 9.83772 7.15 9.67239 7.15 9.5V9.15H8.5C9.41127 9.15 10.15 8.41127 10.15 7.5V6.5C10.15 6.3067 10.3067 6.15 10.5 6.15H11.5C12.9636 6.15 14.15 4.96355 14.15 3.5V2.72697C17.4826 3.99662 19.85 7.22203 19.85 11C19.85 12.7909 19.3182 14.4572 18.4039 15.85H16.5C16.3067 15.85 16.15 15.6933 16.15 15.5C16.15 14.5887 15.4113 13.85 14.5 13.85C14.3067 13.85 14.15 13.6933 14.15 13.5V12.5C14.15 11.5887 13.4113 10.85 12.5 10.85H7.5C7.14102 10.85 6.85 11.141 6.85 11.5V12.5C6.85 12.6724 6.91848 12.8377 7.04038 12.9596L7.85 13.7692V16.5C7.85 16.6724 7.91848 16.8377 8.04038 16.9596ZM11.15 19.8488V18.5C11.15 18.3276 11.0815 18.1623 10.9596 18.0404L9.15 16.2308V13.5C9.15 13.3276 9.08152 13.1623 8.95962 13.0404L8.15 12.2308V12.15H12.5C12.6933 12.15 12.85 12.3067 12.85 12.5V13.5C12.85 14.4113 13.5887 15.15 14.5 15.15C14.6933 15.15 14.85 15.3067 14.85 15.5C14.85 16.4113 15.5887 17.15 16.5 17.15H17.364C15.7869 18.7816 13.5885 19.8082 11.15 19.8488ZM10.5 21.15C10.534 21.15 10.5676 21.1474 10.6004 21.1423C10.733 21.1474 10.8662 21.15 11 21.15C16.6057 21.15 21.15 16.6057 21.15 11C21.15 5.39431 16.6057 0.85 11 0.85C5.39431 0.85 0.85 5.39431 0.85 11C0.85 16.3818 5.03846 20.7852 10.3336 21.1285C10.3869 21.1425 10.4427 21.15 10.5 21.15ZM5.85 9.23076L5.5 9.58076L3.04218 7.12294C4.47961 4.17814 7.5031 2.15 11 2.15C11.6346 2.15 12.2535 2.21677 12.85 2.34363V3.5C12.85 4.24558 12.2456 4.85 11.5 4.85H10.5C9.58873 4.85 8.85 5.58873 8.85 6.5V7.5C8.85 7.6933 8.6933 7.85 8.5 7.85H6.5C6.14102 7.85 5.85 8.14102 5.85 8.5V9.23076Z" fill="#7C7474" stroke="#7C7474" stroke-width="0.3"/>
-                            </svg>
-                            
-                        <select name="country" id="countryId" size="1">
-                            <option value="all">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M9.04038 17.9596L10.85 19.7692V20.776C6.50566 20.2123 3.15 16.498 3.15 12C3.15 11.1111 3.28101 10.253 3.52468 9.44392L6.04038 11.9596C6.29422 12.2135 6.70578 12.2135 6.95962 11.9596L7.95962 10.9596C8.08152 10.8377 8.15 10.6724 8.15 10.5V10.15H9.5C10.4113 10.15 11.15 9.41127 11.15 8.5V7.5C11.15 7.3067 11.3067 7.15 11.5 7.15H12.5C13.9636 7.15 15.15 5.96355 15.15 4.5V3.72697C18.4826 4.99662 20.85 8.22203 20.85 12C20.85 13.7909 20.3182 15.4572 19.4039 16.85H17.5C17.3067 16.85 17.15 16.6933 17.15 16.5C17.15 15.5887 16.4113 14.85 15.5 14.85C15.3067 14.85 15.15 14.6933 15.15 14.5V13.5C15.15 12.5887 14.4113 11.85 13.5 11.85H8.5C8.14102 11.85 7.85 12.141 7.85 12.5V13.5C7.85 13.6724 7.91848 13.8377 8.04038 13.9596L8.85 14.7692V17.5C8.85 17.6724 8.91848 17.8377 9.04038 17.9596ZM12.15 20.8488V19.5C12.15 19.3276 12.0815 19.1623 11.9596 19.0404L10.15 17.2308V14.5C10.15 14.3276 10.0815 14.1623 9.95962 14.0404L9.15 13.2308V13.15H13.5C13.6933 13.15 13.85 13.3067 13.85 13.5V14.5C13.85 15.4113 14.5887 16.15 15.5 16.15C15.6933 16.15 15.85 16.3067 15.85 16.5C15.85 17.4113 16.5887 18.15 17.5 18.15H18.364C16.7869 19.7816 14.5885 20.8082 12.15 20.8488ZM11.5 22.15C11.534 22.15 11.5676 22.1474 11.6004 22.1423C11.733 22.1474 11.8662 22.15 12 22.15C17.6057 22.15 22.15 17.6057 22.15 12C22.15 6.39431 17.6057 1.85 12 1.85C6.39431 1.85 1.85 6.39431 1.85 12C1.85 17.3818 6.03846 21.7852 11.3336 22.1285C11.3869 22.1425 11.4427 22.15 11.5 22.15ZM6.85 10.2308L6.5 10.5808L4.04218 8.12294C5.47961 5.17814 8.5031 3.15 12 3.15C12.6346 3.15 13.2535 3.21677 13.85 3.34363V4.5C13.85 5.24558 13.2456 5.85 12.5 5.85H11.5C10.5887 5.85 9.85 6.58873 9.85 7.5V8.5C9.85 8.6933 9.6933 8.85 9.5 8.85H7.5C7.14102 8.85 6.85 9.14102 6.85 9.5V10.2308Z" fill="#7C7474" stroke="#7C7474" stroke-width="0.3"/>
-                                </svg>
-                                <span>
-                                    Все страны
-                                </span>
-                                </option>
-                        </select>
-                    </div>
-                    <div class="main__search-city">
-                        <select name="city" id="cityID" size="1">
-                            <option value="all">Все города</option>
-                        </select>
-                    </div>
+                    <p class="f-info__title">Информация</p>
                 </div>
-                <div class="main__block">
-                    <div class="main__header">
-                        <h2 class="main__title">Все подписчики</h2>
-                        <div class="main__tab">
-                            <nav class="main__tab-items">
-                                <a href="#tab-incoming" class="main__tab-items__link main__tab-items__link-incoming"> 
-                                    <span class="count-incoming ">2</span> 
-                                    <span class="main__tab-items__link-text hover-line-fr">Входящие</span> 
-                                </a>
-                                <a href="#tab-request" class="main__tab-items__link main__tab-items__link-request ">
-                                    <span class="hover-line-fr">
-                                        Заявки
-                                    </span>
-                                  
-                                </a>
-                                <a href="#tab-outgoing" class="main__tab-items__link main__tab-items__link-outgoing">
-                                    <span class="main__tab-items__link-text hover-line-fr">Исходящие</span> 
-                                     
-                                    <span class="count-incoming viewed ">2</span> </a>
-                            </nav>
-                        </div>
-                        <button class="btn btn-write-all">Написать всем</button>
+                <article class="f-info__item">
+                    <p class="f-info__item-left">Место работы</p>
+                    <div class="f-info__item-right">
+                        <p class="f-info__item-right__text">ООО “Титан”</p>
                     </div>
-                    <div class="main__tab-body">
-                        <div id="tab-incoming" class="main__tab-body-block">
-                            
-                            Входящие
-                        </div>
-                        <div id="tab-request" class="main__tab-body-block">
-                            Заявки
-                        </div>
-                        <div id="tab-outgoing" class="main__tab-body-block">
-                            Исходящие
-                        </div>
+                </article>
+                <article class="f-info__item">
+                    <p class="f-info__item-left">Образование</p>
+                    <div class="f-info__item-right">
+                        <p class="f-info__item-right__text">Высшее</p>
                     </div>
-                    <div class="followers">
-                        <article class="friend-item">
-                            <div class="tab__main-item__block-img">
-                                <a class="tab__main-item__img" href="" style="background-image: url(media/person-menu.png)"></a>
-                            </div>
-                            <div class="tab__main-item__block-info">
-                                <h4 class="tab__main-item__block-info__name">
-                                    <a class="tab__main-item__block-info__name-link" href="">Фамилия Имя</a>
-                                </h4> 
-                                <a class="tab__main-item__block-info__country" href=""><span>Страна</span>, <span>Город</span></a>
-                            </div>
-                            <div class="block-btns">
-                                <btn class="follow-btn__item tab__main-item__block-info__add" >Добавить в друзья</btn>
-                                <btn class="follow-btn__item tab__main-item__block-info__s" >Подписаться</btn>                                
-                                <a class="follow-btn__item tab__main-item__block-info__msg" href="">Написать</a>
-                                <btn class="follow-btn__item tab__main-item__block-info__del" ></btn>
-                            </div>
-                        </article>
-                        <article class="friend-item">
-                            <div class="tab__main-item__block-img">
-                                <a class="tab__main-item__img" href="" style="background-image: url(media/person-menu.png)"></a>
-                            </div>
-                            <div class="tab__main-item__block-info">
-                                <h4 class="tab__main-item__block-info__name">
-                                    <a class="tab__main-item__block-info__name-link" href="">Фамилия Имя</a>
-                                </h4> 
-                                <a class="tab__main-item__block-info__country" href=""><span>Страна</span>, <span>Город</span></a>
-                            </div>
-                            <div class="block-btns">
-                                <btn class="follow-btn__item tab__main-item__block-info__add" >Добавить в друзья</btn>
-                                <btn class="follow-btn__item tab__main-item__block-info__s" >Подписаться</btn>                                
-                                <a class="follow-btn__item tab__main-item__block-info__msg" href="">Написать</a>
-                                <btn class="follow-btn__item tab__main-item__block-info__del" ></btn>
-                            </div>
-                        </article>
-                        <article class="friend-item">
-                            <div class="tab__main-item__block-img">
-                                <a class="tab__main-item__img" href="" style="background-image: url(media/person-menu.png)"></a>
-                            </div>
-                            <div class="tab__main-item__block-info">
-                                <h4 class="tab__main-item__block-info__name">
-                                    <a class="tab__main-item__block-info__name-link" href="">Фамилия Имя</a>
-                                </h4> 
-                                <a class="tab__main-item__block-info__country" href=""><span>Страна</span>, <span>Город</span></a>
-                            </div>
-                            <div class="block-btns">
-                                <btn class="follow-btn__item tab__main-item__block-info__add" >Добавить в друзья</btn>
-                                <btn class="follow-btn__item tab__main-item__block-info__s" >Подписаться</btn>                                
-                                <a class="follow-btn__item tab__main-item__block-info__msg" href="">Написать</a>
-                                <btn class="follow-btn__item tab__main-item__block-info__del" ></btn>
-                            </div>
-                        </article>
-                        <article class="friend-item">
-                            <div class="tab__main-item__block-img">
-                                <a class="tab__main-item__img" href="" style="background-image: url(media/person-menu.png)"></a>
-                            </div>
-                            <div class="tab__main-item__block-info">
-                                <h4 class="tab__main-item__block-info__name">
-                                    <a class="tab__main-item__block-info__name-link" href="">Фамилия Имя</a>
-                                </h4> 
-                                <a class="tab__main-item__block-info__country" href=""><span>Страна</span>, <span>Город</span></a>
-                            </div>
-                            <div class="block-btns">
-                                <btn class="follow-btn__item tab__main-item__block-info__add" >Добавить в друзья</btn>
-                                <btn class="follow-btn__item tab__main-item__block-info__s" >Подписаться</btn>                                
-                                <a class="follow-btn__item tab__main-item__block-info__msg" href="">Написать</a>
-                                <btn class="follow-btn__item tab__main-item__block-info__del" ></btn>
-                            </div>
-                        </article>
-                        <div class="follow__fixed fixed-btn">
-                            <span class="text">Всех</span>
-                            <btn class="follow-btn__item tab__main-item__block-info__add" >Добавить в друзья</btn>
-                            <btn class="follow-btn__item tab__main-item__block-info__s" >Подписаться</btn>                                
-                            <a class="follow-btn__item tab__main-item__block-info__msg" href="">Написать</a>
-                            <btn class="follow-btn__item tab__main-item__block-info__del" ></btn>
-                        </div>
+                </article>
+                <article class="f-info__item">
+                    <p class="f-info__item-left">Родной город</p>
+                    <div class="f-info__item-right">
+                        <p class="f-info__item-right__text">Россия, Псков</p>
                     </div>
-                </div>
+                </article>
+                <article class="f-info__item ai-center">
+                    <p class="f-info__item-left">Интересы</p>
+                    <div class="f-info__item-right">
+                        <span class="f-info__item-right__hobby">#Рыбалка</span>
+                        <span class="f-info__item-right__hobby">#Собаки</span>
+                        <span class="f-info__item-right__hobby">#Сафари</span>
+                        <span class="f-info__item-right__hobby">#Рыбалка</span>
+                        <span class="f-info__item-right__hobby">#Собаки</span>
+                        <span class="f-info__item-right__hobby">#Сафари</span>
+                    </div>
+                </article>
+                <article class="f-info__item ai-center">
+                    <p class="f-info__item-left">Языки</p>
+                    <div class="f-info__item-right">
+                        <span class="f-info__item-right__lang" style="background-image: url(media/lang/lang.png);">Английский</span>
+                        <span class="f-info__item-right__lang" style="background-image: url(media/lang/lang.png);">Французский</span>
+                        <span class="f-info__item-right__lang" style="background-image: url(media/lang/lang.png);">Итальянский</span>
+                    </div>
+                </article>
+                <article class="f-info__item">
+                    <p class="f-info__item-left">Обо мне</p>
+                    <div class="f-info__item-right">
+                        <p class="f-info__item-right__text-n">В советское время работал на промыслах пушнины. Южная Якутия, два промысловых участка по 625 квадратных километра. Кубань охота на утку ,гуся,зайца лиса . Внештатный егерь Приморско Ахтарского р—на.</p>
+                    </div>
+                </article>
+                <article class="f-info__item">
+                    <p class="f-info__item-left">Гражданство</p>
+                    <div class="f-info__item-right">
+                        <p class="f-info__item-right__text">Осетия, Россия</p>
+                    </div>
+                </article>
+                <article class="f-info__item">
+                    <p class="f-info__item-left">Контакты</p>
+                    <div class="f-info__item-right">
+                        <a class="f-info__item-right__text" href="tel:+7 900 000 00 00">+7 900 000 00 00</a>
+                    </div>
+                </article>
+                <article class="f-info__item">
+                    <p class="f-info__item-left">Оружие</p>
+                    <div class="f-info__item-right">
+                        <p class="f-info__item-right__text">Карабин КК Сайга TG2 366TKM</p>
+                    </div>
+                </article>
+                <article class="f-info__item">
+                    <p class="f-info__item-left">Бренды</p>
+                    <div class="f-info__item-right">
+                        <p class="f-info__item-right__text">Название бренда</p>
+                    </div>
+                </article>
+                <article class="f-info__item">
+                    <p class="f-info__item-left">Транспорт</p>
+                    <div class="f-info__item-right">
+                        <p class="f-info__item-right__text">Снегоход Tinger</p>
+                    </div>
+                </article>
+                <article class="f-info__item">
+                    <p class="f-info__item-left">Места охоты</p>
+                    <div class="f-info__item-right">
+                        <p class="f-info__item-right__text">Названия стран</p>
+                    </div>
+                </article>
+                <article class="f-info__item">
+                    <p class="f-info__item-left">Место службы/Звание</p>
+                    <div class="f-info__item-right">
+                        <p class="f-info__item-right__text">Название</p>
+                    </div>
+                </article>
+                <article class="f-info__item">
+                    <p class="f-info__item-left">Сообщество охотников</p>
+                    <div class="f-info__item-right">
+                        <p class="f-info__item-right__text">Название</p>
+                    </div>
+                </article>
+                <article class="f-info__item">
+                    <p class="f-info__item-left">Шлем</p>
+                    <div class="f-info__item-right">
+                        <p class="f-info__item-right__text">Бриллиантовый</p>
+                    </div>
+                </article>
+                <article class="f-info__item">
+                    <p class="f-info__item-left">Коллекции</p>
+                    <div class="f-info__item-right">
+                        <p class="f-info__item-right__text">Горные козлы</p>
+                    </div>
+                </article>
+                <article class="f-info__item ai-center">
+                    <p class="f-info__item-left">В социальных сетях</p>
+                    <div class="f-info__item-right">
+                        <a class="f-info__item-right__social" href="" style="background-image: url(media/post-photo.png);"></a>
+                        <a class="f-info__item-right__social" href="" style="background-image: url(media/social/google.svg);"></a>
+                        <a class="f-info__item-right__social" href="" style="background-image: url(media/social/instagram.svg);"></a>
+                    </div>
+                </article>
             </section>
+
+            <!--нужная часть -->
+
         </div>
     </main>
+
     <div class="fixed-name friends">
         <p class="fixed-name__page"> Friends</p>
     </div>
