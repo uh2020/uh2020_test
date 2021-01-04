@@ -1,0 +1,136 @@
+.main-container{
+    width: calc(100% - 300px);
+    max-width: 880px;
+    padding: 15px 20px 20px;
+    border-radius: 5px;
+    background-color: #fff;
+    align-self: start;
+}
+
+
+.btn-green{
+    background-color: #669774;
+}
+
+.btn-blue{
+    background-color: #608AA1;
+}
+
+.btn-brown{
+    background-color: #E5925B;
+}
+
+.f-all-info{
+    .f-info{
+        &__header__item{
+            display: flex;
+            align-items: center;
+            margin-right: 24px;
+            position: relative;
+            cursor: pointer;
+        }
+        &__header__item.active{
+            .f-info__title{
+                color: #3F4548;
+            }
+            .f-info__line{
+                position: absolute;
+                width: 100%;
+                height: 5px;
+                left: 0;
+                bottom: -10px;
+                background-color: #669774;
+                border: 2px solid #669774;
+                border-radius: 4px;
+            }
+        }
+        &__header__item:last-of-type{
+            margin-right: 0;
+        }
+        &__svg{
+            path{
+                fill: #7C7474;
+            }
+        }
+        &__title{
+            color: #7C7474;
+        }
+        &__count{
+            font-weight: 800;
+            font-size: 12px;
+            line-height: 1.2;
+            color: #ADADAD;
+            margin-left: 7px;
+        }
+    }
+}
+
+
+
+.f-info{
+    &__header{
+        display: flex;
+        align-items: center;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #F2F2F2;
+        margin-bottom: 20px;
+    }
+    &__svg{
+        line-height: 1;
+        margin-right: 10px;
+    }
+    &__title{
+        color: #3F4548;
+        font-size: 12px;
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        line-height: 1.2;
+    }
+}
+
+
+.f-all-info{
+    &__main{
+        padding: 20px 0;
+        text-align: center;
+        &__title{
+            color: #3F4548;
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 30px;
+            line-height: 1.4;
+        }
+        &__btn{
+            border-radius: 5px;
+            border: none;
+            color: #fff;
+            font-size: 12px;
+            font-weight: 600;
+            padding: 7px 13px;
+            
+            cursor: pointer;
+            &:hover{
+                opacity: .8;
+            }
+        }
+        &__text{
+            color: #3F4548;
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 1.4;
+        }
+        &__btn + &__text{
+            margin-top: 40px;
+        }
+    }
+    
+   
+}
+
+
+
+
+.mb-0{
+    margin-bottom: 0;
+}

@@ -1,0 +1,125 @@
+.main-container{
+    width: calc(100% - 300px);
+    max-width: 880px;
+    padding: 15px 20px 20px;
+    border-radius: 5px;
+    background-color: #fff;
+}
+.color-blue{
+    color: #608AA1;
+    border-color: #608AA1;
+}
+
+.color-gray{
+    color: #7C7474;
+    border-color:#7C7474;
+}
+
+
+.f-info{
+    &__header{
+        display: flex;
+        align-items: center;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #F2F2F2;
+        margin-bottom: 20px;
+    }
+    &__svg{
+        line-height: 1;
+        margin-right: 10px;
+    }
+    &__title{
+        color: #3F4548;
+        font-size: 12px;
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        line-height: 1.2;
+    }
+}
+
+.ai-center{
+    align-items: center;
+}
+
+.main-flex{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.f-g{
+    &__count{
+        font-weight: 800;
+        font-size: 12px;
+        line-height: 1.2;
+        color: #ADADAD;
+        margin-left: 7px;
+    }
+    &__item{
+        width: calc((100% - 20px) / 2);
+        margin-right: 20px;
+        margin-bottom: 30px;
+        display: flex;
+    }
+    &__item:nth-child(even){
+        margin-right: 0px;
+    }
+    &__item-image{
+        width: 70px;
+        height: 70px;
+        border-radius: 5px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin-right: 10px;
+    }
+    &__item-r{
+        width: calc(100% - 10px - 70px);
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        justify-content: space-between;
+        height: 100%;
+        &__name{
+            color: #3F4548;
+            font-size: 14px;
+            font-weight: 600;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        &__desc{
+            display: flex;
+            line-height: 1;
+            align-items: center;
+            align-self: flex-end;
+        }
+        &__svg{
+            margin-right: 10px;
+            height: 20px;
+            svg{
+                width: 20px;
+                height: 20px;
+            }
+        }
+        &__svg:last-of-type{
+            margin-right: 6px;
+        }
+        &__count{
+            color: #3F4548;
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 1.1;
+        }
+        &__btn{
+            align-self: flex-end;
+            background-color: transparent;
+            border: 1px solid;
+            border-radius: 5px;
+            font-weight: 600;
+            font-size: 12px;
+            line-height: 1.1;
+            padding: 7px 9px;
+        }
+    }
+}
+
