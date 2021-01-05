@@ -4,6 +4,9 @@ svg {
   }
 }
 .g_manage {
+  &__btn-add {
+    padding: 8px 15px;
+  }
   &__header {
     padding-top: 10px;
     margin-bottom: 25px;

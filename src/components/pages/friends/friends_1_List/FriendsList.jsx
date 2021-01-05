@@ -9,6 +9,10 @@ import { NavLink, Route, Switch } from 'react-router-dom';
 import FilterIcon from '../../../icons/friends/FilterIcon';
 import FSortIcon from '../../../icons/friends/FSortIcon';
 import FriendsHeaderMenuSearch from '../friendsCommon/FriendsHeaderMenuSearch';
+import {
+  ButtonBlueMessengerLine,
+  ButtonCasual,
+} from '../../../commonElements/buttons/Buttons';
 
 const FriendsList = (props) => {
   const items = [{}, {}, {}, {}, {}, {}, {}, {}, {}];
@@ -138,7 +142,9 @@ const FriendItem = (props) => {
         <div className="tab__main-item__block-info__country">
           <span>Страна</span>, <span>Город</span>
         </div>
-        <div className="tab__main-item__block-info__msg">Написать</div>
+        <div className="f_list-item-btn">
+          <ButtonBlueMessengerLine text="Написать" />
+        </div>
       </div>
     </article>
   );
@@ -148,6 +154,7 @@ const FriendsNone = () => {
     <div className="f_list__none">
       <h1 className="f_list__none-title">У вас пока нет друзей.</h1>
       <span className="f_list__none-btn">Искать</span>
+      <ButtonCasual />
     </div>
   );
 };

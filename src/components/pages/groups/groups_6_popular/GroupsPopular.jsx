@@ -10,6 +10,7 @@ import GroupsHeaderMenu from '../groupsCommon/GroupsHeaderMenu';
 import GVerifiedIcon from '../../../icons/groups/GVerifiedIcon';
 import GroupsTopMenuSF from '../groupsCommon/GroupsTopMenuSF';
 import TrendingIcon from '../../../icons/bar/TrendingIcon';
+import { ButtonBlueGroupsLine } from '../../../commonElements/buttons/Buttons';
 
 const GroupsPopular = (props) => {
   const gColor = '#608AA1';
@@ -71,7 +72,7 @@ const GroupsPopularItem = () => {
         </div>
       </div>
       <div className="g__item-group-right">
-        <div className="g__btn-blue-line g__item-group-btn ">Вступить</div>
+        <ButtonBlueGroupsLine text="Вступить" />
       </div>
     </div>
   );

@@ -18,10 +18,16 @@ import OfficialIcon from '../../../icons/groups/OfficialIcon';
 import GAddBtn from '../../../icons/groups/GAddBtn';
 import GroupsManageDen from './GroupsManageDen';
 import GVerifiedIcon from '../../../icons/groups/GVerifiedIcon';
+import {
+  ButtonBlueGroupsLine,
+  ButtonGreen,
+  ButtonGreenLine,
+} from '../../../commonElements/buttons/Buttons';
 
 const GroupsManage = (props) => {
   const gColor = '#608AA1';
   const items = [{}, {}, {}, {}];
+  const [text, setText] = React.useState('');
   return (
     <div className="g__inner">
       <div className="g_manage g__page">
@@ -105,9 +111,7 @@ const GroupsManage = (props) => {
                   </div>
                   <div className="f_list__inn-bottom g_manage__bottom">
                     <div className="f_list__inn-bottom-all">Всех</div>
-                    <div className="f_list__inn-bottom-add g_manage__bottom-green  g__btn-green">
-                      Рекомендовать
-                    </div>
+                    <ButtonGreen text="Рекомендовать" />
                   </div>
                 </>
               )}
@@ -174,8 +178,8 @@ const GroupsManageItem = () => {
           </div>
         </div>
         <div className="g__item-group-btns">
-          <div className="g__btn-blue-line g__item-group-btn ">Управлять</div>
-          <div className="g__btn-green-line">Рекомендовать</div>
+          <ButtonBlueGroupsLine mr={1} text="Управлять" />
+          <ButtonGreenLine text="Рекомендовать" />
         </div>
       </div>
     </div>

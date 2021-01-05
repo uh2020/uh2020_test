@@ -7,6 +7,7 @@ import FSortIcon from '../../../icons/friends/FSortIcon';
 import RewardIcon from '../../../icons/friends/RewardIcon';
 import FilterIcon from '../../../icons/friends/FilterIcon';
 import FriendsPetsIcon from '../../../icons/friends/FriendsPetsIcon';
+import { ButtonBrown } from '../../../commonElements/buttons/Buttons';
 
 const FriendsPets = () => {
   const items = [{}, {}, {}, {}, {}, {}];
@@ -81,7 +82,8 @@ const FriendsPetsItem = () => {
             backgroundImage: `url("https://www.pinclipart.com/picdir/middle/49-490443_avatar-icon-tlcharger-avatar-icon-clipart.png")`,
           }}
         ></div>
-        <div className="f_pets__item-btn">Подписаться</div>
+        {/* <div className="f_pets__item-btn">Подписаться</div> */}
+        <ButtonBrown text="Подписаться" />
       </div>
     </div>
   );

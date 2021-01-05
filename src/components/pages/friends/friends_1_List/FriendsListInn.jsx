@@ -1,5 +1,12 @@
 import React from 'react';
-import AddIcon from '../../../icons/friends/AddIcon';
+import {
+  ButtonBrown,
+  ButtonDisabled,
+  ButtonGreenPlus,
+  ButtonGreenPlusFilled,
+  XDeleteItem,
+  ButtonBrownDisabled,
+} from '../../../commonElements/buttons/Buttons';
 import XRedIcon from '../../../icons/friends/XRedIcon';
 
 const FriendsListInn = () => {
@@ -13,19 +20,9 @@ const FriendsListInn = () => {
       </div>
       <div className="f_list__inn-bottom">
         <div className="f_list__inn-bottom-all">Всех</div>
-        <div className="f_list__inn-bottom-add f_list__inn-btn">
-          <AddIcon color="white" plus="#669774" />
-          Добавить
-        </div>
-        <div className="f_list__inn-bottom-subs f_list__inn-btn">
-          В подписчики
-        </div>
-        <div className="f_list__inn-del">
-          <b>
-            <span> Удалить</span>
-          </b>
-          <XRedIcon />
-        </div>
+        <ButtonGreenPlusFilled text="Добавить" mr={true} />
+        <ButtonBrown text="В подписчики" mr="1" />
+        <XDeleteItem text="Удалить" />
       </div>
     </div>
   );
@@ -51,17 +48,9 @@ const FriendsListInnItem = () => {
       </div>
 
       <div className="f_list__inn-btns">
-        <div className="f_list__inn-btn f_list__inn-plus">
-          <AddIcon />
-          Добавить
-        </div>
-        <div className="f_list__inn-btn f_list__inn-subs"> В подписчики</div>
-        <div className=" f_list__inn-del f_list__inn-del-op">
-          <b>
-            <span>Удалить</span>
-          </b>
-          <XRedIcon />
-        </div>
+        <ButtonGreenPlus text="Добавить" mr={true} />
+        <ButtonBrownDisabled text="В подписчики" mr="1" />
+        <XDeleteItem text="Удалить" op="1" />
       </div>
     </div>
   );

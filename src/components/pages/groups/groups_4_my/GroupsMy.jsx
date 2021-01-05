@@ -14,6 +14,12 @@ import GVideoIcon from '../../../icons/groups/GVideoIcon';
 import GDocumentIcon from '../../../icons/groups/GDocumentIcon';
 import GroupsHeaderMenu from '../groupsCommon/GroupsHeaderMenu';
 import GVerifiedIcon from '../../../icons/groups/GVerifiedIcon';
+import {
+  ButtonBlueMessengerLine,
+  ButtonGreenLine,
+  ButtonBlueMessenger,
+  ButtonGreen,
+} from '../../../commonElements/buttons/Buttons';
 
 const GroupsMy = (props) => {
   const gColor = '#608AA1';
@@ -113,12 +119,8 @@ const GroupsMy = (props) => {
                   </div>
                   <div className="f_list__inn-bottom g_manage__bottom">
                     <div className="f_list__inn-bottom-all">Всем</div>
-                    <div className="g__btn-mar   g__btn-green">
-                      Рекомендовать
-                    </div>
-                    <div className="g__btn-blue-mess g__item-group-btn">
-                      Написать
-                    </div>
+                    <ButtonGreen mr="1" text="Рекомендовать" />
+                    <ButtonBlueMessenger text="Написать" />
                   </div>
                 </>
               )}
@@ -175,10 +177,8 @@ const GroupsManageItem = () => {
           </div>
         </div>
         <div className="g__item-group-btns">
-          <div className="g__btn-green-line g__item-group-btn ">
-            Рекомендовать
-          </div>
-          <div className="g__btn-blue-line-mess">Написать</div>
+          <ButtonGreenLine mr="1" text="Рекомендовать" />
+          <ButtonBlueMessengerLine text="Написать" />
         </div>
       </div>
     </div>

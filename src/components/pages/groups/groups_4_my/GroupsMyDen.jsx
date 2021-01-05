@@ -5,6 +5,12 @@ import OfficialIcon from '../../../icons/groups/OfficialIcon';
 import LockIcon from '../../../icons/groups/LockIcon';
 import GroupUserIcon from '../../../icons/groups/GroupUserIcon';
 import GVerifiedIcon from '../../../icons/groups/GVerifiedIcon';
+import {
+  ButtonBlueMessengerLine,
+  ButtonDisabled,
+  XDeleteItem,
+  ButtonBlueMessenger,
+} from '../../../commonElements/buttons/Buttons';
 
 const GroupsManageDen = (props) => {
   const items = [{}, {}, {}];
@@ -18,7 +24,7 @@ const GroupsManageDen = (props) => {
       </div>
       <div className="f_list__inn-bottom g_manage__bottom">
         <div className="f_list__inn-bottom-all">Всем</div>
-        <div className="f_list__inn-bottom-add g__btn-blue-mess">Написать</div>
+        <ButtonBlueMessenger text="Написать" mr="1" />
         <div className="f_list__out-del">
           <b>
             <span>Отменить заявку</span>
@@ -59,13 +65,8 @@ const GroupsManageDenItem = () => {
       </div>
       <div className="g__item-x-right">
         <div className="g__item-group-my-den">Отклонено</div>
-        <div className="g__btn-blue-line-mess  g__item-x-btn">Написать</div>
-        <div className="f_list__out-del">
-          <b>
-            <span>Отменить заявку</span>
-          </b>
-          <XRedIcon />
-        </div>
+        <ButtonBlueMessengerLine text="Написать" mr="1" />
+        <XDeleteItem op="1" text="Отменить заявку" />
       </div>
     </div>
   );
@@ -99,7 +100,7 @@ const GroupsMyItemInnDel = () => {
         </div>
       </div>
       <div className="g__item-x-right">
-        <div className="g__btn-dis">Группа удалена из списка</div>
+        <ButtonDisabled text="Группа удалена из списка" />
       </div>
     </div>
   );

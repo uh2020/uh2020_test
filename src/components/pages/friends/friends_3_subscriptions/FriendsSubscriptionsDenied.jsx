@@ -1,4 +1,5 @@
 import React from 'react';
+import { ButtonCasual } from '../../../commonElements/buttons/Buttons';
 import AddIcon from '../../../icons/friends/AddIcon';
 import XRedIcon from '../../../icons/friends/XRedIcon';
 
@@ -12,7 +13,7 @@ const FriendsListOut = () => {
         })}
       </div>
       <div className="f_list__more">
-        <span>Показать еще</span>
+        <ButtonCasual text="Показать еще" />
       </div>
     </div>
   );

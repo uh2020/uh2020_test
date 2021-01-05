@@ -4,6 +4,10 @@
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
+    .g__item-group:nth-last-child(2),
+    .g__item-group:nth-last-child(1) {
+      margin-bottom: 20px;
+    }
   }
   &__bottom {
     padding-top: 20px;

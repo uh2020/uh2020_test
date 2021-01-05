@@ -1,32 +1,49 @@
 import React from 'react';
 import { NavLink, Route, Switch } from 'react-router-dom';
 import FilterIcon from '../../../icons/friends/FilterIcon';
-import './GroupsRecommendations.scss';
 import FSortIcon from '../../../icons/friends/FSortIcon';
 import LockIcon from '../../../icons/groups/LockIcon';
 import GroupUserIcon from '../../../icons/groups/GroupUserIcon';
 import OfficialIcon from '../../../icons/groups/OfficialIcon';
+import GroupsHeaderMenu from '../groupsCommon/GroupsHeaderMenu';
 import GVerifiedIcon from '../../../icons/groups/GVerifiedIcon';
-import GroupsTopMenuSF from '../groupsCommon/GroupsTopMenuSF';
-import New from '../../../icons/bar/NewIcon';
-import EyeIcon from '../../../icons/bar/EyeIconIcon';
-import RecommendationIcon from '../../../icons/bar/RecommendationIcon';
 import { ButtonBlueGroupsLine } from '../../../commonElements/buttons/Buttons';
+import Search from '../../../icons/bar/SearchIcon';
 
-const GroupsRecommendations = (props) => {
+const GroupsSearch = (props) => {
   const gColor = '#608AA1';
   const items = [{}, {}, {}, {}, {}, {}, {}, {}];
   return (
     <div className="g__inner">
+      <div className="friends-page">
+        <GroupsHeaderMenu />
+      </div>
+
       <div className="g_manage g__page">
         <div className="g__container">
-          <div className="friends-page g_new__header f_new__header f_new ">
-            <GroupsTopMenuSF Icon={RecommendationIcon} text="Рекомндации" />
+          <div className="g_manage__header">
+            <div className="f_pets__header-left  f_list__header-left f_list__header-left-active">
+              <Search />
+              <p>
+                результаты поиска <span>0</span>
+              </p>
+            </div>
+
+            <div className="f_list__header-right">
+              <div className="f_list__header-sort">
+                <div className="f_list__header-sort-item">
+                  <FilterIcon />
+                </div>
+                <div className="f_list__header-sort-item">
+                  <FSortIcon />
+                </div>
+              </div>
+            </div>
           </div>
           <>
             <div className="g__items-x g_Off__items">
               {items.map((i) => {
-                return <GroupsRecommendationsItem />;
+                return <GroupsManageItem />;
               })}
             </div>
             <div className="g_Off__bottom">
@@ -40,7 +57,7 @@ const GroupsRecommendations = (props) => {
     </div>
   );
 };
-const GroupsRecommendationsItem = () => {
+const GroupsManageItem = () => {
   return (
     <div className="g__item-group g_Off__item">
       <div className="g__item-group-left">
@@ -75,4 +92,4 @@ const GroupsRecommendationsItem = () => {
   );
 };
 
-export default GroupsRecommendations;
+export default GroupsSearch;

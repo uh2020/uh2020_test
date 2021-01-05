@@ -1,4 +1,8 @@
 import React from 'react';
+import {
+  ButtonCasual,
+  ButtonGreenPlus,
+} from '../../../commonElements/buttons/Buttons';
 import New from '../../../icons/bar/NewIcon';
 import FriendsTopMenuSF from '../friendsCommon/FriendsTopMenuSF';
 import './FriendsNew.scss';
@@ -17,7 +21,7 @@ const FriendsNew = () => {
             })}
           </div>
           <div className="f_list__more">
-            <span>Показать еще</span>
+            <ButtonCasual text="Показать еще" />
           </div>
         </div>
       </div>
@@ -40,24 +44,7 @@ export const FriendNewItem = () => {
           <span>Россия, </span>
           <span>Москва</span>
         </div>
-        <div className="f_new__item-btn">
-          <svg
-            width="15"
-            height="15"
-            viewBox="0 0 15 15"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <circle cx="7.5" cy="7.5" r="7.5" fill="#669774" />
-            <path
-              fillRule="evenodd"
-              clipRule="evenodd"
-              d="M8.125 4.375H6.875V6.875H4.375V8.125H6.875V10.625H8.125V8.125H10.625V6.875H8.125V4.375Z"
-              fill="white"
-            />
-          </svg>
-          <span>Добавить в друзья</span>
-        </div>
+        <ButtonGreenPlus text="Добавить в друзья" />
       </div>
     </div>
   );

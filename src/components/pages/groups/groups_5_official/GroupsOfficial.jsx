@@ -12,6 +12,7 @@ import GVideoIcon from '../../../icons/groups/GVideoIcon';
 import GDocumentIcon from '../../../icons/groups/GDocumentIcon';
 import GroupsHeaderMenu from '../groupsCommon/GroupsHeaderMenu';
 import GVerifiedIcon from '../../../icons/groups/GVerifiedIcon';
+import { ButtonBlueGroupsLine } from '../../../commonElements/buttons/Buttons';
 
 const GroupsOfficial = (props) => {
   const gColor = '#608AA1';
@@ -93,7 +94,7 @@ const GroupsManageItem = () => {
         </div>
       </div>
       <div className="g__item-group-right">
-        <div className="g__btn-blue-line g__item-group-btn ">Вступить</div>
+        <ButtonBlueGroupsLine text="Вступить" />
       </div>
     </div>
   );

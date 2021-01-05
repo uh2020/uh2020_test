@@ -9,6 +9,7 @@ import OfficialIcon from '../../../icons/groups/OfficialIcon';
 import GVerifiedIcon from '../../../icons/groups/GVerifiedIcon';
 import GroupsTopMenuSF from '../groupsCommon/GroupsTopMenuSF';
 import New from '../../../icons/bar/NewIcon';
+import { ButtonBlueGroupsLine } from '../../../commonElements/buttons/Buttons';
 
 const GroupsNew = (props) => {
   const gColor = '#608AA1';
@@ -66,7 +67,7 @@ const GroupsNewItem = () => {
         </div>
       </div>
       <div className="g__item-group-right">
-        <div className="g__btn-blue-line g__item-group-btn ">Вступить</div>
+        <ButtonBlueGroupsLine text="Вступить" />
       </div>
     </div>
   );

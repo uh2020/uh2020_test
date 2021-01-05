@@ -76,7 +76,7 @@ const FriendsInvite = () => {
                   placeholder="Введите email:"
                 />
               </div>
-              <button className="btn invite-form__btn">
+              <button className="g__btn-green f_list__header-btn">
                 Выслать приглашение
               </button>
             </form>

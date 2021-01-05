@@ -74,11 +74,13 @@
 
   .main__search-city select {
     min-width: 170px;
+    font-family: Noto Sans;
     padding: 14px 10px 13px 10px;
   }
 
   .main__search-coutry select,
   .main__search-city select {
+    font-family: Noto Sans;
     cursor: pointer;
     width: 100%;
     font-size: 12px;
@@ -350,10 +352,6 @@
   .tab__main-item__block-info__name {
     line-height: 1;
     margin-bottom: 5px;
-  }
-
-  .tab__main-item__block-info {
-    width: calc(100% - 80px);
   }
 
   .tab__main-item__block-info__country {

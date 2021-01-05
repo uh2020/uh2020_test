@@ -2,6 +2,10 @@ import React from 'react';
 import TrendingIcon from '../../../icons/bar/TrendingIcon';
 import '../friends_6_New/FriendsNew.scss';
 import FriendsTopMenuSF from '../friendsCommon/FriendsTopMenuSF';
+import {
+  ButtonBrownLine,
+  ButtonCasual,
+} from '../../../commonElements/buttons/Buttons';
 
 const FriendsPopular = () => {
   const items = [{}, {}, {}, {}, {}, {}, {}, {}, {}];
@@ -17,7 +21,7 @@ const FriendsPopular = () => {
             })}
           </div>
           <div className="f_list__more">
-            <span>Показать еще</span>
+            <ButtonCasual text="Показать еще" />
           </div>
         </div>
       </div>
@@ -40,9 +44,7 @@ const FriendsPopularItem = () => {
           <span>Россия, </span>
           <span>Москва</span>
         </div>
-        <div className="f_list__inn-btn f_list__out-plus">
-          <span>Подписаться</span>
-        </div>
+        <ButtonBrownLine text="Подписаться" />
       </div>
     </div>
   );

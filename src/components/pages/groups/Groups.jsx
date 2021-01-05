@@ -2,7 +2,7 @@ import React from 'react';
 import './Groups.scss';
 import '../../../scss/App.scss';
 import SideBarFriends from '../../sideBars/SideBarFriends';
-import { Redirect, Route, Switch, withRouter } from 'react-router-dom';
+import { NavLink, Redirect, Route, Switch, withRouter } from 'react-router-dom';
 import SideBarGroups from '../../sideBars/SideBarGroups';
 import { WithAuthRedirect } from '../../hoc/WithAuthRedirect';
 import GroupsManage from './groups_1_manage/GroupsManage';
@@ -15,6 +15,9 @@ import GroupsViewed from './groups_9_viewed/GroupsViewed';
 import GroupsRecommendations from './groups_10_recommendations/GroupsRecommendations';
 import GroupsMessage from './groups_3_message/GroupsMessage';
 import GroupsActivity from './groups_8_activity/GroupsActivity';
+import ArrowRightBlueIcon from '../../icons/friends/ArrowRightBlueIcon';
+import Search from '../../icons/bar/SearchIcon';
+import GroupsSearch from './groups_11_search/GroupsSearch';
 
 const Groups = (props) => {
   return (
@@ -75,7 +78,7 @@ const Groups = (props) => {
               path="/groups/recommendations"
               render={() => <GroupsRecommendations />}
             />
-            <Route path="/groups/search" render={() => <h1>Поиск</h1>} />
+            <Route path="/groups/search" render={() => <GroupsSearch />} />
           </Switch>
         </div>
       </div>
@@ -93,6 +96,14 @@ const GroupsBottomBar = () => {
           return <GroupsBottomBarItem />;
         })}
       </div>
+      <div className="g__barB-all">
+        <span>Показать все</span>
+        <ArrowRightBlueIcon />
+      </div>
+      <NavLink to="/groups/search" className="g__barB-search">
+        <Search width="24" height="24" />
+        <span>Поиск групп</span>
+      </NavLink>
     </div>
   );
 };

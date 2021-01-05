@@ -1,4 +1,11 @@
 import React from 'react';
+import {
+  ButtonBlueMessenger,
+  ButtonBlueMessengerLine,
+  ButtonBrown,
+  ButtonBrownLine,
+  XDeleteItem,
+} from '../../../commonElements/buttons/Buttons';
 import AddIcon from '../../../icons/friends/AddIcon';
 import XRedIcon from '../../../icons/friends/XRedIcon';
 
@@ -13,16 +20,9 @@ const FriendsListOut = () => {
       </div>
       <div className="f_list__out-bottom">
         <div className="f_list__out-bottom-all">Все</div>
-        <div className="f_list__out-bottom-add f_list__inn-btn">
-          Подписаться
-        </div>
-        <div className="f_list__out-bottom-subs f_list__inn-btn">Написать</div>
-        <div className="f_list__out-del">
-          <b>
-            <span>Отменить заявку</span>
-          </b>
-          <XRedIcon />
-        </div>
+        <ButtonBrown text="Подписаться" mr="1" />
+        <ButtonBlueMessenger text="Написать" mr="1" />
+        <XDeleteItem text="Отменить заявку" />
       </div>
     </div>
   );
@@ -50,14 +50,9 @@ const FriendsListOutItem = () => {
       </div>
 
       <div className="f_list__inn-btns">
-        <div className="f_list__inn-btn f_list__out-plus">Подписаться</div>
-        <div className="f_list__inn-btn f_list__out-subs">Написать</div>
-        <div className=" f_list__out-del f_list__out-del-op">
-          <b>
-            <span>Отменить заявку</span>
-          </b>
-          <XRedIcon />
-        </div>
+        <ButtonBrownLine text="Подписаться" mr="1" />
+        <ButtonBlueMessengerLine text="Написать" mr="1" />
+        <XDeleteItem text="Отменить заявку" op="1" />
       </div>
     </div>
   );

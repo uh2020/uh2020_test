@@ -1,13 +1,10 @@
 import React from 'react';
-import { NavLink, Route, Switch } from 'react-router-dom';
-import MyIcon from '../../../icons/bar/MyIcon';
-import FilterIcon from '../../../icons/friends/FilterIcon';
 import './GroupsManage.scss';
-import FSortIcon from '../../../icons/friends/FSortIcon';
-import AddIcon from '../../../icons/friends/AddIcon';
-import XRedIcon from '../../../icons/friends/XRedIcon';
-
-import GAddBtn from '../../../icons/groups/GAddBtn';
+import {
+  ButtonBlueGroupsPlus,
+  ButtonBlueGroupsPlusFilled,
+  XDeleteItem,
+} from '../../../commonElements/buttons/Buttons';
 
 const GroupsManageInn = (props) => {
   const items = [{}, {}, {}];
@@ -20,9 +17,12 @@ const GroupsManageInn = (props) => {
       </div>
       <div className="f_list__inn-bottom g_manage__bottom">
         <div className="f_list__inn-bottom-all">Всех</div>
-        <div className="f_list__inn-bottom-add g_manage__bottom-btn g__btn-blue">
+        {/* <div className="f_list__inn-bottom-add g_manage__bottom-btn g__btn-blue">
           <AddIcon color="white" plus="#608AA1" />
           Добавить
+        </div> */}
+        <div className="g_manage__bottom-btn">
+          <ButtonBlueGroupsPlusFilled text="Добавить" />
         </div>
       </div>
     </>
@@ -52,16 +52,12 @@ const GroupsManageInnItem = () => {
         </div>
       </div>
       <div className="g__item-x-right">
-        <div className="g__btn-blue-line  g__item-x-btn">
+        {/* <div className="g__btn-blue-line  g__item-x-btn">
           <GAddBtn />
           Добавить
-        </div>
-        <div className="f_list__out-del">
-          <b>
-            <span>Отменить заявку</span>
-          </b>
-          <XRedIcon />
-        </div>
+        </div> */}
+        <ButtonBlueGroupsPlus text="Добавить" mr={true} />
+        <XDeleteItem text="Добавить" op="1" />
       </div>
     </div>
   );

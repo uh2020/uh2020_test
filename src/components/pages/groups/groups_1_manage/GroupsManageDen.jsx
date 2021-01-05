@@ -1,7 +1,10 @@
 import React from 'react';
-import { NavLink, Route, Switch } from 'react-router-dom';
 import './GroupsManage.scss';
-import XRedIcon from '../../../icons/friends/XRedIcon';
+import {
+  ButtonBlueGroups,
+  ButtonBlueGroupsLine,
+  XDeleteItem,
+} from '../../../commonElements/buttons/Buttons';
 
 const GroupsManageDen = (props) => {
   const items = [{}, {}, {}];
@@ -14,13 +17,8 @@ const GroupsManageDen = (props) => {
       </div>
       <div className="f_list__inn-bottom g_manage__bottom">
         <div className="f_list__inn-bottom-all">Всех</div>
-        <div className="f_list__inn-bottom-add g__btn-blue">Восстановить</div>
-        <div className="f_list__out-del">
-          <b>
-            <span>Отменить заявку</span>
-          </b>
-          <XRedIcon />
-        </div>
+        <ButtonBlueGroups text="Восстановить" mr="1" />
+        <XDeleteItem text="Отменить заявку" />
       </div>
     </>
   );
@@ -48,13 +46,8 @@ const GroupsManageDenItem = () => {
         </div>
       </div>
       <div className="g__item-x-right">
-        <div className="g__btn-blue-line  g__item-x-btn">Восстановить</div>
-        <div className="f_list__out-del">
-          <b>
-            <span>Отменить заявку</span>
-          </b>
-          <XRedIcon />
-        </div>
+        <ButtonBlueGroupsLine text="Восстановить" mr="1" />
+        <XDeleteItem text="Удалить" op="1" />
       </div>
     </div>
   );
