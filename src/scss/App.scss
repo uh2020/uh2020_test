@@ -43,7 +43,7 @@ body {
   font-weight: 600;
   font-size: 14px;
   color: #3f4548;
-  background-color: #e5e5e5;
+  background-color: #f5f4f2;
   &.dis {
     overflow: hidden;
   }
@@ -91,10 +91,6 @@ p {
 textarea {
   resize: none;
 }
-
-body {
-  background: #e5e5e5;
-}
 .app {
   &__main {
     position: relative;
@@ -110,6 +106,12 @@ body {
       min-height: 500px;
       max-width: 880px;
     }
+  }
+  &__inner {
+    position: relative;
+    transform-style: preserve-3d;
+    z-index: 3;
+    min-height: 101vh;
   }
 }
 ::-webkit-input-placeholder {

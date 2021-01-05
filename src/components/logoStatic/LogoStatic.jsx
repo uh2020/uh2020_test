@@ -18,6 +18,11 @@ const LogoStatic = (props) => {
     const path = props.location;
     const links = [
       {
+        ln: '/id',
+        color: '#669774',
+        title: 'Friend',
+      },
+      {
         ln: '/friends',
         color: '#669774',
         title: 'Friends',
@@ -98,7 +103,17 @@ const LogoStatic = (props) => {
   }, []);
   return (
     <div>
-      <div className="logo__static">
+      <div
+        className="logo__static"
+        style={
+          props.location.includes('/id/main')
+            ? {
+                height: '70%',
+                top: '420px',
+              }
+            : null
+        }
+      >
         <svg
           width="34"
           height="130"

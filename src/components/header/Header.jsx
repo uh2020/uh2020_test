@@ -11,7 +11,7 @@ import PetsIcons from '../icons/header/PetsIcons';
 import PLacesIcon from '../icons/header/PlacesIcon';
 import SearchIcon from '../icons/header/SearchIcon';
 import './header.scss';
-const Header = () => {
+const Header = (props) => {
   const [Active, setActive] = React.useState(1);
   const HomeColor = '#7c7474';
   const FriendsColor = '#669774';
@@ -23,8 +23,13 @@ const Header = () => {
   const LibraryColor = '#b28d75';
   const SearchColor = '#fff';
   return (
-    <div>
-      <header className="header">
+    <div className="header__inner">
+      <header
+        className="header"
+        style={
+          props.location.includes('/id/main') ? null : { background: '#3f4548' }
+        }
+      >
         <div className="header__container">
           <div className="header__logo-inner">
             <h1 className="header__title">Uhunt</h1>

@@ -25,6 +25,7 @@ import Library from './components/pages/lirbrary/Library';
 import Search from './components/pages/search/Search';
 import { auth, TestApi } from './api/api';
 import { setAuthData } from './redux/auth_reducer';
+import Friend from './components/pages/friend/Friend';
 function App(props) {
   const [AuthHows, setAuth] = React.useState(false);
   const [Redirect, setRedirect] = React.useState(false);
@@ -67,9 +68,9 @@ function App(props) {
     <div className="app__inner">
       <div className="app__container">
         {AuthHows ? null : (
-          <div className="">
+          <div>
             <LogoStatic location={props.location.pathname} />
-            <Header />
+            <Header location={props.location.pathname} />
           </div>
         )}
 
@@ -78,6 +79,7 @@ function App(props) {
           <Route path="/auth" render={() => <Auth />} />
           <Route path="/home" render={() => <Friends />} />
           <Route path="/friends" render={() => <Friends />} />
+          <Route path="/id" render={() => <Friend />} />
           <Route path="/pets" render={() => <Pets />} />
           <Route path="/messenger" render={() => <Messenger />} />
           <Route path="/groups" render={() => <Groups />} />
@@ -97,11 +99,11 @@ const MainApp = (props) => {
   return (
     // <BrowserRouter basename={process.env.PUBLIC_URL}></BrowserRouter>
     // <HashRouter></HashRouter>
-    <HashRouter>
+    <BrowserRouter>
       <Provider store={store}>
         <WrappedApp />
       </Provider>
-    </HashRouter>
+    </BrowserRouter>
   );
 };
 
