@@ -65,31 +65,48 @@ function App(props) {
   }, []);
 
   return (
-    <div className="app__inner">
+    <div
+      className="app__inner"
+      style={
+        props.location.pathname.includes('/id/main')
+          ? {
+              transformStyle: 'preserve-3d',
+            }
+          : null
+      }
+    >
       <div className="app__container">
         {AuthHows ? null : (
-          <div>
+          <>
             <LogoStatic location={props.location.pathname} />
             <Header location={props.location.pathname} />
-          </div>
+          </>
         )}
 
-        <Switch>
-          <Route path="/reg" render={() => <Reg />} />
-          <Route path="/auth" render={() => <Auth />} />
-          <Route path="/home" render={() => <Friends />} />
-          <Route path="/friends" render={() => <Friends />} />
-          <Route path="/id" render={() => <Friend />} />
-          <Route path="/pets" render={() => <Pets />} />
-          <Route path="/messenger" render={() => <Messenger />} />
-          <Route path="/groups" render={() => <Groups />} />
-          <Route path="/media" render={() => <Media />} />
-          <Route path="/booking" render={() => <Booking />} />
-          <Route path="/market" render={() => <Market />} />
-          <Route path="/library" render={() => <Library />} />
-          <Route path="/search" render={() => <Search />} />
-          <Route exact path="*" render={() => <div>404 NOT FOUND </div>} />
-        </Switch>
+        <div
+          style={
+            props.location.pathname.includes('/id/main')
+              ? null
+              : { paddingTop: '87px' }
+          }
+        >
+          <Switch>
+            <Route path="/reg" render={() => <Reg />} />
+            <Route path="/auth" render={() => <Auth />} />
+            <Route path="/home" render={() => <Friends />} />
+            <Route path="/friends" render={() => <Friends />} />
+            <Route path="/id" render={() => <Friend />} />
+            <Route path="/pets" render={() => <Pets />} />
+            <Route path="/messenger" render={() => <Messenger />} />
+            <Route path="/groups" render={() => <Groups />} />
+            <Route path="/media" render={() => <Media />} />
+            <Route path="/booking" render={() => <Booking />} />
+            <Route path="/market" render={() => <Market />} />
+            <Route path="/library" render={() => <Library />} />
+            <Route path="/search" render={() => <Search />} />
+            <Route exact path="*" render={() => <div>404 NOT FOUND </div>} />
+          </Switch>
+        </div>
       </div>
     </div>
   );
@@ -99,11 +116,11 @@ const MainApp = (props) => {
   return (
     // <BrowserRouter basename={process.env.PUBLIC_URL}></BrowserRouter>
     // <HashRouter></HashRouter>
-    <BrowserRouter>
+    <HashRouter>
       <Provider store={store}>
         <WrappedApp />
       </Provider>
-    </BrowserRouter>
+    </HashRouter>
   );
 };
 

@@ -27,7 +27,6 @@ import {
 const GroupsManage = (props) => {
   const gColor = '#608AA1';
   const items = [{}, {}, {}, {}];
-  const [text, setText] = React.useState('');
   return (
     <div className="g__inner">
       <div className="g_manage g__page">

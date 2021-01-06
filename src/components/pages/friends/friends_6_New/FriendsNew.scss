@@ -260,6 +260,10 @@
       font-size: 14px;
       line-height: 110%;
       margin-bottom: 5px;
+      max-width: 150px;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
     }
     &-text {
       margin-bottom: 8px;
@@ -267,6 +271,10 @@
       font-size: 12px;
       line-height: 110%;
       color: #adadad;
+      max-width: 150px;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
       span {
         cursor: pointer;
       }

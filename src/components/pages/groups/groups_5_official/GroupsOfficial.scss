@@ -2,7 +2,6 @@
   &__items {
     display: flex;
     align-items: center;
-    justify-content: center;
     flex-wrap: wrap;
     .g__item-group:nth-last-child(2),
     .g__item-group:nth-last-child(1) {

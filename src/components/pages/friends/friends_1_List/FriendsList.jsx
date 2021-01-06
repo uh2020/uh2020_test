@@ -125,14 +125,14 @@ const FriendsList = (props) => {
 const FriendItem = (props) => {
   return (
     <article className="friend-item">
-      <div className="tab__main-item__block-img">
+      <NavLink to="/id" className="tab__main-item__block-img">
         <a
           style={{
             backgroundImage: `url(${'https://7sisters.ru/wp-content/uploads/2017/08/2515091748.jpg'})`,
           }}
           className="tab__main-item__img"
         ></a>
-      </div>
+      </NavLink>
       <div className="tab__main-item__block-info">
         <h4 className="tab__main-item__block-info__name">
           <a className="tab__main-item__block-info__name-link">

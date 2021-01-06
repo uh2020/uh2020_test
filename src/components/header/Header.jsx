@@ -23,7 +23,10 @@ const Header = (props) => {
   const LibraryColor = '#b28d75';
   const SearchColor = '#fff';
   return (
-    <div className="header__inner">
+    <div
+      className="header__inner"
+      style={props.location.includes('/id/main') ? null : { position: 'fixed' }}
+    >
       <header
         className="header"
         style={

@@ -106,13 +106,19 @@ const FriendsInvite = () => {
   );
 };
 
-const FriendInviteIcon = (props) => {
+export const FriendInviteIcon = (props) => {
   return (
-    <div className="invite-social__link  f_list__inn-del ">
+    <div
+      className={
+        'invite-social__link  f_list__inn-del ' +
+        ' ' +
+        (props.size ? 'f_list__inn-soc-small' : ' ')
+      }
+    >
       <b>
         <span>{props.text}</span>
       </b>
-      <props.Icon />
+      <props.Icon size={props.size} />
     </div>
   );
 };

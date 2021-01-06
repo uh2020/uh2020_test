@@ -1,5 +1,6 @@
 import React from 'react';
 import './friend.scss';
+import './friendNat.scss';
 import SideBarFriend from '../../sideBars/SideBarFriend';
 import { Redirect, Route, Switch, withRouter } from 'react-router-dom';
 import { setFile } from '../../../redux/auth_reducer';
@@ -7,6 +8,11 @@ import { useDispatch } from 'react-redux';
 import { WithAuthRedirect } from '../../hoc/WithAuthRedirect';
 import { AmericanFlag } from '../../icons/flags/Flags';
 import { Weather } from '../../icons/weather/Weather';
+import FriendInfo from './friend_2_info/FriendInfo';
+import FriendWrite from './friend_3_write/FriendWrite';
+import FriendFriends from './friend_4_friends/FriendFriends';
+import FriendGroups from './friend_5_groups/FriendGroups';
+import FriendMain from './friend_1_main/FriendMain';
 const Friend = (props) => {
   const dispatch = useDispatch();
   return (
@@ -50,11 +56,11 @@ const Friend = (props) => {
               path="/id/subscribers"
               render={() => <FriendsSubscribers location={props.location} />}
             /> */}
-              <Route path="/id/main" render={() => <>Главная</>} />
-              <Route path="/id/info" render={() => <>info</>} />
-              <Route path="/id/write" render={() => <>write</>} />
-              <Route path="/id/friends" render={() => <>friends</>} />
-              <Route path="/id/groups" render={() => <>subscriptions</>} />
+              <Route path="/id/main" render={() => <FriendMain />} />
+              <Route path="/id/info" render={() => <FriendInfo />} />
+              <Route path="/id/write" render={() => <FriendWrite />} />
+              <Route path="/id/friends" render={() => <FriendFriends />} />
+              <Route path="/id/groups" render={() => <FriendGroups />} />
               <Route path="/id/media" render={() => <>media</>} />
               <Route path="/id/pets" render={() => <>pets</>} />
               <Route path="/id/posts" render={() => <>posts</>} />
