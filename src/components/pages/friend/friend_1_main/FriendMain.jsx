@@ -10,7 +10,7 @@ import MessageIcon from '../../../icons/bar/MessageIcon';
 import AppraisalIcon from '../../../icons/bar/AppraisalIcon';
 
 const FriendMain = () => {
-  const hide = false;
+  const hide = true;
   return (
     <>
       <div className="fr__top-bar">
@@ -25,7 +25,7 @@ const FriendMain = () => {
         </div>
         <div className="fr__top-bar-right">
           <div className="fr__poi">
-            <AddIcon />
+            <AddIcon size="24" />
           </div>
         </div>
       </div>

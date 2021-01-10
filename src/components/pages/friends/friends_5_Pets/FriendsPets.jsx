@@ -79,7 +79,7 @@ const FriendsPetsItem = () => {
         <div
           className="f_pets__item-logo"
           style={{
-            backgroundImage: `url("https://www.pinclipart.com/picdir/middle/49-490443_avatar-icon-tlcharger-avatar-icon-clipart.png")`,
+            backgroundImage: `url("https://i.pinimg.com/736x/2f/03/f8/2f03f8cae2989c91c13b19b91ad94f8a.jpg")`,
           }}
         ></div>
         {/* <div className="f_pets__item-btn">Подписаться</div> */}

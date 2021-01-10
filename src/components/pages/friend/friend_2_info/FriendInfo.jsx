@@ -67,12 +67,7 @@ const FriendInfoItems = () => {
       <article className="f-info__item ai-center">
         <p className="f-info__item-left">Языки</p>
         <div className="f-info__item-right">
-          <span
-            className="f-info__item-right__lang"
-            // style="background-image: url(media/lang/lang.png);"
-          >
-            Английский
-          </span>
+          <span className="f-info__item-right__lang">Английский</span>
           <span
             className="f-info__item-right__lang"
             // style="background-image: url(media/lang/lang.png);"

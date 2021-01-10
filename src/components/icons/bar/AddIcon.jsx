@@ -4,8 +4,8 @@ const AddIcon = (props) => {
   return (
     <>
       <svg
-        width="27"
-        height="27"
+        width={props.size ? props.size : '27'}
+        height={props.size ? props.size : '27'}
         viewBox="0 0 27 27"
         fill={props.color ? props.color : '#7C7474'}
         xmlns="http://www.w3.org/2000/svg"

@@ -176,9 +176,9 @@ const SideBarItem = (props) => {
           <div className="bar__ln-title">{props.title}</div>
         </div>
         <div className="bar__ln-info">
-          <span className="bar__ln-info-new">{props.new}</span>
+          {/* <span className="bar__ln-info-new">{props.new}</span> */}
           <span className="bar__ln-info-ls">
-            {props.new ? '/' : null}
+            {/* {props.new ? '/' : null} */}
             {props.all}
           </span>
         </div>

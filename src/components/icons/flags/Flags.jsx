@@ -1,11 +1,11 @@
 import React from 'react';
 
-export const AmericanFlag = () => {
+export const AmericanFlag = (props) => {
   return (
     <>
       <svg
-        width="60"
-        height="40"
+        width={props.sm ? '30' : '60'}
+        height={props.sm ? '20' : '40'}
         viewBox="0 0 60 40"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"

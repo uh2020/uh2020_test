@@ -25,7 +25,8 @@
     &-casual,
     &-brown,
     &-brown-dis,
-    &-brown-line {
+    &-brown-line,
+    &-orange {
       font-size: 12px;
       padding: 8px 10px;
       line-height: 110%;
@@ -46,6 +47,12 @@
       circle,
       path {
         transition: 0.3s;
+      }
+    }
+    &-orange {
+      background-color: #e5925b;
+      &:hover {
+        background-color: rgba($color: #e5925b, $alpha: 0.8);
       }
     }
     &-brown {

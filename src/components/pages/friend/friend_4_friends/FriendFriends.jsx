@@ -15,7 +15,8 @@ import FSortIcon from '../../../icons/friends/FSortIcon';
 import FriendsHeaderMenu from '../../friends/friendsCommon/FriendsHeaderMenu';
 
 const FriendFriends = () => {
-  const items = [{}, {}, {}, {}, {}, {}, {}];
+  // const items = [{}, {}, {}, {}, {}, {}, {}];
+  const items = [];
   return (
     <div className="friends-page">
       <FriendsHeaderMenu />
@@ -25,8 +26,12 @@ const FriendFriends = () => {
             <NavLink
               exact
               to="/id/friends"
-              activeClassName="f-info__header__item active"
-              className="f-info__header__item"
+              activeClassName="active"
+              className={
+                'f-info__header__item' +
+                ' ' +
+                (items.length === 0 ? 'disLn' : '')
+              }
             >
               <div className="f-info__svg">
                 <UsersIcon />
@@ -36,9 +41,13 @@ const FriendFriends = () => {
               <span className="f-info__line"></span>
             </NavLink>
             <NavLink
-              activeClassName="f-info__header__item active"
+              activeClassName=" active"
               to="/id/friends/subscriptions"
-              className="f-info__header__item"
+              className={
+                'f-info__header__item' +
+                ' ' +
+                (items.length === 0 ? 'disLn' : '')
+              }
             >
               <div className="f-info__svg">
                 <UserFollow />
@@ -48,9 +57,13 @@ const FriendFriends = () => {
               <span className="f-info__line"></span>
             </NavLink>
             <NavLink
-              activeClassName="f-info__header__item active"
+              activeClassName="active"
               to="/id/friends/subscribers"
-              className="f-info__header__item"
+              className={
+                'f-info__header__item' +
+                ' ' +
+                (items.length === 0 ? 'disLn' : '')
+              }
             >
               <div className="f-info__svg">
                 <UserFollowL />

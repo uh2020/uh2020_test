@@ -359,6 +359,20 @@ export const ButtonBlueMessengerPlusFilled = (props) => {
     </div>
   );
 };
+//media
+//media
+//media
+export const ButtonOrangeMedia = (props) => {
+  return (
+    <div
+      onClick={props.onClick}
+      className={'g__btn-orange' + ' ' + (props.mr ? 'g__btn-mar' : ' ')}
+    >
+      {props.text}
+    </div>
+  );
+};
+
 // Other
 // Other
 // Other

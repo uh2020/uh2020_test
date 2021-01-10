@@ -234,6 +234,51 @@
     &-fdf {
     }
   }
+  &__pets {
+    &-ln {
+      position: relative;
+      margin-left: 36px;
+      p {
+        position: relative;
+      }
+      &-arr {
+        border-radius: 50%;
+        position: absolute;
+        top: 0;
+        left: -20px;
+        // background-color: rgb(0, 0, 0);
+      }
+    }
+    &-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 10px;
+
+      &-logo {
+        margin-right: 10px;
+        &-inner {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+      &-flag {
+        display: flex;
+        svg {
+          border-radius: 2px;
+        }
+      }
+      &-right {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &-like {
+          margin-right: 10px;
+        }
+      }
+    }
+  }
 }
 
 .fr__main {
@@ -362,4 +407,7 @@
       font-size: 12px;
     }
   }
+}
+.disLn {
+  pointer-events: none;
 }

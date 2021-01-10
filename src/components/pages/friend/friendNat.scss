@@ -14,6 +14,9 @@
     border-bottom: 1px solid #f2f2f2;
     margin-bottom: 20px;
     justify-content: space-between;
+    &__item {
+      min-height: 27px;
+    }
     &-left {
       display: flex;
       align-items: center;
@@ -21,6 +24,7 @@
   }
 
   &__svg {
+    display: flex;
     line-height: 1;
     margin-right: 5px;
   }
@@ -147,24 +151,28 @@
 .f-all-info {
   .f-info {
     &__header__item {
+      min-height: 27px;
       display: flex;
       align-items: center;
-      margin-right: 24px;
+      margin-right: 20px;
       position: relative;
       cursor: pointer;
+      transition: 0.3s;
     }
     &__header__item.active {
       .f-info__title {
         color: #3f4548;
       }
       .f-info__line {
+        transition: 0.3s;
         position: absolute;
         width: 100%;
         height: 5px;
         left: 0;
         bottom: -11.5px;
         background-color: #669774;
-        border: 2px solid #669774;
+        // border: 2px solid #669774;
+        height: 5px;
         border-radius: 4px;
       }
     }
@@ -172,6 +180,7 @@
       margin-right: 0;
     }
     &__svg {
+      display: flex;
       path {
         fill: #7c7474;
       }
@@ -184,7 +193,7 @@
       font-size: 12px;
       line-height: 1.2;
       color: #adadad;
-      margin-left: 7px;
+      margin-left: 5px;
     }
   }
 }
@@ -198,6 +207,7 @@
     margin-bottom: 20px;
   }
   &__svg {
+    display: flex;
     line-height: 1;
     margin-right: 5px;
   }
