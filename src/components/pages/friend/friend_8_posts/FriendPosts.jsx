@@ -1,33 +1,26 @@
 import React from 'react';
-import { NavLink, Route, Switch } from 'react-router-dom';
 import {
-  ButtonBlueGroups,
   ButtonCasual,
+  ButtonGreen,
 } from '../../../commonElements/buttons/Buttons';
-import FriendItemSmall from '../../../commonElements/friends/FriendItemSmall';
-import GroupsItemSmall from '../../../commonElements/groups/GroupsItemSmall';
-import GroupsIcon from '../../../icons/bar/GroupsIcon';
-import UserFollow from '../../../icons/bar/UserFollowIcon';
-import UserFollowL from '../../../icons/bar/UserFollowLIcon';
-import UsersIcon from '../../../icons/bar/UsersIconIcon';
+import NoteBookIcon from '../../../icons/bar/NoteBookIcon';
 import FilterIcon from '../../../icons/friends/FilterIcon';
 import FSortIcon from '../../../icons/friends/FSortIcon';
-import FriendsHeaderMenu from '../../friends/friendsCommon/FriendsHeaderMenu';
+import { FriendNotificationItem } from '../friend_9_notification/FriendNotification';
 
-const FriendGroups = () => {
+const FriendPosts = () => {
   const items = [{}];
   return (
     <div className="friends-page">
-      <FriendsHeaderMenu />
       <section className="main-container f-all-info">
         <div className="f-info__header">
           <div className="f-info__header-left">
             <div className="f-info__header__item active">
               <div className="f-info__svg">
-                <GroupsIcon />
+                <NoteBookIcon />
               </div>
-              <p className="f-info__title">группы</p>
-              <span className="f-info__count">0</span>
+              <p className="f-info__title">Публикации</p>
+              <span className="f-info__count">434</span>
             </div>
           </div>
 
@@ -42,32 +35,30 @@ const FriendGroups = () => {
             </div>
           </div>
         </div>
-        {items.length === 0 ? <FriendGroupsNone /> : <FriendGroupsInit />}
+        {items.length === 0 ? <FriendPostsNone /> : <FriendPostsInit />}
       </section>
     </div>
   );
 };
 
-const FriendGroupsNone = () => {
+const FriendPostsNone = () => {
   return (
     <div className="f-all-info__main">
-      <p className="f-all-info__main__title">
-        Сергей не состоит ни в одной группе
-      </p>
+      <p className="f-all-info__main__title">Объявления скрыты</p>
       <span>
-        <ButtonBlueGroups text="Рекомендовать группы" />
+        <ButtonGreen text="Добавить в друзья" />
       </span>
     </div>
   );
 };
 
-const FriendGroupsInit = () => {
+const FriendPostsInit = () => {
   const items = [{}, {}, {}, {}, {}, {}, {}];
   return (
     <>
       <div className="g_Off__items">
         {items.map((i) => (
-          <GroupsItemSmall />
+          <FriendNotificationItem />
         ))}
       </div>
       <div className="f_list__more">
@@ -77,4 +68,4 @@ const FriendGroupsInit = () => {
   );
 };
 
-export default FriendGroups;
+export default FriendPosts;

@@ -10,7 +10,7 @@ import MessageIcon from '../../../icons/bar/MessageIcon';
 import AppraisalIcon from '../../../icons/bar/AppraisalIcon';
 
 const FriendMain = () => {
-  const hide = true;
+  const hide = false;
   return (
     <>
       <div className="fr__top-bar">

@@ -1,15 +1,9 @@
 import React from 'react';
-import { NavLink, Route, Switch } from 'react-router-dom';
-import FilterIcon from '../../../icons/friends/FilterIcon';
 import './GroupsNew.scss';
-import FSortIcon from '../../../icons/friends/FSortIcon';
-import LockIcon from '../../../icons/groups/LockIcon';
-import GroupUserIcon from '../../../icons/groups/GroupUserIcon';
-import OfficialIcon from '../../../icons/groups/OfficialIcon';
-import GVerifiedIcon from '../../../icons/groups/GVerifiedIcon';
 import GroupsTopMenuSF from '../groupsCommon/GroupsTopMenuSF';
 import New from '../../../icons/bar/NewIcon';
-import { ButtonBlueGroupsLine } from '../../../commonElements/buttons/Buttons';
+import { ButtonCasual } from '../../../commonElements/buttons/Buttons';
+import GroupsItemSmall from '../../../commonElements/groups/GroupsItemSmall';
 
 const GroupsNew = (props) => {
   const gColor = '#608AA1';
@@ -24,13 +18,11 @@ const GroupsNew = (props) => {
           <>
             <div className="g__items-x g_Off__items">
               {items.map((i) => {
-                return <GroupsNewItem />;
+                return <GroupsItemSmall />;
               })}
             </div>
-            <div className="g_Off__bottom">
-              <div class="f_list__more">
-                <span>Показать еще</span>
-              </div>
+            <div class="f_list__more">
+              <ButtonCasual text="Показать еще" />
             </div>
           </>
         </div>
@@ -38,39 +30,4 @@ const GroupsNew = (props) => {
     </div>
   );
 };
-const GroupsNewItem = () => {
-  return (
-    <div className="g__item-group g_Off__item">
-      <div className="g__item-group-left">
-        <div
-          className="g__item-group-img"
-          style={{
-            backgroundImage: `url(${'https://domfotooboev.com.ua/home/products_images/0381.jpg'})`,
-          }}
-        ></div>
-        <div className="g__item-group-texts g_Off__item-text">
-          <h4>
-            <OfficialIcon width="24" height="24" /> <span>Имя Фамилия</span>
-          </h4>
-          <div className="g__item-group-users">
-            <span className="g__item-group-lock">
-              <GVerifiedIcon />
-            </span>
-            <span className="g__item-group-lock">
-              <LockIcon />
-            </span>
-            <span className="g__item-group-count">
-              <GroupUserIcon />
-              <span>5678</span>
-            </span>
-          </div>
-        </div>
-      </div>
-      <div className="g__item-group-right">
-        <ButtonBlueGroupsLine text="Вступить" />
-      </div>
-    </div>
-  );
-};
-
 export default GroupsNew;

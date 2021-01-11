@@ -3,6 +3,7 @@ import { NavLink, Route, Switch } from 'react-router-dom';
 import {
   ButtonOrangeMedia,
   ButtonBrown,
+  ButtonCasual,
 } from '../../../commonElements/buttons/Buttons';
 import FriendsPetsIcon from '../../../icons/friends/FriendsPetsIcon';
 import PetsIcons from '../../../icons/header/PetsIcons';
@@ -12,13 +13,46 @@ import FLikeIcon from '../../../icons/friends/FLikeIcon';
 import RewardIcon from '../../../icons/friends/RewardIcon';
 import XIcon from '../../../icons/friends/XIcon';
 import FArrowIcon from '../../../icons/friend/FArrowIcon';
+import FilterIcon from '../../../icons/friends/FilterIcon';
+import FSortIcon from '../../../icons/friends/FSortIcon';
 
 const FriendPets = (props) => {
   const items = [{}];
   return (
     <section class="main-container f-all-info">
       <div class="f-info__header">
-        <div className="f-info__header-left">
+        <div
+          className="f-info__header-left"
+          style={
+            props.location.pathname.includes('/id/pets/id')
+              ? null
+              : { flexDirection: 'row-reverse' }
+          }
+        >
+          {props.location.pathname.includes('/id/pets/id') ? null : (
+            <NavLink
+              exact
+              style={
+                props.location.pathname.includes('/id/pets/id')
+                  ? null
+                  : { marginLeft: '20px' }
+              }
+              to="/id/pets/subscriptions"
+              activeClassName="active"
+              className={
+                'f-info__header__item' +
+                ' ' +
+                (items.length === 0 ? 'disLn' : '')
+              }
+            >
+              <div className="f-info__svg">
+                <FriendsPetsIcon />
+              </div>
+              <p className="f-info__title">Подписки </p>
+              <span className="f-info__count">0</span>
+              <span className="f-info__line"></span>
+            </NavLink>
+          )}
           <NavLink
             exact
             to="/id/pets"
@@ -34,6 +68,7 @@ const FriendPets = (props) => {
             <span className="f-info__count">0</span>
             <span className="f-info__line"></span>
           </NavLink>
+
           {props.location.pathname.includes('/id/pets/id') ? (
             <div className="fr__pets-ln">
               <NavLink
@@ -55,25 +90,17 @@ const FriendPets = (props) => {
                 <span className="f-info__line"></span>
               </NavLink>
             </div>
-          ) : (
-            <NavLink
-              exact
-              to="/id/pets/subscriptions"
-              activeClassName="active"
-              className={
-                'f-info__header__item' +
-                ' ' +
-                (items.length === 0 ? 'disLn' : '')
-              }
-            >
-              <div className="f-info__svg">
-                <FriendsPetsIcon />
-              </div>
-              <p className="f-info__title">Подписки </p>
-              <span className="f-info__count">0</span>
-              <span className="f-info__line"></span>
-            </NavLink>
-          )}
+          ) : null}
+        </div>
+        <div className="f-info__header-right">
+          <div className="f_list__header-sort">
+            <div className="f_list__header-sort-item">
+              <FilterIcon />
+            </div>
+            <div className="f_list__header-sort-item">
+              <FSortIcon />
+            </div>
+          </div>
         </div>
       </div>
 
@@ -101,6 +128,9 @@ const FriendPetsMain = () => {
           return <FriendPetsItem />;
         })}
       </div>
+      <div className="f_list__more">
+        <ButtonCasual text="Показать еще" />
+      </div>
     </>
   );
 };
@@ -110,7 +140,7 @@ const FriendPetPage = () => {
 
 export const FriendPetsItem = () => {
   return (
-    <NavLink to="/id/pets/id" className="f_pets__item fr__pets-item">
+    <div className="f_pets__item fr__pets-item">
       <div className="f_pets__item-header">
         <p className="f_pets__item-title">
           Марсель, <span>7</span>
@@ -125,19 +155,18 @@ export const FriendPetsItem = () => {
           </p>
         </div>
       </div>
+      <NavLink to="/id/pets/id">
+        <div
+          to="/id/pets/id"
+          className="f_pets__item-img"
+          style={{
+            backgroundImage: `url("https://avatars.mds.yandex.net/get-zen_doc/1064817/pub_5d468e47e3062c00ad408138_5d5beca597b5d400ae26c826/scale_1200")`,
+          }}
+        ></div>
+      </NavLink>
 
-      <div
-        className="f_pets__item-img"
-        style={{
-          backgroundImage: `url("https://avatars.mds.yandex.net/get-zen_doc/1064817/pub_5d468e47e3062c00ad408138_5d5beca597b5d400ae26c826/scale_1200")`,
-        }}
-      ></div>
       <div className="f_pets__item-about">
         <p>австрийская гончая</p>
-        {/* <div className="f_pets__item-about-right">
-          <span>999+</span>
-          <FLikeIcon />
-        </div> */}
       </div>
       <div className="fr__pets-bottom">
         <div className="fr__pets-bottom-logo-inner">
@@ -159,7 +188,7 @@ export const FriendPetsItem = () => {
           <ButtonBrown text="Подписаться" />
         </div>
       </div>
-    </NavLink>
+    </div>
   );
 };
 

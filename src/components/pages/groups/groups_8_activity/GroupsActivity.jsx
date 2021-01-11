@@ -13,6 +13,7 @@ import PeaceIcon from '../../../icons/groups/PeaceIcon';
 import AppraisalIcon from '../../../icons/bar/AppraisalIcon';
 import PlayVideoIcon from '../../../icons/groups/PlayVideoIcon';
 import ForumsIcon from '../../../icons/bar/ForumsIcon';
+import { ButtonCasual } from '../../../commonElements/buttons/Buttons';
 
 const GroupsActivity = () => {
   return (
@@ -26,7 +27,7 @@ const GroupsActivity = () => {
         </div>
         <div className="g_Off__bottom">
           <div class="f_list__more">
-            <span>Показать еще</span>
+            <ButtonCasual text="Показать еще" />
           </div>
         </div>
       </div>

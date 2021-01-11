@@ -15,6 +15,9 @@ import FriendGroups from './friend_5_groups/FriendGroups';
 import FriendMain from './friend_1_main/FriendMain';
 import FriendMedia from './friend_6_media/FriendMedia';
 import FriendPets from './friend_7_pets/FriendPets';
+import FriendNotification from './friend_9_notification/FriendNotification';
+import FriendPosts from './friend_8_posts/FriendPosts';
+import FriendBusiness from './friend_10_business/FriendBusiness';
 const Friend = (props) => {
   const dispatch = useDispatch();
   return (
@@ -63,14 +66,20 @@ const Friend = (props) => {
               <Route path="/id/write" render={() => <FriendWrite />} />
               <Route path="/id/friends" render={() => <FriendFriends />} />
               <Route path="/id/groups" render={() => <FriendGroups />} />
-              <Route path="/id/media" render={() => <FriendMedia />} />
+              <Route
+                path="/id/media"
+                render={() => <FriendMedia location={props.location} />}
+              />
               <Route
                 path="/id/pets"
                 render={() => <FriendPets location={props.location} />}
               />
-              <Route path="/id/posts" render={() => <>posts</>} />
-              <Route path="/id/notification" render={() => <>notification</>} />
-              <Route path="/id/business" render={() => <>business</>} />
+              <Route path="/id/posts" render={() => <FriendPosts />} />
+              <Route
+                path="/id/notification"
+                render={() => <FriendNotification />}
+              />
+              <Route path="/id/business" render={() => <FriendBusiness />} />
             </Switch>
           </div>
         </div>
