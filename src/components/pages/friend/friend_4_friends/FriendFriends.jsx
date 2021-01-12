@@ -15,8 +15,8 @@ import FSortIcon from '../../../icons/friends/FSortIcon';
 import FriendsHeaderMenu from '../../friends/friendsCommon/FriendsHeaderMenu';
 
 const FriendFriends = () => {
-  // const items = [{}, {}, {}, {}, {}, {}, {}];
-  const items = [];
+  const items = [{}, {}, {}, {}, {}, {}, {}];
+  // const items = [{}];
   return (
     <div className="friends-page">
       <FriendsHeaderMenu />

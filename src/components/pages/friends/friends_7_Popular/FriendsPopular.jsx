@@ -6,6 +6,7 @@ import {
   ButtonBrownLine,
   ButtonCasual,
 } from '../../../commonElements/buttons/Buttons';
+import FriendItemSmall from '../../../commonElements/friends/FriendItemSmall';
 
 const FriendsPopular = () => {
   const items = [{}, {}, {}, {}, {}, {}, {}, {}, {}];
@@ -17,7 +18,12 @@ const FriendsPopular = () => {
 
           <div className="f_new__items">
             {items.map((i) => {
-              return <FriendsPopularItem />;
+              return (
+                <FriendItemSmall
+                  button={ButtonBrownLine}
+                  buttonText="Подписаться"
+                />
+              );
             })}
           </div>
           <div className="f_list__more">

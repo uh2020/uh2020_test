@@ -3,6 +3,7 @@ import {
   ButtonBrown,
   ButtonBrownLine,
   ButtonCasual,
+  ButtonDisabled,
 } from '../../../commonElements/buttons/Buttons';
 import BlockUserIcon from '../../../icons/bar/BlockUserIcon';
 import FriendsTopMenuSF from '../friendsCommon/FriendsTopMenuSF';
@@ -77,6 +78,7 @@ const FriendsBlackListItemAdd = () => {
             <span>Москва</span>
           </p>
         </div>
+        <ButtonDisabled ml={20} text="Был удален из черного списка" />
       </div>
       <ButtonCasual text="Заблокировать" color="#7C7474" />
     </div>

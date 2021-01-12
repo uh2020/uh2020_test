@@ -3,6 +3,10 @@ import {
   ButtonCasual,
   ButtonGreen,
 } from '../../../commonElements/buttons/Buttons';
+import {
+  NonePage,
+  NonePageButtonTwo,
+} from '../../../commonElements/NonePages/NonePages';
 import NoteBookIcon from '../../../icons/bar/NoteBookIcon';
 import FilterIcon from '../../../icons/friends/FilterIcon';
 import FSortIcon from '../../../icons/friends/FSortIcon';
@@ -10,6 +14,7 @@ import { FriendNotificationItem } from '../friend_9_notification/FriendNotificat
 
 const FriendPosts = () => {
   const items = [{}];
+  const hide = false;
   return (
     <div className="friends-page">
       <section className="main-container f-all-info">
@@ -35,19 +40,23 @@ const FriendPosts = () => {
             </div>
           </div>
         </div>
-        {items.length === 0 ? <FriendPostsNone /> : <FriendPostsInit />}
+        {hide ? (
+          <NonePageButtonTwo
+            button={ButtonGreen}
+            buttonText="Добавить в друзья"
+            UpperText="Публикации скрыты"
+            UnderText="Добавьте Сергея в друзья, чтобы видеть больше"
+          />
+        ) : (
+          <>
+            {!items.length ? (
+              <NonePage UpperText="У Сергея пока нет питомцев" />
+            ) : (
+              <FriendPostsInit />
+            )}
+          </>
+        )}
       </section>
-    </div>
-  );
-};
-
-const FriendPostsNone = () => {
-  return (
-    <div className="f-all-info__main">
-      <p className="f-all-info__main__title">Объявления скрыты</p>
-      <span>
-        <ButtonGreen text="Добавить в друзья" />
-      </span>
     </div>
   );
 };

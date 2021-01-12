@@ -8,7 +8,7 @@ const FriendItemSmall = (props) => {
         <div
           className="f_new__item-img"
           style={{
-            backgroundImage: `url("https://zbulvar.ru/wp-content/uploads/2018/10/ohotnik_ohota_fotobank9-e1538579459614.jpg")`,
+            backgroundImage: `url("https://vsrap.ru/wp-content/uploads/2019/08/drake2.jpg")`,
           }}
         ></div>
         <div className="f_new__item-right">
@@ -19,9 +19,8 @@ const FriendItemSmall = (props) => {
           </div>
           {props.button ? (
             <props.button text={props.buttonText ? props.buttonText : ' '} />
-          ) : (
-            <ButtonGreenPlus text="Добавить в друзья" />
-          )}
+          ) : // <ButtonGreenPlus text="Добавить в друзья" />
+          null}
         </div>
       </div>
     </>

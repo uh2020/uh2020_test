@@ -19,10 +19,12 @@ import GAddBtn from '../../../icons/groups/GAddBtn';
 import GroupsManageDen from './GroupsManageDen';
 import GVerifiedIcon from '../../../icons/groups/GVerifiedIcon';
 import {
+  ButtonBlueGroups,
   ButtonBlueGroupsLine,
   ButtonGreen,
   ButtonGreenLine,
 } from '../../../commonElements/buttons/Buttons';
+import { NonePageButtonOne } from '../../../commonElements/NonePages/NonePages';
 
 const GroupsManage = (props) => {
   const gColor = '#608AA1';
@@ -89,34 +91,40 @@ const GroupsManage = (props) => {
               </div>
             </div>
           </div>
-
-          <Switch>
-            {items.length === 0 ? <GroupsNone /> : null}
-            <Route
-              path="/groups/manage/incoming"
-              render={() => <GroupsManageInn />}
+          {items.length === 0 ? (
+            <NonePageButtonOne
+              button={ButtonBlueGroups}
+              buttonText="Создать"
+              UpperText="У вас пока нет групп."
             />
-            <Route
-              path="/groups/manage/denied"
-              render={() => <GroupsManageDen />}
-            />
-            <Route
-              path="/groups/manage"
-              render={() => (
-                <>
-                  <div className="g__items-x">
-                    {items.map((i) => {
-                      return <GroupsManageItem />;
-                    })}
-                  </div>
-                  <div className="f_list__inn-bottom g_manage__bottom">
-                    <div className="f_list__inn-bottom-all">Всех</div>
-                    <ButtonGreen text="Рекомендовать" />
-                  </div>
-                </>
-              )}
-            />
-          </Switch>
+          ) : (
+            <Switch>
+              <Route
+                path="/groups/manage/incoming"
+                render={() => <GroupsManageInn />}
+              />
+              <Route
+                path="/groups/manage/denied"
+                render={() => <GroupsManageDen />}
+              />
+              <Route
+                path="/groups/manage"
+                render={() => (
+                  <>
+                    <div className="g__items-x">
+                      {items.map((i) => {
+                        return <GroupsManageItem />;
+                      })}
+                    </div>
+                    <div className="f_list__inn-bottom g_manage__bottom">
+                      <div className="f_list__inn-bottom-all">Всех</div>
+                      <ButtonGreen text="Рекомендовать" />
+                    </div>
+                  </>
+                )}
+              />
+            </Switch>
+          )}
         </div>
       </div>
     </div>
@@ -182,14 +190,6 @@ const GroupsManageItem = () => {
           <ButtonGreenLine text="Рекомендовать" />
         </div>
       </div>
-    </div>
-  );
-};
-const GroupsNone = () => {
-  return (
-    <div className="f_list__none">
-      <h1 className="f_list__none-title">У вас пока нет групп.</h1>
-      <span className="g__btn-blue">Создать</span>
     </div>
   );
 };

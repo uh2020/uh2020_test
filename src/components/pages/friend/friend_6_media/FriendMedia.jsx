@@ -2,8 +2,13 @@ import React from 'react';
 import { NavLink, Route, Switch } from 'react-router-dom';
 import {
   ButtonCasual,
+  ButtonGreen,
   ButtonOrangeMedia,
 } from '../../../commonElements/buttons/Buttons';
+import {
+  NonePageButtonOne,
+  NonePageButtonTwo,
+} from '../../../commonElements/NonePages/NonePages';
 import MediaIcon from '../../../icons/bar/MediaIcon';
 import AlbumFriendMediaIcon from '../../../icons/friend/AlbumFriendMediaIcon';
 import AlbumIcon from '../../../icons/friend/AlbumIcon';
@@ -18,6 +23,7 @@ import FriendMediaVideos from './FriendMediaVideos';
 
 const FriendMedia = (props) => {
   const items = [{}];
+  const hide = false;
   return (
     <section class="main-container f-all-info">
       <div class="f-info__header">
@@ -128,21 +134,48 @@ const FriendMedia = (props) => {
           </div>
         </div>
       </div>
-
-      {items.length === 0 ? (
-        <FriendMediaNone />
+      {hide ? (
+        <NonePageButtonTwo
+          button={ButtonGreen}
+          buttonText="Добавить в друзья"
+          UpperText="Медиа скрыты"
+          UnderText="Добавьте Сергея в друзья, чтобы видеть больше"
+        />
       ) : (
-        <Switch>
-          <Route exact path="/id/media" render={() => <FriendMediaMain />} />
-          <Route path="/id/media/photos" render={() => <FriendMediaPhotos />} />
-          <Route path="/id/media/videos" render={() => <FriendMediaVideos />} />
-          <Route path="/id/media/albums" render={() => <FriendMediaAlbums />} />
-          <Route
-            exact
-            path="/id/media/album/id"
-            render={() => <FriendMediaAlbumPage />}
-          />
-        </Switch>
+        <>
+          {!items.length ? (
+            <NonePageButtonOne
+              button={ButtonOrangeMedia}
+              buttonText="Отметить на своих медиа"
+              UpperText="У Сергея пока нет медиа"
+            />
+          ) : (
+            <Switch>
+              <Route
+                exact
+                path="/id/media"
+                render={() => <FriendMediaMain />}
+              />
+              <Route
+                path="/id/media/photos"
+                render={() => <FriendMediaPhotos />}
+              />
+              <Route
+                path="/id/media/videos"
+                render={() => <FriendMediaVideos />}
+              />
+              <Route
+                path="/id/media/albums"
+                render={() => <FriendMediaAlbums />}
+              />
+              <Route
+                exact
+                path="/id/media/album/id"
+                render={() => <FriendMediaAlbumPage />}
+              />
+            </Switch>
+          )}
+        </>
       )}
     </section>
   );
@@ -185,15 +218,6 @@ const FriendMediaMain = () => {
         <ButtonCasual text="Показать еще" />
       </div>
     </>
-  );
-};
-
-const FriendMediaNone = () => {
-  return (
-    <div class="f-all-info__main">
-      <p class="f-all-info__main__title">У Сергея пока нет медиа</p>
-      <ButtonOrangeMedia text="Отметить на своих медиа" />
-    </div>
   );
 };
 

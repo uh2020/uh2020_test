@@ -1,6 +1,5 @@
 import React from 'react';
 import FriendsHeaderMenu from '../friendsCommon/FriendsHeaderMenu';
-import './FriendsSubscribers.scss';
 import FriendsHeaderMenuIS from '../friendsCommon/FriendsHeaderMenuIS';
 import UsersIcon from '../../../icons/bar/UsersIconIcon';
 import FriendsSubscribersInn from './FriendsSubscribersInn';
@@ -19,7 +18,9 @@ import {
   ButtonBrown,
   ButtonGreenPlusFilled,
   XDeleteItem,
+  ButtonGreen,
 } from '../../../commonElements/buttons/Buttons';
+import { NonePageButtonOne } from '../../../commonElements/NonePages/NonePages';
 
 const FriendsSubscribers = (props) => {
   const items = [{}, {}, {}];
@@ -95,36 +96,43 @@ const FriendsSubscribers = (props) => {
             </div>
           </div>
         </div>
-        <Switch>
-          {items.length === 0 ? <FriendsNone /> : null}
-          <Route
-            path="/friends/subscribers/incoming"
-            render={() => <FriendsSubscribersInn />}
+        {items.length === 0 ? (
+          <NonePageButtonOne
+            button={ButtonGreen}
+            buttonText="Искать"
+            UpperText="У вас пока нет подписчиков."
           />
-          <Route
-            path="/friends/subscribers/denied"
-            render={() => <FriendsSubscribersDeny />}
-          />
-          <Route
-            path="/friends/subscribers"
-            render={() => (
-              <div className="f_list__items-inner">
-                <div className="f_list__items f_list__items-sroke">
-                  {items.map((i) => {
-                    return <FriendItem />;
-                  })}
+        ) : (
+          <Switch>
+            <Route
+              path="/friends/subscribers/incoming"
+              render={() => <FriendsSubscribersInn />}
+            />
+            <Route
+              path="/friends/subscribers/denied"
+              render={() => <FriendsSubscribersDeny />}
+            />
+            <Route
+              path="/friends/subscribers"
+              render={() => (
+                <div className="f_list__items-inner">
+                  <div className="f_list__items f_list__items-sroke">
+                    {items.map((i) => {
+                      return <FriendItem />;
+                    })}
+                  </div>
+                  <div className="f_list__inn-bottom">
+                    <div className="f_list__inn-bottom-all">Всех</div>
+                    <ButtonGreenPlusFilled text="Добавить в друзья" mr="1" />
+                    <ButtonBrown text="Подписаться" mr="1" />
+                    <ButtonBlueMessenger text="Написать" mr="1" />
+                    <XDeleteItem text="Удалить" />
+                  </div>
                 </div>
-                <div className="f_list__inn-bottom">
-                  <div className="f_list__inn-bottom-all">Всех</div>
-                  <ButtonGreenPlusFilled text="Добавить в друзья" mr="1" />
-                  <ButtonBrown text="Подписаться" mr="1" />
-                  <ButtonBlueMessenger text="Написать" mr="1" />
-                  <XDeleteItem text="Удалить" />
-                </div>
-              </div>
-            )}
-          />
-        </Switch>
+              )}
+            />
+          </Switch>
+        )}
       </div>
     </div>
   );

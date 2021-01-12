@@ -19,7 +19,9 @@ import {
   ButtonGreenLine,
   ButtonBlueMessenger,
   ButtonGreen,
+  ButtonBlueGroups,
 } from '../../../commonElements/buttons/Buttons';
+import { NonePageButtonOne } from '../../../commonElements/NonePages/NonePages';
 
 const GroupsMy = (props) => {
   const gColor = '#608AA1';
@@ -84,9 +86,7 @@ const GroupsMy = (props) => {
             </div>
             <div className="f_list__header-right">
               {props.location.pathname === '/groups/my' ? (
-                <div className="g_manage__btn-add g__btn-blue">
-                  Создать группу
-                </div>
+                <ButtonBlueGroups text="Создать группу" />
               ) : null}
               {props.location.pathname === '/groups/my/incoming' ? (
                 <div className="g_manage__btn-add g__btn-blue-mess">
@@ -105,7 +105,13 @@ const GroupsMy = (props) => {
             </div>
           </div>
           <Switch>
-            {items.length === 0 ? <GroupsNone /> : null}
+            {items.length === 0 ? (
+              <NonePageButtonOne
+                button={ButtonBlueGroups}
+                buttonText="Создать"
+                UpperText="У вас пока нет групп."
+              />
+            ) : null}
             <Route path="/groups/my/incoming" render={() => <GroupsMyInn />} />
             <Route path="/groups/my/sent" render={() => <GroupsMyDen />} />
             <Route

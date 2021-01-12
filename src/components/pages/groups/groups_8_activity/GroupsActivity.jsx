@@ -14,23 +14,31 @@ import AppraisalIcon from '../../../icons/bar/AppraisalIcon';
 import PlayVideoIcon from '../../../icons/groups/PlayVideoIcon';
 import ForumsIcon from '../../../icons/bar/ForumsIcon';
 import { ButtonCasual } from '../../../commonElements/buttons/Buttons';
+import { NonePage } from '../../../commonElements/NonePages/NonePages';
 
 const GroupsActivity = () => {
+  const activity = true;
   return (
     <div className="g__act">
-      <div className="friends-page g__act__header f_new__header f_new ">
+      <div className="friends-page g__act__header  f_new ">
         <TopMenu />
-        <div className="g__act__items">
-          <Item />
-          <ItemVideo />
-          <ItemFroums />
-        </div>
-        <div className="g_Off__bottom">
-          <div class="f_list__more">
-            <ButtonCasual text="Показать еще" />
-          </div>
-        </div>
       </div>
+      {!activity ? (
+        <NonePage UpperText="У вас пока нет активностей." />
+      ) : (
+        <>
+          <div className="g__act__items">
+            <Item />
+            <ItemVideo />
+            <ItemFroums />
+          </div>
+          <div className="g_Off__bottom">
+            <div class="f_list__more">
+              <ButtonCasual text="Показать еще" />
+            </div>
+          </div>
+        </>
+      )}
     </div>
   );
 };

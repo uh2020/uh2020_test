@@ -3,11 +3,16 @@ import {
   ButtonCasual,
   ButtonGreen,
 } from '../../../commonElements/buttons/Buttons';
+import {
+  NonePage,
+  NonePageButtonTwo,
+} from '../../../commonElements/NonePages/NonePages';
 import BusinessIcon from '../../../icons/bar/BusinessIcon';
 import FSortIcon from '../../../icons/friends/FSortIcon';
 
 const FriendBusiness = () => {
-  const items = [{}];
+  const items = [{}, {}];
+  const hide = false;
   return (
     <div className="friends-page">
       <section className="main-container f-all-info">
@@ -30,19 +35,23 @@ const FriendBusiness = () => {
             </div>
           </div>
         </div>
-        {items.length === 0 ? <FriendBusinessNone /> : <FriendBusinessInit />}
+        {hide ? (
+          <NonePageButtonTwo
+            button={ButtonGreen}
+            buttonText="Добавить в друзья"
+            UpperText="Бизнес скрыт"
+            UnderText="Добавьте Сергея в друзья, чтобы видеть больше"
+          />
+        ) : (
+          <>
+            {!items.length ? (
+              <NonePage UpperText="У Сергея пока нет бизнеса" />
+            ) : (
+              <FriendBusinessInit />
+            )}
+          </>
+        )}
       </section>
-    </div>
-  );
-};
-
-const FriendBusinessNone = () => {
-  return (
-    <div className="f-all-info__main">
-      <p className="f-all-info__main__title">Объявления скрыты</p>
-      <span>
-        <ButtonGreen text="Добавить в друзья" />
-      </span>
     </div>
   );
 };

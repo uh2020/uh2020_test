@@ -7,7 +7,11 @@ import FSortIcon from '../../../icons/friends/FSortIcon';
 import RewardIcon from '../../../icons/friends/RewardIcon';
 import FilterIcon from '../../../icons/friends/FilterIcon';
 import FriendsPetsIcon from '../../../icons/friends/FriendsPetsIcon';
-import { ButtonBrown } from '../../../commonElements/buttons/Buttons';
+import {
+  ButtonBrown,
+  ButtonGreen,
+} from '../../../commonElements/buttons/Buttons';
+import { NonePageButtonOne } from '../../../commonElements/NonePages/NonePages';
 
 const FriendsPets = () => {
   const items = [{}, {}, {}, {}, {}, {}];
@@ -31,13 +35,21 @@ const FriendsPets = () => {
               </div>
             </div>
           </div>
-
-          <div className="f_pets__main">
-            {' '}
-            {items.map((i) => {
-              return <FriendsPetsItem />;
-            })}{' '}
-          </div>
+          {!items.length ? (
+            <div className="p-b20">
+              <NonePageButtonOne
+                button={ButtonGreen}
+                buttonText="Добавить"
+                UpperText="У вас пока нет питомцев."
+              />
+            </div>
+          ) : (
+            <div className="f_pets__main">
+              {items.map((i) => {
+                return <FriendsPetsItem />;
+              })}
+            </div>
+          )}
         </div>
       </div>
     </>

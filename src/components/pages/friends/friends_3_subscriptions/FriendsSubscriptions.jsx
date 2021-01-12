@@ -17,7 +17,9 @@ import {
   ButtonBlueMessenger,
   ButtonGreenPlusFilled,
   XDeleteItem,
+  ButtonGreen,
 } from '../../../commonElements/buttons/Buttons';
+import { NonePageButtonOne } from '../../../commonElements/NonePages/NonePages';
 const FriendsSubscriptions = (props) => {
   const items = [{}, {}, {}];
   return (
@@ -92,35 +94,42 @@ const FriendsSubscriptions = (props) => {
             </div>
           </div>
         </div>
-        <Switch>
-          {items.length === 0 ? <FriendsNone /> : null}
-          <Route
-            path="/friends/subscriptions/outcoming"
-            render={() => <FriendsSubscriptionsInn />}
+        {items.length === 0 ? (
+          <NonePageButtonOne
+            button={ButtonGreen}
+            buttonText="Искать"
+            UpperText="У вас пока нет подписок."
           />
-          <Route
-            path="/friends/subscriptions/denied"
-            render={() => <FriendsSubscriptionsDenied />}
-          />
-          <Route
-            path="/friends/subscriptions"
-            render={() => (
-              <div className="f_list__items-inner">
-                <div className="f_list__items f_list__items-sroke">
-                  {items.map((i) => {
-                    return <FriendItem />;
-                  })}
+        ) : (
+          <Switch>
+            <Route
+              path="/friends/subscriptions/outcoming"
+              render={() => <FriendsSubscriptionsInn />}
+            />
+            <Route
+              path="/friends/subscriptions/denied"
+              render={() => <FriendsSubscriptionsDenied />}
+            />
+            <Route
+              path="/friends/subscriptions"
+              render={() => (
+                <div className="f_list__items-inner">
+                  <div className="f_list__items f_list__items-sroke">
+                    {items.map((i) => {
+                      return <FriendItem />;
+                    })}
+                  </div>
+                  <div className="f_list__inn-bottom">
+                    <div className="f_list__inn-bottom-all">Всех</div>
+                    <ButtonGreenPlusFilled text="Добавить в друзья" mr="1" />
+                    <ButtonBlueMessenger text="Написать" mr="1" />
+                    <XDeleteItem text="Удалить" />
+                  </div>
                 </div>
-                <div className="f_list__inn-bottom">
-                  <div className="f_list__inn-bottom-all">Всех</div>
-                  <ButtonGreenPlusFilled text="Добавить в друзья" mr="1" />
-                  <ButtonBlueMessenger text="Написать" mr="1" />
-                  <XDeleteItem text="Удалить" />
-                </div>
-              </div>
-            )}
-          />
-        </Switch>
+              )}
+            />
+          </Switch>
+        )}
       </div>
     </div>
   );

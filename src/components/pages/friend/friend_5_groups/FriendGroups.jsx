@@ -3,19 +3,21 @@ import { NavLink, Route, Switch } from 'react-router-dom';
 import {
   ButtonBlueGroups,
   ButtonCasual,
+  ButtonGreen,
 } from '../../../commonElements/buttons/Buttons';
-import FriendItemSmall from '../../../commonElements/friends/FriendItemSmall';
 import GroupsItemSmall from '../../../commonElements/groups/GroupsItemSmall';
+import {
+  NonePageButtonOne,
+  NonePageButtonTwo,
+} from '../../../commonElements/NonePages/NonePages';
 import GroupsIcon from '../../../icons/bar/GroupsIcon';
-import UserFollow from '../../../icons/bar/UserFollowIcon';
-import UserFollowL from '../../../icons/bar/UserFollowLIcon';
-import UsersIcon from '../../../icons/bar/UsersIconIcon';
 import FilterIcon from '../../../icons/friends/FilterIcon';
 import FSortIcon from '../../../icons/friends/FSortIcon';
 import FriendsHeaderMenu from '../../friends/friendsCommon/FriendsHeaderMenu';
 
 const FriendGroups = () => {
   const items = [{}];
+  const hide = false;
   return (
     <div className="friends-page">
       <FriendsHeaderMenu />
@@ -42,7 +44,27 @@ const FriendGroups = () => {
             </div>
           </div>
         </div>
-        {items.length === 0 ? <FriendGroupsNone /> : <FriendGroupsInit />}
+
+        {hide ? (
+          <NonePageButtonTwo
+            button={ButtonGreen}
+            buttonText="Добавить в друзья"
+            UpperText="Группы скрыты"
+            UnderText="Добавьте Сергея в друзья, чтобы видеть больше"
+          />
+        ) : (
+          <>
+            {!items.length ? (
+              <NonePageButtonOne
+                button={ButtonBlueGroups}
+                buttonText="Рекомендовать группы"
+                UpperText="Сергей не состоит ни в одной группе"
+              />
+            ) : (
+              <FriendGroupsInit />
+            )}
+          </>
+        )}
       </section>
     </div>
   );

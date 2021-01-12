@@ -17,7 +17,7 @@ import FriendsHeaderMenu from '../friendsCommon/FriendsHeaderMenu';
 const FriendsInvite = () => {
   return (
     <div>
-      <section className="main-container friends">
+      <section className="">
         {/* <FriendsHeaderMenu /> */}
         <div className="main__block invite">
           <div className="main__header">

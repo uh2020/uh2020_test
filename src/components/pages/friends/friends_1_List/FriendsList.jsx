@@ -10,9 +10,13 @@ import FilterIcon from '../../../icons/friends/FilterIcon';
 import FSortIcon from '../../../icons/friends/FSortIcon';
 import FriendsHeaderMenuSearch from '../friendsCommon/FriendsHeaderMenuSearch';
 import {
+  ButtonBlueMessenger,
   ButtonBlueMessengerLine,
   ButtonCasual,
+  ButtonGreen,
 } from '../../../commonElements/buttons/Buttons';
+import FriendItemSmall from '../../../commonElements/friends/FriendItemSmall';
+import { NonePageButtonOne } from '../../../commonElements/NonePages/NonePages';
 
 const FriendsList = (props) => {
   const items = [{}, {}, {}, {}, {}, {}, {}, {}, {}];
@@ -65,22 +69,12 @@ const FriendsList = (props) => {
           </div>
           <div className="f_list__header-right">
             {props.location.pathname === '/friends/list/incoming' ? (
-              <div className="f_list__inn-bottom-add f_list__header-add f_list__inn-btn">
-                Добавить в друзья
-              </div>
-            ) : (
-              <div
-                className={
-                  'f_list__header-btn' +
-                  ' ' +
-                  (props.location.pathname === '/friends/list/outcoming'
-                    ? 'f_list__header-btn-op'
-                    : '')
-                }
-              >
-                Написать всем
-              </div>
-            )}
+              <ButtonGreen text="Добавить всех" />
+            ) : null}
+            {props.location.pathname === '/friends/list' ? (
+              <ButtonBlueMessenger text="Написать всем" />
+            ) : null}
+
             <div className="f_list__header-sort">
               <div className="f_list__header-sort-item">
                 <FilterIcon />
@@ -91,70 +85,45 @@ const FriendsList = (props) => {
             </div>
           </div>
         </div>
-        <Switch>
-          {items.length === 0 ? <FriendsNone /> : null}
-          <Route
-            path="/friends/list/incoming"
-            render={() => <FriendsListInn />}
+        {items.length === 0 ? (
+          <NonePageButtonOne
+            button={ButtonGreen}
+            buttonText="Искать"
+            UpperText="У вас пока нет групп."
           />
-          <Route
-            path="/friends/list/outcoming"
-            render={() => <FriendsListOut />}
-          />
-          <Route
-            path="/friends/list"
-            render={() => (
-              <div className="f_list__items-inner">
-                <div className="f_list__items">
-                  {items.map((i) => {
-                    return <FriendItem name={'Пабло'} surname={'Диего'} />;
-                  })}
+        ) : (
+          <Switch>
+            <Route
+              path="/friends/list/incoming"
+              render={() => <FriendsListInn />}
+            />
+            <Route
+              path="/friends/list/outcoming"
+              render={() => <FriendsListOut />}
+            />
+            <Route
+              path="/friends/list"
+              render={() => (
+                <div className="f_list__items-inner">
+                  <div className="f_list__items">
+                    {items.map((i) => {
+                      return (
+                        <FriendItemSmall
+                          button={ButtonBlueMessengerLine}
+                          buttonText="Написать"
+                        />
+                      );
+                    })}
+                  </div>
+                  <div className="f_list__more">
+                    <span>Показать еще</span>
+                  </div>
                 </div>
-                <div className="f_list__more">
-                  <span>Показать еще</span>
-                </div>
-              </div>
-            )}
-          />
-        </Switch>
+              )}
+            />
+          </Switch>
+        )}
       </div>
-    </div>
-  );
-};
-
-const FriendItem = (props) => {
-  return (
-    <article className="friend-item">
-      <NavLink to="/id" className="tab__main-item__block-img">
-        <a
-          style={{
-            backgroundImage: `url(${'https://7sisters.ru/wp-content/uploads/2017/08/2515091748.jpg'})`,
-          }}
-          className="tab__main-item__img"
-        ></a>
-      </NavLink>
-      <div className="tab__main-item__block-info">
-        <h4 className="tab__main-item__block-info__name">
-          <a className="tab__main-item__block-info__name-link">
-            {props.surname} {props.name}
-          </a>
-        </h4>
-        <div className="tab__main-item__block-info__country">
-          <span>Страна</span>, <span>Город</span>
-        </div>
-        <div className="f_list-item-btn">
-          <ButtonBlueMessengerLine text="Написать" />
-        </div>
-      </div>
-    </article>
-  );
-};
-const FriendsNone = () => {
-  return (
-    <div className="f_list__none">
-      <h1 className="f_list__none-title">У вас пока нет друзей.</h1>
-      <span className="f_list__none-btn">Искать</span>
-      <ButtonCasual />
     </div>
   );
 };

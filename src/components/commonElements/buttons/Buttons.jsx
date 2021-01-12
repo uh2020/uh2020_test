@@ -108,6 +108,7 @@ export const ButtonCasual = (props) => {
 export const ButtonDisabled = (props) => {
   return (
     <div
+      style={props.ml ? { marginLeft: props.ml } : null}
       onClick={props.onClick}
       className={'g__btn-dis' + ' ' + (props.mr ? 'g__btn-mar' : ' ')}
     >

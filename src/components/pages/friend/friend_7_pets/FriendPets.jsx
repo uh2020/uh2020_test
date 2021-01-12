@@ -4,6 +4,7 @@ import {
   ButtonOrangeMedia,
   ButtonBrown,
   ButtonCasual,
+  ButtonGreen,
 } from '../../../commonElements/buttons/Buttons';
 import FriendsPetsIcon from '../../../icons/friends/FriendsPetsIcon';
 import PetsIcons from '../../../icons/header/PetsIcons';
@@ -15,9 +16,14 @@ import XIcon from '../../../icons/friends/XIcon';
 import FArrowIcon from '../../../icons/friend/FArrowIcon';
 import FilterIcon from '../../../icons/friends/FilterIcon';
 import FSortIcon from '../../../icons/friends/FSortIcon';
+import {
+  NonePage,
+  NonePageButtonTwo,
+} from '../../../commonElements/NonePages/NonePages';
 
 const FriendPets = (props) => {
   const items = [{}];
+  const hide = false;
   return (
     <section class="main-container f-all-info">
       <div class="f-info__header">
@@ -103,18 +109,32 @@ const FriendPets = (props) => {
           </div>
         </div>
       </div>
-
-      {items.length === 0 ? (
-        <FriendPetsNone />
+      {hide ? (
+        <NonePageButtonTwo
+          button={ButtonGreen}
+          buttonText="Добавить в друзья"
+          UpperText="Питомцы скрыты"
+          UnderText="Добавьте Сергея в друзья, чтобы видеть больше"
+        />
       ) : (
-        <Switch>
-          <Route exact path="/id/pets" render={() => <FriendPetsMain />} />
-          <Route
-            path="/id/pets/subscriptions"
-            render={() => <FriendPetsSubscriptions />}
-          />
-          <Route exact path="/id/pets/id" render={() => <FriendPetPage />} />
-        </Switch>
+        <>
+          {!items.length ? (
+            <NonePage UpperText="У Сергея пока нет питомцев" />
+          ) : (
+            <Switch>
+              <Route exact path="/id/pets" render={() => <FriendPetsMain />} />
+              <Route
+                path="/id/pets/subscriptions"
+                render={() => <FriendPetsSubscriptions />}
+              />
+              <Route
+                exact
+                path="/id/pets/id"
+                render={() => <FriendPetPage />}
+              />
+            </Switch>
+          )}
+        </>
       )}
     </section>
   );
@@ -188,14 +208,6 @@ export const FriendPetsItem = () => {
           <ButtonBrown text="Подписаться" />
         </div>
       </div>
-    </div>
-  );
-};
-
-const FriendPetsNone = () => {
-  return (
-    <div class="f-all-info__main">
-      <p class="f-all-info__main__title">У Сергея пока нет питомцев</p>
     </div>
   );
 };

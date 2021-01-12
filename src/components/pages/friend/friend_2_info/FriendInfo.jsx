@@ -1,5 +1,6 @@
 import React from 'react';
 import { ButtonGreen } from '../../../commonElements/buttons/Buttons';
+import { NonePageButtonTwo } from '../../../commonElements/NonePages/NonePages';
 import InfoIcon from '../../../icons/friend/InfoIcon';
 import FacebookIcon from '../../../icons/friendsSocial/FacebookIcon';
 import GoogleIcon from '../../../icons/friendsSocial/GoogleIcon';
@@ -26,7 +27,16 @@ const FriendInfo = () => {
             <p className="f-info__title">Информация</p>
           </div>
         </div>
-        {hide ? <FriendInfoNone /> : <FriendInfoItems />}
+        {hide ? (
+          <NonePageButtonTwo
+            button={ButtonGreen}
+            buttonText="Добавить в друзья"
+            UpperText="Сергей скрыл информацию"
+            UnderText="Добавьте Сергея в друзья, чтобы видеть больше"
+          />
+        ) : (
+          <FriendInfoItems />
+        )}
       </section>
     </>
   );
@@ -184,17 +194,4 @@ const FriendInfoItems = () => {
     </div>
   );
 };
-
-const FriendInfoNone = () => {
-  return (
-    <div class="f-all-info__main">
-      <p class="f-all-info__main__title">Сергей скрыл информацию</p>
-      <ButtonGreen text="Добавить в друзья" />
-      <p class="f-all-info__main__text">
-        Добавьте Сергея в друзья, чтобы видеть больше
-      </p>
-    </div>
-  );
-};
-
 export default FriendInfo;
