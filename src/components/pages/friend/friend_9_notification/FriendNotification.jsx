@@ -1,17 +1,21 @@
 import React from 'react';
 import {
-  ButtonBrownLine,
   ButtonCasual,
   ButtonGreen,
 } from '../../../commonElements/buttons/Buttons';
 import {
+  BookingCardItem,
+  LibraryArticleCardItem,
+  LibraryStoryCardItem,
+  MarketCardItem,
+  PetsCardItem,
+} from '../../../commonElements/friends/FriendNotItems';
+import {
   NonePage,
   NonePageButtonTwo,
 } from '../../../commonElements/NonePages/NonePages';
-import FavoritIcon from '../../../icons/bar/FavoritIcon';
 import PricetagIcon from '../../../icons/bar/PricetagIcon';
 import DownIcon from '../../../icons/friends/DownIcon';
-import FilterIcon from '../../../icons/friends/FilterIcon';
 import FSortIcon from '../../../icons/friends/FSortIcon';
 
 const FriendNotification = () => {
@@ -71,58 +75,24 @@ const FriendNotification = () => {
   );
 };
 
-const FriendNotificationNone = () => {
-  return (
-    <div className="f-all-info__main">
-      <p className="f-all-info__main__title">Объявления скрыты</p>
-      <span>
-        <ButtonGreen text="Добавить в друзья" />
-      </span>
-    </div>
-  );
-};
-
 const FriendNotificationInit = () => {
   const items = [{}, {}, {}, {}, {}, {}, {}];
   return (
     <>
       <div className="g_Off__items">
-        {items.map((i) => (
-          <FriendNotificationItem />
-        ))}
+        {/* {items.map((i) => (
+          <PetsCardItem />
+        ))} */}
+        <PetsCardItem />
+        <MarketCardItem />
+        <BookingCardItem />
+        <LibraryArticleCardItem />
+        <LibraryStoryCardItem />
       </div>
       <div className="f_list__more">
         <ButtonCasual text="Показать еще" />
       </div>
     </>
-  );
-};
-
-export const FriendNotificationItem = () => {
-  return (
-    <div className="fr__post-item">
-      <div
-        className="fr__post-item-img"
-        style={{
-          backgroundImage: `url("https://wallbox.ru/wallpapers/main2/201724/149752505259426b3cf3a916.08809280.jpg")`,
-        }}
-      >
-        <div className="fr__post-item-like">
-          <FavoritIcon />
-        </div>
-      </div>
-      <h4 className="fr__post-item-title">
-        Пропал кобель курцхаар в районе озера Байкал
-      </h4>
-      <div className="fr__post-item-name">Имя автора</div>
-      <div className="fr__post-item-text">
-        Санта-Крус-де-Тенерифе, Канарск...
-      </div>
-      <div className="fr__post-item-bottom">
-        <div className="fr__post-item-date">24.09.2020</div>
-        <ButtonBrownLine text="Подробнее" />
-      </div>
-    </div>
   );
 };
 

@@ -3,6 +3,7 @@ import {
   ButtonCasual,
   ButtonGreen,
 } from '../../../commonElements/buttons/Buttons';
+import { PetsCardItem } from '../../../commonElements/friends/FriendNotItems';
 import {
   NonePage,
   NonePageButtonTwo,
@@ -10,7 +11,6 @@ import {
 import NoteBookIcon from '../../../icons/bar/NoteBookIcon';
 import FilterIcon from '../../../icons/friends/FilterIcon';
 import FSortIcon from '../../../icons/friends/FSortIcon';
-import { FriendNotificationItem } from '../friend_9_notification/FriendNotification';
 
 const FriendPosts = () => {
   const items = [{}];
@@ -67,7 +67,7 @@ const FriendPostsInit = () => {
     <>
       <div className="g_Off__items">
         {items.map((i) => (
-          <FriendNotificationItem />
+          <PetsCardItem />
         ))}
       </div>
       <div className="f_list__more">

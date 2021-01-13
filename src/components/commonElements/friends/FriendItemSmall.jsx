@@ -1,18 +1,22 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import { ButtonGreenPlus } from '../buttons/Buttons';
 
 const FriendItemSmall = (props) => {
   return (
     <>
       <div className="f_new__item">
-        <div
+        <NavLink
+          to="/id"
           className="f_new__item-img"
           style={{
             backgroundImage: `url("https://vsrap.ru/wp-content/uploads/2019/08/drake2.jpg")`,
           }}
-        ></div>
+        ></NavLink>
         <div className="f_new__item-right">
-          <div className="f_new__item-title">Имя Фамилия</div>
+          <NavLink to="/id" className="f_new__item-title">
+            Имя Фамилия
+          </NavLink>
           <div className="f_new__item-text">
             <span>Россия, </span>
             <span>Москва</span>

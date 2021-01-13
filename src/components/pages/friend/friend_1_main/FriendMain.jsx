@@ -21,7 +21,11 @@ const FriendMain = () => {
               backgroundImage: `url("https://i.pinimg.com/736x/2f/03/f8/2f03f8cae2989c91c13b19b91ad94f8a.jpg")`,
             }}
           ></div>
-          <div className="fr__top-bar-text">Написать в новостях Сергея</div>
+          {/* <div className="fr__top-bar-text">Написать в новостях Сергея</div> */}
+          <input
+            placeholder="Написать в новостях Сергея"
+            className="fr__top-bar-text"
+          />
         </div>
         <div className="fr__top-bar-right">
           <div className="fr__poi">

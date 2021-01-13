@@ -14,8 +14,8 @@ const FriendsBlackList = () => {
   const items = [{}, {}, {}, {}];
   return (
     <>
-      <div className="f_BL">
-        <div className=" f-container f_BL__container">
+      <div className="f_BL f_new">
+        <div className=" f-container f_new__container">
           <FriendsTopMenuSF Icon={BlockUserIcon} text="черный список" />
           <div className="f_BL__items">
             {items.map((i) => {

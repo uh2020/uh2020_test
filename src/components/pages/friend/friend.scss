@@ -215,8 +215,8 @@
         align-items: center;
       }
       &-img {
-        width: 30px;
-        height: 30px;
+        min-width: 30px;
+        min-height: 30px;
         border-radius: 50%;
         background-repeat: no-repeat;
         background-size: cover;
@@ -226,6 +226,12 @@
       &-text {
         font-weight: normal;
         color: #7c7474;
+        width: 100%;
+        &::placeholder {
+          font-weight: normal;
+          font-size: 13px;
+          line-height: 140%;
+        }
       }
       &-right {
         display: flex;
@@ -389,6 +395,7 @@
   }
   &__post {
     &-item {
+      min-height: 337px;
       max-width: 270px;
       width: 100%;
       margin-right: 15px;
@@ -406,6 +413,12 @@
         position: relative;
         margin-bottom: 10px;
       }
+      &-underImg {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        min-height: 147px;
+      }
       &-like {
         position: absolute;
         background: rgba($color: #fff, $alpha: 0.7);
@@ -421,9 +434,12 @@
         font-size: 18px;
         line-height: 110%;
         margin-bottom: 10px;
+        cursor: pointer;
+        &:hover {
+          text-decoration: underline;
+        }
       }
       &-name {
-        text-decoration-line: underline;
         color: #7c7474;
         margin-bottom: 10px;
         cursor: pointer;
@@ -431,6 +447,9 @@
         white-space: nowrap;
         text-overflow: ellipsis;
         overflow: hidden;
+        &:hover {
+          text-decoration: underline;
+        }
       }
       &-text {
         cursor: pointer;
@@ -451,6 +470,47 @@
       }
       &-date {
         color: #7c7474;
+      }
+      &-date-eye {
+        color: #7c7474;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        margin-right: 30px;
+        p {
+          color: #7c7474;
+        }
+        span {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 12px;
+          svg {
+            margin-right: 5px;
+          }
+        }
+      }
+      &-price,
+      &-booking {
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 110%;
+
+        span {
+          text-decoration-line: line-through;
+          color: #7c7474;
+          font-weight: 500;
+          font-size: 13px;
+          line-height: 110%;
+          margin-left: 10px;
+        }
+      }
+      &-booking {
+        span {
+          margin-left: 5px;
+          text-decoration-line: none;
+        }
       }
     }
   }
