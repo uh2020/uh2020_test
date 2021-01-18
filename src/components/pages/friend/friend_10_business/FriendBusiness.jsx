@@ -19,7 +19,7 @@ const FriendBusiness = () => {
         <div className="f-info__header">
           <div className="f-info__header-left">
             <div className="f-info__header__item active">
-              <div className="f-info__svg">
+              <div className="f-info__svg ">
                 <BusinessIcon />
               </div>
               <p className="f-info__title">бизнес</p>
@@ -29,7 +29,7 @@ const FriendBusiness = () => {
 
           <div className="f-info__header-right">
             <div className="f_list__header-sort">
-              <div className="f_list__header-sort-item">
+              <div className="f_list__header-sort-item m-0">
                 <FSortIcon />
               </div>
             </div>

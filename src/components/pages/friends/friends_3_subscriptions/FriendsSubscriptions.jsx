@@ -1,6 +1,5 @@
 import React from 'react';
 import FriendsHeaderMenu from '../friendsCommon/FriendsHeaderMenu';
-import './FriendsSubscriptions.scss';
 import FriendsHeaderMenuIS from '../friendsCommon/FriendsHeaderMenuIS';
 import UsersIcon from '../../../icons/bar/UsersIconIcon';
 import FriendsSubscriptionsInn from './FriendsSubscriptionsInn';

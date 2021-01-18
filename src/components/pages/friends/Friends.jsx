@@ -59,7 +59,10 @@ const Friends = (props) => {
             <Route path="/friends/pets" render={() => <FriendsPets />} />
             <Route path="/friends/new" render={() => <FriendsNew />} />
             <Route path="/friends/popular" render={() => <FriendsPopular />} />
-            <Route path="/friends/recomm" render={() => <FriendsRecom />} />
+            <Route
+              path="/friends/recommendations"
+              render={() => <FriendsRecom />}
+            />
             <Route
               path="/friends/blackList"
               render={() => <FriendsBlackList />}

@@ -1,19 +1,18 @@
 import React from 'react';
-import BlockUserIcon from '../icons/bar/BlockUserIcon';
-import CommentIcon from '../icons/bar/CommentIcon';
-import NewIcon from '../icons/bar/NewIcon';
 import PetsIcon from '../icons/bar/PetsIcon';
-import RecommendationIcon from '../icons/bar/RecommendationIcon';
-import SearchIcon from '../icons/bar/SearchIcon';
-import TrendingIcon from '../icons/bar/TrendingIcon';
-import UserFollowIcon from '../icons/bar/UserFollowIcon';
-import UserFollowLIcon from '../icons/bar/UserFollowLIcon';
-import UserPlusIcon from '../icons/bar/UserPlusIcon';
 import UsersIconIcon from '../icons/bar/UsersIconIcon';
 import './sidebar.scss';
 import { NavLink } from 'react-router-dom';
-import FriendsPetsIcon from '../icons/friends/FriendsPetsIcon';
-const SideBarFriends = (props) => {
+import MyIcon from '../icons/bar/MyIcon';
+import MessageIcon from '../icons/bar/MessageIcon';
+import GroupsIcon from '../icons/bar/GroupsIcon';
+import MediaIcon from '../icons/bar/MediaIcon';
+import NoteBookIcon from '../icons/bar/NoteBookIcon';
+import BusinessIcon from '../icons/bar/BusinessIcon';
+import PricetagIcon from '../icons/bar/PricetagIcon';
+import NewsIcon from '../icons/bar/NewsIcon';
+import SettingsIcon from '../icons/bar/SettingsIcon';
+const SideBarProfile = (props) => {
   const [Link, setLink] = React.useState(1);
   return (
     <div className="bar">
@@ -21,98 +20,100 @@ const SideBarFriends = (props) => {
         <div
           className="bar__fr "
           style={{
-            backgroundColor: '#669774',
+            backgroundColor: '#7C7474',
           }}
         >
-          Your friends
+          Uhunt passport
         </div>
         <SideBarItem
+          exact={true}
           location={props.location.pathname}
-          title={'Мои друзья'}
-          new={'4'}
-          all={'45'}
-          Icon={UsersIconIcon}
-          to="/friends/list"
-        />
-        <SideBarItem
-          location={props.location.pathname}
-          title={'Мои подписчики'}
-          new={'4'}
-          all={'45'}
-          Icon={UserFollowIcon}
-          to="/friends/subscribers"
-        />
-        <SideBarItem
-          location={props.location.pathname}
-          title={'Мои подписки'}
-          new={'4'}
-          all={'45'}
-          Icon={UserFollowLIcon}
-          to="/friends/subscriptions"
+          title={'Моя страница'}
+          new={''}
+          all={''}
+          Icon={MyIcon}
+          to="/profile"
         />
         <SideBarItem
           location={props.location.pathname}
           title={'Сообщения'}
+          new={''}
+          all={''}
+          Icon={MessageIcon}
+          to="/profile/messages"
+        />
+        <SideBarItem
+          location={props.location.pathname}
+          title={'Новости'}
+          new={''}
+          all={''}
+          Icon={NewsIcon}
+          to="/profile/news"
+        />
+        <SideBarItem
+          location={props.location.pathname}
+          title={'Настройки'}
+          new={''}
+          all={''}
+          Icon={SettingsIcon}
+          to="/profile/settings"
+        />
+        <SideBarItem
+          location={props.location.pathname}
+          title={'Друзья'}
           new={'4'}
           all={'45'}
-          Icon={CommentIcon}
-          to="/friends/messages"
+          Icon={UsersIconIcon}
+          to="/profile/friends"
         />
+
         <SideBarItem
           location={props.location.pathname}
           title={'Животные'}
           new={'4'}
           all={'45'}
-          Icon={FriendsPetsIcon}
-          to="/friends/pets"
+          Icon={PetsIcon}
+          to="/profile/pets"
         />
         <SideBarItem
           location={props.location.pathname}
-          title={'Новые пользователи'}
+          title={'Группы'}
           new={'4'}
           all={'45'}
-          Icon={NewIcon}
-          to="/friends/new"
+          Icon={GroupsIcon}
+          to="/profile/groups"
         />
         <SideBarItem
           location={props.location.pathname}
-          title={'Популярные люди'}
+          title={'Медиа'}
           new={'4'}
           all={'45'}
-          Icon={TrendingIcon}
-          to="/friends/popular"
+          Icon={MediaIcon}
+          to="/profile/media"
         />
         <SideBarItem
           location={props.location.pathname}
-          title={'Рекомендации'}
+          title={'Публикации'}
           new={''}
-          all={''}
-          Icon={RecommendationIcon}
-          to="/friends/recommendations"
+          all={'0'}
+          Icon={NoteBookIcon}
+          to="/profile/posts"
         />
         <SideBarItem
           location={props.location.pathname}
-          title={'Черный список'}
+          title={'Объявления'}
           new={''}
           all={''}
-          Icon={BlockUserIcon}
-          to="/friends/blackList"
+          Icon={PricetagIcon}
+          to="/profile/products"
         />
         <SideBarItem
           location={props.location.pathname}
-          title={'Пригласить друзей'}
+          title={'Бизнес'}
           new={''}
           all={''}
-          Icon={UserPlusIcon}
-          to="/friends/invite"
-        />
-        <SideBarItem
-          location={props.location.pathname}
-          title={'Искать друзей'}
-          new={''}
-          all={''}
-          Icon={SearchIcon}
-          to="/friends/search"
+          Icon={BusinessIcon}
+          to="/profile/business"
         />
       </div>
       <div className="bar__about">
@@ -140,11 +141,13 @@ const SideBarFriends = (props) => {
 };
 
 const SideBarItem = (props) => {
-  const FriendsColor = '#669774';
+  const ProfileColor = '#7C7474';
   const active = props.location.includes(props.to) ? props.to : 0;
   return (
     <>
       <NavLink
+        // exact={props.exact ? true : false}
+        exact
         to={props.to}
         activeClassName={'bar__active'}
         className="bar__ln"
@@ -152,19 +155,19 @@ const SideBarItem = (props) => {
         <div
           className={active === props.to ? '  bar__ln-active' : 'bar__ln-dis'}
           style={{
-            backgroundColor: FriendsColor,
+            backgroundColor: ProfileColor,
           }}
         ></div>
         <div className="bar__ln-inner">
           <div className="bar__ln-img">
-            <props.Icon color={active === props.to ? FriendsColor : 0} />
+            <props.Icon color={active === props.to ? ProfileColor : 0} />
           </div>
           <div className="bar__ln-title">{props.title}</div>
         </div>
         <div className="bar__ln-info">
-          <span className="bar__ln-info-new">{props.new}</span>
+          {/* <span className="bar__ln-info-new">{props.new}</span> */}
           <span className="bar__ln-info-ls">
-            {props.all ? '/' : null}
+            {/* {props.new ? '/' : null} */}
             {props.all}
           </span>
         </div>
@@ -173,4 +176,4 @@ const SideBarItem = (props) => {
   );
 };
 
-export default SideBarFriends;
+export default SideBarProfile;

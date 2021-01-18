@@ -1,0 +1,22 @@
+.pr {
+  &__news {
+    background-color: #fff;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    &-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #f2f2f2;
+      margin-bottom: 0;
+      background-color: #fff;
+      padding: 13px 0px 10px;
+      margin: 0 20px;
+    }
+    &-search {
+      cursor: pointer;
+      padding: 5px;
+      margin: -5px;
+    }
+  }
+}

@@ -1,6 +1,4 @@
 import React from 'react';
-import './friend.scss';
-import './friendNat.scss';
 import SideBarFriend from '../../sideBars/SideBarFriend';
 import { Redirect, Route, Switch, withRouter } from 'react-router-dom';
 import { setFile } from '../../../redux/auth_reducer';
@@ -8,32 +6,27 @@ import { useDispatch } from 'react-redux';
 import { WithAuthRedirect } from '../../hoc/WithAuthRedirect';
 import { AmericanFlag } from '../../icons/flags/Flags';
 import { Weather } from '../../icons/weather/Weather';
-import FriendInfo from './friend_2_info/FriendInfo';
-import FriendWrite from './friend_3_write/FriendWrite';
-import FriendFriends from './friend_4_friends/FriendFriends';
-import FriendGroups from './friend_5_groups/FriendGroups';
-import FriendMain from './friend_1_main/FriendMain';
-import FriendMedia from './friend_6_media/FriendMedia';
-import FriendPets from './friend_7_pets/FriendPets';
-import FriendNotification from './friend_9_notification/FriendNotification';
-import FriendPosts from './friend_8_posts/FriendPosts';
-import FriendBusiness from './friend_10_business/FriendBusiness';
-const Friend = (props) => {
+import FriendInfo from '../friend/friend_2_info/FriendInfo';
+import SideBarProfile from '../../sideBars/SideBarProfile';
+import ProfileMy from './profile_1_my/ProfileMy';
+import ProfileNews from './profile_2_news/ProfileNews';
+import './profile.scss';
+const Profile = (props) => {
   const dispatch = useDispatch();
   return (
     <div>
-      {props.location.pathname === '/id' ? (
-        <Redirect from="/id" to="/id/main" />
-      ) : null}
+      {/* {props.location.pathname === '/profile' ? (
+        <Redirect from="/profile" to="/profile" />
+      ) : null} */}
       <div
         className="app__main"
         style={
-          props.location.pathname.includes('/id/main')
-            ? { paddingTop: '160px' }
+          props.location.pathname.includes('/profile')
+            ? { paddingTop: '72px' }
             : null
         }
       >
-        {props.location.pathname.includes('/id/main') ? (
+        {props.location.pathname.includes('/profile') ? (
           <div
             className="fr__fixed-img"
             style={{
@@ -42,44 +35,58 @@ const Friend = (props) => {
           ></div>
         ) : null}
         <div className="fr__left-inner">
-          {props.location.pathname.includes('/id/main') ? (
-            <FriendOnline />
-          ) : null}
-          <FriendLogoBig />
-          <SideBarFriend location={props.location} />
+          {props.location.pathname.includes('/profile') ? <Online /> : null}
+          <LogoBig />
+          <SideBarProfile location={props.location} />
         </div>
         <div className="fr__right">
-          {props.location.pathname.includes('/id/main') ? (
+          {props.location.pathname.includes('/profile') ? (
             <div className="fr__right-top">
-              <FriendLocation />
+              <Location />
             </div>
           ) : null}
 
           <div className="app__main-right fr__right-bottom">
             <Switch>
               {/* <Route
-              path="/id/subscribers"
+              path="/profile/subscribers"
               render={() => <FriendsSubscribers location={props.location} />}
             /> */}
-              <Route path="/id/main" render={() => <FriendMain />} />
-              <Route path="/id/info" render={() => <FriendInfo />} />
-              <Route path="/id/write" render={() => <FriendWrite />} />
-              <Route path="/id/friends" render={() => <FriendFriends />} />
-              <Route path="/id/groups" render={() => <FriendGroups />} />
               <Route
-                path="/id/media"
-                render={() => <FriendMedia location={props.location} />}
+                exact
+                path="/profile"
+                location={props.location}
+                render={() => <ProfileMy />}
               />
               <Route
-                path="/id/pets"
-                render={() => <FriendPets location={props.location} />}
+                exact
+                path="/profile/messages"
+                render={() => <>/profile/messages</>}
               />
-              <Route path="/id/posts" render={() => <FriendPosts />} />
+              <Route path="/profile/news" render={() => <ProfileNews />} />
               <Route
-                path="/id/notification"
-                render={() => <FriendNotification />}
+                path="/profile/settings"
+                render={() => <>/profile/settings</>}
               />
-              <Route path="/id/business" render={() => <FriendBusiness />} />
+              <Route
+                path="/profile/friends"
+                render={() => <>/profile/friends</>}
+              />
+              <Route path="/profile/pets" render={() => <>/profile/pets</>} />
+              <Route
+                path="/profile/groups"
+                render={() => <>/profile/groups</>}
+              />
+              <Route path="/profile/media" render={() => <>/profile/media</>} />
+              <Route path="/profile/posts" render={() => <>/profile/posts</>} />
+              <Route
+                path="/profile/products"
+                render={() => <>/profile/products</>}
+              />
+              <Route
+                path="/profile/business"
+                render={() => <>/profile/business</>}
+              />
             </Switch>
           </div>
         </div>
@@ -87,7 +94,7 @@ const Friend = (props) => {
     </div>
   );
 };
-const FriendLogoBig = (props) => {
+const LogoBig = (props) => {
   return (
     <div className="fr__left-logo">
       <div
@@ -106,7 +113,7 @@ const FriendLogoBig = (props) => {
     </div>
   );
 };
-const FriendOnline = () => {
+const Online = () => {
   return (
     <div className="fr__left-online-inner">
       <div className="fr__left-online">
@@ -116,7 +123,7 @@ const FriendOnline = () => {
     </div>
   );
 };
-const FriendLocation = () => {
+const Location = () => {
   return (
     <div className="fr__right-loc">
       <div className="fr__right-loc-flag">
@@ -139,7 +146,7 @@ const FriendLocation = () => {
     </div>
   );
 };
-const redDriend = WithAuthRedirect(Friend);
-const WrapperdFriend = withRouter(redDriend);
+const redProfile = WithAuthRedirect(Profile);
+const WrapperdProfile = withRouter(redProfile);
 
-export default WrapperdFriend;
+export default WrapperdProfile;

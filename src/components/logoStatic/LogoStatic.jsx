@@ -23,6 +23,11 @@ const LogoStatic = (props) => {
         title: 'Friend',
       },
       {
+        ln: '/profile',
+        color: '#7c7474',
+        title: 'Uhunt Home',
+      },
+      {
         ln: '/friends',
         color: '#669774',
         title: 'Friends',

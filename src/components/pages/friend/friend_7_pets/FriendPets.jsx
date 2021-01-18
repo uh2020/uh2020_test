@@ -25,8 +25,8 @@ const FriendPets = (props) => {
   const items = [{}];
   const hide = false;
   return (
-    <section class="main-container f-all-info">
-      <div class="f-info__header">
+    <section className="main-container f-all-info">
+      <div className="f-info__header">
         <div
           className="f-info__header-left"
           style={

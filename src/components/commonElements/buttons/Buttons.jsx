@@ -54,8 +54,8 @@ export const ButtonBrownPlus = (props) => {
       >
         <circle cx="7.5" cy="7.5" r="7.5" />
         <path
-          fill-rule="evenodd"
-          clip-rule="evenodd"
+          fillRule="evenodd"
+          clipRule="evenodd"
           d="M8.125 4.375H6.875V6.875H4.375V8.125H6.875V10.625H8.125V8.125H10.625V6.875H8.125V4.375Z"
         />
       </svg>
@@ -82,8 +82,8 @@ export const ButtonBrownPlusFilled = (props) => {
       >
         <circle cx="7.5" cy="7.5" r="7.5" fill="#608AA1" />
         <path
-          fill-rule="evenodd"
-          clip-rule="evenodd"
+          fillRule="evenodd"
+          clipRule="evenodd"
           d="M8.125 4.375H6.875V6.875H4.375V8.125H6.875V10.625H8.125V8.125H10.625V6.875H8.125V4.375Z"
           fill="white"
         />
@@ -100,6 +100,19 @@ export const ButtonCasual = (props) => {
         color: props.color,
       }}
       className={'g__btn-casual' + ' ' + (props.mr ? 'g__btn-mar' : ' ')}
+    >
+      {props.text}
+    </div>
+  );
+};
+export const ButtonCasualFilled = (props) => {
+  return (
+    <div
+      onClick={props.onClick}
+      style={{
+        color: props.color,
+      }}
+      className={'g__btn-casual-filled' + ' ' + (props.mr ? 'g__btn-mar' : ' ')}
     >
       {props.text}
     </div>
@@ -158,8 +171,8 @@ export const ButtonGreenPlus = (props) => {
       >
         <circle cx="7.5" cy="7.5" r="7.5" />
         <path
-          fill-rule="evenodd"
-          clip-rule="evenodd"
+          fillRule="evenodd"
+          clipRule="evenodd"
           d="M8.125 4.375H6.875V6.875H4.375V8.125H6.875V10.625H8.125V8.125H10.625V6.875H8.125V4.375Z"
         />
       </svg>
@@ -186,8 +199,8 @@ export const ButtonGreenPlusFilled = (props) => {
       >
         <circle cx="7.5" cy="7.5" r="7.5" fill="#608AA1" />
         <path
-          fill-rule="evenodd"
-          clip-rule="evenodd"
+          fillRule="evenodd"
+          clipRule="evenodd"
           d="M8.125 4.375H6.875V6.875H4.375V8.125H6.875V10.625H8.125V8.125H10.625V6.875H8.125V4.375Z"
           fill="white"
         />
@@ -238,8 +251,8 @@ export const ButtonBlueGroupsPlus = (props) => {
       >
         <circle cx="7.5" cy="7.5" r="7.5" fill="#608AA1" />
         <path
-          fill-rule="evenodd"
-          clip-rule="evenodd"
+          fillRule="evenodd"
+          clipRule="evenodd"
           d="M8.125 4.375H6.875V6.875H4.375V8.125H6.875V10.625H8.125V8.125H10.625V6.875H8.125V4.375Z"
           fill="white"
         />
@@ -267,8 +280,8 @@ export const ButtonBlueGroupsPlusFilled = (props) => {
       >
         <circle cx="7.5" cy="7.5" r="7.5" fill="#608AA1" />
         <path
-          fill-rule="evenodd"
-          clip-rule="evenodd"
+          fillRule="evenodd"
+          clipRule="evenodd"
           d="M8.125 4.375H6.875V6.875H4.375V8.125H6.875V10.625H8.125V8.125H10.625V6.875H8.125V4.375Z"
           fill="white"
         />
@@ -321,8 +334,8 @@ export const ButtonBlueMessengerPlus = (props) => {
       >
         <circle cx="7.5" cy="7.5" r="7.5" fill="#608AA1" />
         <path
-          fill-rule="evenodd"
-          clip-rule="evenodd"
+          fillRule="evenodd"
+          clipRule="evenodd"
           d="M8.125 4.375H6.875V6.875H4.375V8.125H6.875V10.625H8.125V8.125H10.625V6.875H8.125V4.375Z"
           fill="white"
         />
@@ -350,8 +363,8 @@ export const ButtonBlueMessengerPlusFilled = (props) => {
       >
         <circle cx="7.5" cy="7.5" r="7.5" fill="#608AA1" />
         <path
-          fill-rule="evenodd"
-          clip-rule="evenodd"
+          fillRule="evenodd"
+          clipRule="evenodd"
           d="M8.125 4.375H6.875V6.875H4.375V8.125H6.875V10.625H8.125V8.125H10.625V6.875H8.125V4.375Z"
           fill="white"
         />

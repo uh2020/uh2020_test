@@ -17,6 +17,7 @@ import FilterIcon from '../../../icons/friends/FilterIcon';
 import FSortIcon from '../../../icons/friends/FSortIcon';
 import GCameraIcon from '../../../icons/groups/GCameraIcon';
 import GVideoIcon from '../../../icons/groups/GVideoIcon';
+import FriendMediaAlbumPage from './FriendMediaAlbumPage';
 import FriendMediaAlbums from './FriendMediaAlbums';
 import FriendMediaPhotos from './FriendMediaPhotos';
 import FriendMediaVideos from './FriendMediaVideos';
@@ -25,8 +26,8 @@ const FriendMedia = (props) => {
   const items = [{}];
   const hide = false;
   return (
-    <section class="main-container f-all-info">
-      <div class="f-info__header">
+    <section className="main-container f-all-info">
+      <div className="f-info__header">
         <div className="f-info__header-left">
           {props.location.pathname.includes('/id/media/album/id') ? null : (
             <div className="fr__media-ln-inn">
@@ -123,6 +124,7 @@ const FriendMedia = (props) => {
             </div>
           ) : null}
         </div>
+
         <div className="f-info__header-right">
           <div className="f_list__header-sort">
             <div className="f_list__header-sort-item">
@@ -134,6 +136,7 @@ const FriendMedia = (props) => {
           </div>
         </div>
       </div>
+
       {hide ? (
         <NonePageButtonTwo
           button={ButtonGreen}
@@ -281,7 +284,5 @@ export const FriendMediaAlbum = () => {
     </NavLink>
   );
 };
-export const FriendMediaAlbumPage = () => {
-  return <>FriendMediaAlbumPage</>;
-};
+
 export default FriendMedia;

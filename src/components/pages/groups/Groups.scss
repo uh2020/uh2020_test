@@ -23,6 +23,7 @@
     &-blue-line,
     &-green-line,
     &-casual,
+    &-casual-filled,
     &-brown,
     &-brown-dis,
     &-brown-line,
@@ -108,6 +109,13 @@
     &-casual {
       background-color: transparent;
       color: #3f4548;
+      &-filled {
+        background-color: #f5f4f2;
+        color: #7c7474;
+        &:hover {
+          // background-color: #f5f4f2;
+        }
+      }
       &:hover {
         background-color: #f5f4f2;
       }

@@ -1,6 +1,5 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import logo from '../../assets/log0.png';
 import FriendsIcon from '../icons/header/FriendsIcon';
 import GroupsIcon from '../icons/header/GroupsIcon';
 import LibraryIcon from '../icons/header/LibraryIcon';
@@ -22,23 +21,29 @@ const Header = (props) => {
   const MarketColor = '#e5635b';
   const LibraryColor = '#b28d75';
   const SearchColor = '#fff';
+
+  const transparent =
+    props.location.includes('/id/main') || props.location.includes('/profile');
   return (
-    <div
-      className="header__inner"
-      style={props.location.includes('/id/main') ? null : { position: 'fixed' }}
-    >
+    <div className="header__inner" style={{ position: 'fixed' }}>
       <header
         className="header"
-        style={
-          props.location.includes('/id/main') ? null : { background: '#3f4548' }
-        }
+        style={transparent ? null : { background: '#3f4548' }}
       >
         <div className="header__container">
           <div className="header__logo-inner">
             <h1 className="header__title">Uhunt</h1>
-            <NavLink to="/reg" className="header__logo">
-              <img src={logo} alt="" />
-            </NavLink>
+            <NavLink
+              to="/profile"
+              className="header__logo"
+              style={
+                props.location.includes('/profile')
+                  ? { opacity: 0, pointerEvents: 'none' }
+                  : {
+                      backgroundImage: `url(${'https://vsrap.ru/wp-content/uploads/2019/08/drake2.jpg'})`,
+                    }
+              }
+            ></NavLink>
           </div>
           <nav className="header__items">
             <HeaderItem

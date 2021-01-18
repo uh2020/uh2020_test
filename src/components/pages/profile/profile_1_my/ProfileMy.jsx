@@ -1,6 +1,12 @@
 import React from 'react';
-import { ButtonGreen } from '../../../commonElements/buttons/Buttons';
-import { NonePageButtonTwo } from '../../../commonElements/NonePages/NonePages';
+import { NavLink, Route, Switch } from 'react-router-dom';
+import { ButtonBrown } from '../../../commonElements/buttons/Buttons';
+import {
+  NonePage,
+  NonePageButtonOne,
+} from '../../../commonElements/NonePages/NonePages';
+import NewsIcon from '../../../icons/bar/NewsIcon';
+import Plus from '../../../icons/bar/PlusIcon';
 import {
   UnitedKingDomSmallFlag,
   FranceSmallFlag,
@@ -17,37 +23,66 @@ import TwitterIcon from '../../../icons/friendsSocial/TwitterIcon';
 import ViberIcon from '../../../icons/friendsSocial/ViberIcon';
 import VkIcon from '../../../icons/friendsSocial/VkIcon';
 import WhatsappIcon from '../../../icons/friendsSocial/WhatsappIcon';
+import { FriendMainPageArticle } from '../../friend/friend_1_main/FriendMain';
 import { FriendInviteIcon } from '../../friends/friends_10_Invite/FriendsInvite';
 
-const FriendInfo = () => {
+const ProfileMy = () => {
   const hide = false;
+  const [editMode, setEditMode] = React.useState(false);
   return (
-    <>
-      <section className="main-container f-info">
-        <div className="f-info__header">
-          <div className="f-info__header-left">
-            <div className="f-info__svg">
-              <InfoIcon />
+    <section className="main-container f-info">
+      {/* <div className="f-info__header">
+        <div className="f-info__header-left">
+          <div className="f-info__svg">
+            <InfoIcon />
+          </div>
+          <p className="f-info__title">Информация</p>
+        </div>
+      </div> */}
+      <div className="f-info__header">
+        <div className="f-info__header-left">
+          <div className="fr__media-ln-inn">
+            <div className="f-info__header-left">
+              <div className="f-info__svg">
+                <InfoIcon />
+              </div>
+              <p className="f-info__title">Информация</p>
             </div>
-            <p className="f-info__title">Информация</p>
           </div>
         </div>
-        {hide ? (
-          <NonePageButtonTwo
-            button={ButtonGreen}
-            buttonText="Добавить в друзья"
-            UpperText="Сергей скрыл информацию"
-            UnderText="Добавьте Сергея в друзья, чтобы видеть больше"
+        <div className="f-info__header-right">
+          {/* <NavLink to="/profile/edit"> */}
+          <ButtonBrown
+            onClick={() => {
+              setEditMode(true);
+            }}
+            text="Редактировать"
           />
-        ) : (
-          <FriendInfoItems />
-        )}
-      </section>
-    </>
+          {console.log(editMode)}
+          {/* </NavLink> */}
+        </div>
+      </div>
+      {hide ? (
+        <NonePageButtonOne
+          button={ButtonBrown}
+          buttonText="Добавить "
+          UpperText="Вы не добавили информацию о себе"
+        />
+      ) : (
+        // <Switch>
+        //   <Route exact path="/profile" render={() => <ProfileMyInfo />} />
+        //   <Route path="/profile/edit" render={() => <ProfileMyEdit />} />
+        // </Switch>
+        <> {editMode ? <ProfileMyEdit /> : <ProfileMyInfo />} </>
+      )}
+    </section>
   );
 };
+const ProfileMyEdit = () => {
+  return <>ProfileMyEdit</>;
+};
 
-const FriendInfoItems = () => {
+const ProfileMyInfo = () => {
   return (
     <div className="f-info__items">
       <article className="f-info__item">
@@ -66,6 +101,12 @@ const FriendInfoItems = () => {
         <p className="f-info__item-left">Родной город</p>
         <div className="f-info__item-right">
           <p className="f-info__item-right__text">Россия, Псков</p>
+        </div>
+      </article>
+      <article className="f-info__item">
+        <p className="f-info__item-left">Профессия</p>
+        <div className="f-info__item-right">
+          <p className="f-info__item-right__text">Инженер</p>
         </div>
       </article>
       <article className="f-info__item ai-center">
@@ -129,6 +170,28 @@ const FriendInfoItems = () => {
         </div>
       </article>
       <article className="f-info__item">
+        <p className="f-info__item-left">Опыт в охоте</p>
+        <div className="f-info__item-right">
+          <p className="f-info__item-right__text">10 лет</p>
+        </div>
+      </article>
+      <article className="f-info__item ai-center">
+        <p className="f-info__item-left">Вид охоты</p>
+        <div className="f-info__item-right">
+          <span className="f-info__item-right__hobby">#Охота на кабана</span>
+          <span className="f-info__item-right__hobby">#Охота на медведя</span>
+          <span className="f-info__item-right__hobby">#Подводная охота</span>
+        </div>
+      </article>
+      <article className="f-info__item ai-center">
+        <p className="f-info__item-left">Трофеи</p>
+        <div className="f-info__item-right">
+          <span className="f-info__item-right__hobby">#Медведь</span>
+          <span className="f-info__item-right__hobby">#Кабан</span>
+          <span className="f-info__item-right__hobby">#Тетерев</span>
+        </div>
+      </article>
+      <article className="f-info__item">
         <p className="f-info__item-left">Бренды</p>
         <div className="f-info__item-right">
           <p className="f-info__item-right__text">Название бренда</p>
@@ -150,6 +213,12 @@ const FriendInfoItems = () => {
         <p className="f-info__item-left">Место службы/Звание</p>
         <div className="f-info__item-right">
           <p className="f-info__item-right__text">Название</p>
+        </div>
+      </article>
+      <article className="f-info__item">
+        <p className="f-info__item-left">События</p>
+        <div className="f-info__item-right">
+          <p className="f-info__item-right__text">Выставка охотничьих собак</p>
         </div>
       </article>
       <article className="f-info__item">
@@ -198,4 +267,5 @@ const FriendInfoItems = () => {
     </div>
   );
 };
-export default FriendInfo;
+
+export default ProfileMy;

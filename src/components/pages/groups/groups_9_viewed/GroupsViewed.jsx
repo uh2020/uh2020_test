@@ -21,7 +21,7 @@ const GroupsViewed = (props) => {
                 return <GroupsItemSmall />;
               })}
             </div>
-            <div class="f_list__more">
+            <div className="f_list__more">
               <ButtonCasual text="Показать еще" />
             </div>
           </>

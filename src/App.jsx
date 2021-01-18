@@ -23,6 +23,7 @@ import Booking from './components/pages/booking/Booking';
 import Market from './components/pages/market/Market';
 import Library from './components/pages/lirbrary/Library';
 import Search from './components/pages/search/Search';
+import Profile from './components/pages/profile/Profile';
 import { auth, TestApi } from './api/api';
 import { setAuthData } from './redux/auth_reducer';
 import Friend from './components/pages/friend/Friend';
@@ -56,10 +57,11 @@ function App(props) {
   //   setRedirect(false);
   // }
   React.useEffect(() => {
-    checkAuth();
+    // checkAuth();
+    console.log(props.location.pathname);
   }, [props.location.pathname]);
   React.useEffect(() => {
-    TestApi.testApi();
+    // TestApi.testApi();
     // auth.sesId();
     // setAuthData();
   }, []);
@@ -67,13 +69,13 @@ function App(props) {
   return (
     <div
       className="app__inner"
-      style={
-        props.location.pathname.includes('/id/main')
-          ? {
-              transformStyle: 'preserve-3d',
-            }
-          : null
-      }
+      // style={
+      //   props.location.pathname.includes('/id/main')
+      //     ? {
+      //         transformStyle: 'preserve-3d',
+      //       }
+      //     : null
+      // }
     >
       <div className="app__container">
         {AuthHows ? null : (
@@ -96,6 +98,7 @@ function App(props) {
             <Route path="/home" render={() => <Friends />} />
             <Route path="/friends" render={() => <Friends />} />
             <Route path="/id" render={() => <Friend />} />
+            <Route path="/profile" render={() => <Profile />} />
             <Route path="/pets" render={() => <Pets />} />
             <Route path="/messenger" render={() => <Messenger />} />
             <Route path="/groups" render={() => <Groups />} />

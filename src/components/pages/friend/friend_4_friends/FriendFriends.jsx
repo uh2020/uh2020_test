@@ -5,6 +5,7 @@ import {
   ButtonCasual,
   ButtonGreen,
   ButtonGreenLine,
+  ButtonGreenPlus,
 } from '../../../commonElements/buttons/Buttons';
 import FriendItemSmall from '../../../commonElements/friends/FriendItemSmall';
 import UserFollow from '../../../icons/bar/UserFollowIcon';
@@ -125,7 +126,7 @@ const FriendFriendsInit = () => {
       <div className="f_list__items">
         {items.map((i) => (
           <FriendItemSmall
-            button={ButtonGreenLine}
+            button={ButtonGreenPlus}
             buttonText="Добавить в друзья"
           />
         ))}

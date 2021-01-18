@@ -33,7 +33,7 @@ const GroupsActivity = () => {
             <ItemFroums />
           </div>
           <div className="g_Off__bottom">
-            <div class="f_list__more">
+            <div className="f_list__more">
               <ButtonCasual text="Показать еще" />
             </div>
           </div>

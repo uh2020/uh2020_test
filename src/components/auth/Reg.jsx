@@ -1,10 +1,8 @@
 import React from 'react';
 import './auth.scss';
-import bg from '../../assets/bg_login.png';
 import { Field, reduxForm, stopSubmit } from 'redux-form';
 import { useDispatch, useSelector } from 'react-redux';
 import { setRegData } from '../../redux/auth_reducer';
-import EyeIcon from '../icons/bar/EyeIconIcon';
 import EyeslashIcon from '../icons/bar/EyeslashIcon';
 import { NavLink, Redirect } from 'react-router-dom';
 import LoginWith from './LoginWith';
@@ -27,7 +25,12 @@ const Reg = () => {
     }
   };
   return (
-    <div className="auth" style={{ backgroundImage: `url(${bg})` }}>
+    <div
+      className="auth"
+      style={{
+        backgroundImage: `url(${'https://img1.goodfon.com/original/2048x1367/5/b0/korolevstvo-danii-farerskie-5741.jpg'})`,
+      }}
+    >
       {regDone ? <Redirect to="/friends" /> : <></>}
       <div className="auth-form">
         <div className="auth-form__container">

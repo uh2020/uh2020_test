@@ -12,8 +12,8 @@ const AddBarIcon = () => {
       >
         <circle cx="12" cy="12" r="12" fill="#608AA1" />
         <path
-          fill-rule="evenodd"
-          clip-rule="evenodd"
+          fillRule="evenodd"
+          clipRule="evenodd"
           d="M13 7H11V11H7V13H11V17H13V13H17V11H13V7Z"
           fill="white"
         />
