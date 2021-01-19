@@ -114,6 +114,11 @@ textarea {
     min-height: 101vh;
   }
 }
+input {
+  font-weight: 600;
+  font-size: 13px;
+  color: #3f4548;
+}
 ::-webkit-input-placeholder {
   color: #adadad;
   font-size: 13px;
@@ -153,4 +158,8 @@ textarea {
   .select {
     padding-left: 44px;
   }
+}
+
+.flex {
+  display: flex;
 }

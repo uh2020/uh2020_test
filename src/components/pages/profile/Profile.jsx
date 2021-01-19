@@ -8,7 +8,7 @@ import { AmericanFlag } from '../../icons/flags/Flags';
 import { Weather } from '../../icons/weather/Weather';
 import FriendInfo from '../friend/friend_2_info/FriendInfo';
 import SideBarProfile from '../../sideBars/SideBarProfile';
-import ProfileMy from './profile_1_my/ProfileMy';
+import ProfileMy, { ProfileMyEdit } from './profile_1_my/ProfileMy';
 import ProfileNews from './profile_2_news/ProfileNews';
 import './profile.scss';
 const Profile = (props) => {
@@ -55,8 +55,12 @@ const Profile = (props) => {
               <Route
                 exact
                 path="/profile"
-                location={props.location}
-                render={() => <ProfileMy />}
+                render={() => <ProfileMy location={props.location} />}
+              />
+              <Route
+                exact
+                path="/profile/edit"
+                render={() => <ProfileMy location={props.location} />}
               />
               <Route
                 exact

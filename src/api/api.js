@@ -73,7 +73,8 @@ export const auth = {
     data.repass = data.repass ? data.repass : '';
     return instance
       .post(
-        `/ajindex.php/?sessid=${sessId}&proc=${proc}&contry=${data.contry}&tel=${data.tel}&mail=${data.mail}&pass=${data.pass}&repass=${data.repass}`
+        `/ajindex.php/?sessid=${sessId}&proc=${proc}&contry=${data.contry}&tel=${data.tel}&mail=${data.mail}&pass=${data.pass}&repass=${data.repass}`,
+        { data }
       )
       .then((data) => {
         debugger;

@@ -25,14 +25,14 @@ const SideBarProfile = (props) => {
         >
           Uhunt passport
         </div>
-        <SideBarItem
-          exact={true}
+        <SideBarItemSp
           location={props.location.pathname}
           title={'Моя страница'}
           new={''}
           all={''}
           Icon={MyIcon}
           to="/profile"
+          to2="/profile/edit"
         />
         <SideBarItem
           location={props.location.pathname}
@@ -147,7 +147,6 @@ const SideBarItem = (props) => {
     <>
       <NavLink
         // exact={props.exact ? true : false}
-        exact
         to={props.to}
         activeClassName={'bar__active'}
         className="bar__ln"
@@ -165,9 +164,9 @@ const SideBarItem = (props) => {
           <div className="bar__ln-title">{props.title}</div>
         </div>
         <div className="bar__ln-info">
-          {/* <span className="bar__ln-info-new">{props.new}</span> */}
+          <span className="bar__ln-info-new">{props.new}</span>
           <span className="bar__ln-info-ls">
-            {/* {props.new ? '/' : null} */}
+            {props.new ? '/' : null}
             {props.all}
           </span>
         </div>
@@ -175,5 +174,44 @@ const SideBarItem = (props) => {
     </>
   );
 };
-
+const SideBarItemSp = (props) => {
+  const ProfileColor = '#7C7474';
+  const active = props.location.includes(props.to) ? props.to : 0;
+  const show = props.location === props.to || props.location === props.to2;
+  return (
+    <>
+      <NavLink
+        // exact={props.exact ? true : false}
+        to={props.to}
+        activeClassName={'bar__active'}
+        isActive={() => {
+          if (show) {
+            return true;
+          }
+        }}
+        className="bar__ln"
+      >
+        <div
+          className={show ? 'bar__ln-active' : 'bar__ln-dis'}
+          style={{
+            backgroundColor: ProfileColor,
+          }}
+        ></div>
+        <div className="bar__ln-inner">
+          <div className="bar__ln-img">
+            <props.Icon color={show ? ProfileColor : 0} />
+          </div>
+          <div className="bar__ln-title">{props.title}</div>
+        </div>
+        <div className="bar__ln-info">
+          <span className="bar__ln-info-new">{props.new}</span>
+          <span className="bar__ln-info-ls">
+            {props.new ? '/' : null}
+            {props.all}
+          </span>
+        </div>
+      </NavLink>
+    </>
+  );
+};
 export default SideBarProfile;

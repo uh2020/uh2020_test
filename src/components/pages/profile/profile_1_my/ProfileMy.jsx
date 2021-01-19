@@ -13,6 +13,7 @@ import {
   ItalySmallFlag,
 } from '../../../icons/flags/SmallFlags';
 import InfoIcon from '../../../icons/friend/InfoIcon';
+import DownIcon from '../../../icons/friends/DownIcon';
 import FacebookIcon from '../../../icons/friendsSocial/FacebookIcon';
 import GoogleIcon from '../../../icons/friendsSocial/GoogleIcon';
 import InstagramIcon from '../../../icons/friendsSocial/InstagramIcon';
@@ -23,12 +24,13 @@ import TwitterIcon from '../../../icons/friendsSocial/TwitterIcon';
 import ViberIcon from '../../../icons/friendsSocial/ViberIcon';
 import VkIcon from '../../../icons/friendsSocial/VkIcon';
 import WhatsappIcon from '../../../icons/friendsSocial/WhatsappIcon';
+import TagIcon from '../../../icons/profile/TagIcon';
 import { FriendMainPageArticle } from '../../friend/friend_1_main/FriendMain';
 import { FriendInviteIcon } from '../../friends/friends_10_Invite/FriendsInvite';
+import PlusIcon from '../../../icons/bar/PlusIcon';
 
-const ProfileMy = () => {
+const ProfileMy = (props) => {
   const hide = false;
-  const [editMode, setEditMode] = React.useState(false);
   return (
     <section className="main-container f-info">
       {/* <div className="f-info__header">
@@ -51,15 +53,16 @@ const ProfileMy = () => {
           </div>
         </div>
         <div className="f-info__header-right">
-          {/* <NavLink to="/profile/edit"> */}
-          <ButtonBrown
-            onClick={() => {
-              setEditMode(true);
-            }}
-            text="Редактировать"
-          />
-          {console.log(editMode)}
-          {/* </NavLink> */}
+          {props.location.pathname === '/profile' ? (
+            <NavLink to="/profile/edit">
+              <ButtonBrown text="Редактировать" />
+            </NavLink>
+          ) : null}
+          {props.location.pathname === '/profile/edit' ? (
+            <NavLink to="/profile">
+              <ButtonBrown text="Сохранить" />
+            </NavLink>
+          ) : null}
         </div>
       </div>
       {hide ? (
@@ -69,19 +72,157 @@ const ProfileMy = () => {
           UpperText="Вы не добавили информацию о себе"
         />
       ) : (
-        // <Switch>
-        //   <Route exact path="/profile" render={() => <ProfileMyInfo />} />
-        //   <Route path="/profile/edit" render={() => <ProfileMyEdit />} />
-        // </Switch>
-        <> {editMode ? <ProfileMyEdit /> : <ProfileMyInfo />} </>
+        <Switch>
+          <Route exact path="/profile" render={() => <ProfileMyInfo />} />
+          <Route path="/profile/edit" render={() => <ProfileMyEdit />} />
+        </Switch>
+        // <> {editMode ? <ProfileMyEdit /> : <ProfileMyInfo />} </>
       )}
     </section>
   );
 };
-const ProfileMyEdit = () => {
-  return <>ProfileMyEdit</>;
+export const ProfileMyEdit = () => {
+  return (
+    <>
+      <div className="pr__my-edit">
+        <div className="pr__my-item">
+          <p className="pr__my-item-title">Верификация</p>
+          <div className="pr__my-item-right">
+            <ButtonBrown text="Подать заявку" />
+          </div>
+        </div>
+        <div className="pr__my-item">
+          <p className="pr__my-item-title">Место работы</p>
+          <div className="pr__my-item-right">
+            <input
+              className="pr__my-item-input"
+              type="text"
+              placeholder="Введите место работы"
+            />
+          </div>
+        </div>
+        <div className="pr__my-item">
+          <p className="pr__my-item-title">Место работы</p>
+          <div className="pr__my-item-right">
+            <ProfileSelectIcon />
+          </div>
+        </div>
+        <div className="pr__my-item">
+          <p className="pr__my-item-title">Место работы</p>
+          <div className="pr__my-item-right">
+            {/* <div className="pr__my-item-select">
+              <div className="pr__my-item-select-top">
+                <div className="pr__my-item-select-body">
+                  <input
+                    placeholder="Выберите образование"
+                    className="pr__my-item-select-input"
+                  />
+                  <DownIcon />
+                </div>
+              </div>
+              <div className="pr__my-item-select-list">
+                <div className="pr__my-item-select-option">Олени</div>
+                <div className="pr__my-item-select-option">Олени</div>
+                <div className="pr__my-item-select-option">Олени</div>
+                <div className="pr__my-item-select-option">Олени</div>
+                <div className="pr__my-item-select-option">Олени</div>
+                <div className="pr__my-item-select-option">Олени</div>
+                <div className="pr__my-item-select-option">Олени</div>
+                <div className="pr__my-item-select-option">Олени</div>
+                <div className="pr__my-item-select-option">Олени</div>
+                <div className="pr__my-item-select-option">Олени</div>
+                <div className="pr__my-item-select-option">Олени</div>
+                <div className="pr__my-item-select-option">Олени</div>
+                <div className="pr__my-item-select-option">Олени</div>
+                <div className="pr__my-item-select-option">Олени</div>
+                <div className="pr__my-item-select-option">Олени</div>
+              </div>
+            </div> */}
+            <ProfileSelect />
+          </div>
+        </div>
+      </div>
+    </>
+  );
 };
 
+const ProfileSelectIcon = () => {
+  const [active, setActive] = React.useState(false);
+  const change = () => {
+    active === false ? setActive(true) : setActive(false);
+  };
+  return (
+    <>
+      {console.log(active)}
+      <div className="pr__my-item-select">
+        <div className="pr__my-item-select-top">
+          <TagIcon />
+          <div className="pr__my-item-select-body">
+            <input
+              placeholder="Выберите образование"
+              className="pr__my-item-select-input"
+            />
+            <div className="pr__my-item-select-click flex" onClick={change}>
+              <PlusIcon size="20" />
+            </div>
+          </div>
+        </div>
+        <div
+          className={
+            'pr__my-item-select-list pr__my-item-select-list-icon' +
+            ' ' +
+            (active ? ' ' : 'hide')
+          }
+        >
+          <div className="pr__my-item-select-option">Олени</div>
+          <div className="pr__my-item-select-option">Олени</div>
+          <div className="pr__my-item-select-option">Олени</div>
+          <div className="pr__my-item-select-option">Олени</div>
+          <div className="pr__my-item-select-option">Олени</div>
+          <div className="pr__my-item-select-option">Олени</div>
+          <div className="pr__my-item-select-option">Олени</div>
+          <div className="pr__my-item-select-option">Олени</div>
+        </div>
+      </div>
+    </>
+  );
+};
+const ProfileSelect = () => {
+  const [active, setActive] = React.useState(false);
+  const change = () => {
+    active === false ? setActive(true) : setActive(false);
+  };
+  return (
+    <>
+      {console.log(active)}
+      <div className="pr__my-item-select">
+        <div className="pr__my-item-select-top">
+          <div className="pr__my-item-select-body">
+            <input
+              placeholder="Выберите образование"
+              className="pr__my-item-select-input"
+            />
+            <div className="pr__my-item-select-click flex" onClick={change}>
+              <DownIcon />
+            </div>
+          </div>
+        </div>
+        <div
+          className={'pr__my-item-select-list' + ' ' + (active ? ' ' : 'hide')}
+        >
+          <div className="pr__my-item-select-option">Олени</div>
+          <div className="pr__my-item-select-option">Олени</div>
+          <div className="pr__my-item-select-option">Олени</div>
+          <div className="pr__my-item-select-option">Олени</div>
+          <div className="pr__my-item-select-option">Олени</div>
+          <div className="pr__my-item-select-option">Олени</div>
+          <div className="pr__my-item-select-option">Олени</div>
+          <div className="pr__my-item-select-option">Олени</div>
+        </div>
+      </div>
+    </>
+  );
+};
 const ProfileMyInfo = () => {
   return (
     <div className="f-info__items">

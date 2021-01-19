@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Route, Switch } from 'react-router-dom';
 import {
   ButtonBrown,
   ButtonBrownLine,
@@ -22,7 +22,7 @@ const ProfileNews = () => {
   return (
     <>
       <ProfileNewsTopAdd />
-      <div className="pr__news">
+      <div className="pr__news-header-inn">
         <div className="pr__news-header">
           <div className="f-info__header-left">
             <div className="fr__media-ln-inn">
@@ -52,8 +52,8 @@ const ProfileNews = () => {
               <div className="f-info__svg">
                 <MyIcon />
               </div>
-              <p className="f-info__title">альбомы</p>
-              <span className="f-info__count">23</span>
+              <p className="f-info__title">мои записи</p>
+              <span className="f-info__count">2</span>
               <span
                 className="f-info__line "
                 style={{ backgroundColor: `#7C7474` }}
@@ -67,16 +67,31 @@ const ProfileNews = () => {
             </div>
           </div>
         </div>
-        {hide ? <FriendMainNone /> : <ProfileNewsMain />}
       </div>
+      {hide ? (
+        <FriendMainNone />
+      ) : (
+        <Switch>
+          <Route
+            // exact
+            path="/profile/news"
+            render={() => <ProfileNewsMain />}
+          />
+          <Route
+            // exact
+            path="/profile/news/my"
+            render={() => <ProfileNewsMy />}
+          />
+        </Switch>
+      )}
       {hide ? null : (
         <>
-          <div className="pr__news">
+          {/* <div className="pr__news">
             <ProfileNewsFriends />
           </div>
           <div className="pr__news">
             <ProfileNewsGroups />
-          </div>
+          </div> */}
         </>
       )}
     </>
@@ -86,7 +101,35 @@ const ProfileNews = () => {
 const ProfileNewsMain = () => {
   return (
     <>
-      <FriendMainPageArticle />
+      <div className="pr__news">
+        <FriendMainPageArticle />
+      </div>
+
+      <>
+        <div className="pr__news">
+          <ProfileNewsFriends />
+        </div>
+        <div className="pr__news">
+          <ProfileNewsGroups />
+        </div>
+      </>
+    </>
+  );
+};
+const ProfileNewsMy = () => {
+  return (
+    <>
+      <div className="pr__news">
+        <FriendMainPageArticle />
+      </div>
+      <>
+        <div className="pr__news">
+          <ProfileNewsFriends />
+        </div>
+        <div className="pr__news">
+          <ProfileNewsGroups />
+        </div>
+      </>
     </>
   );
 };
