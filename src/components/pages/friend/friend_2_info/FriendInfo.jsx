@@ -70,7 +70,7 @@ const FriendInfoItems = () => {
       </article>
       <article className="f-info__item ai-center">
         <p className="f-info__item-left">Интересы</p>
-        <div className="f-info__item-right">
+        <div className="f-info__item-right f-info__item-wrap">
           <span className="f-info__item-right__hobby">#Рыбалка</span>
           <span className="f-info__item-right__hobby">#Собаки</span>
           <span className="f-info__item-right__hobby">#Сафари</span>

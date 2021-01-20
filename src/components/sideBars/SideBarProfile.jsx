@@ -64,7 +64,7 @@ const SideBarProfile = (props) => {
           new={'4'}
           all={'45'}
           Icon={UsersIconIcon}
-          to="/profile/friends"
+          to="/friends"
         />
 
         <SideBarItem
@@ -73,7 +73,7 @@ const SideBarProfile = (props) => {
           new={'4'}
           all={'45'}
           Icon={PetsIcon}
-          to="/profile/pets"
+          to="/pets"
         />
         <SideBarItem
           location={props.location.pathname}
@@ -81,7 +81,7 @@ const SideBarProfile = (props) => {
           new={'4'}
           all={'45'}
           Icon={GroupsIcon}
-          to="/profile/groups"
+          to="/groups"
         />
         <SideBarItem
           location={props.location.pathname}
@@ -89,7 +89,7 @@ const SideBarProfile = (props) => {
           new={'4'}
           all={'45'}
           Icon={MediaIcon}
-          to="/profile/media"
+          to="/media"
         />
         <SideBarItem
           location={props.location.pathname}
@@ -159,7 +159,7 @@ const SideBarItem = (props) => {
         ></div>
         <div className="bar__ln-inner">
           <div className="bar__ln-img">
-            <props.Icon color={active === props.to ? ProfileColor : 0} />
+            <props.Icon color={active === props.to ? '#3F4548' : 0} />
           </div>
           <div className="bar__ln-title">{props.title}</div>
         </div>
@@ -199,7 +199,7 @@ const SideBarItemSp = (props) => {
         ></div>
         <div className="bar__ln-inner">
           <div className="bar__ln-img">
-            <props.Icon color={show ? ProfileColor : 0} />
+            <props.Icon color={show ? '#3F4548' : 0} />
           </div>
           <div className="bar__ln-title">{props.title}</div>
         </div>

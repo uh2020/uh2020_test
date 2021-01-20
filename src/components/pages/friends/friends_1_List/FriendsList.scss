@@ -16,8 +16,8 @@
       justify-content: center;
       &-item {
         cursor: pointer;
-        width: 30px;
-        height: 30px;
+        min-width: 30px;
+        min-height: 30px;
         display: flex;
         align-items: center;
         justify-content: center;

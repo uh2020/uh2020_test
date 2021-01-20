@@ -11,6 +11,11 @@ import SideBarProfile from '../../sideBars/SideBarProfile';
 import ProfileMy, { ProfileMyEdit } from './profile_1_my/ProfileMy';
 import ProfileNews from './profile_2_news/ProfileNews';
 import './profile.scss';
+import ProfileSettings from './profile_5_settings/ProfileSettings';
+import ProfilePosts from './profile_9_posts/ProfilePosts';
+import ProfileProducts from './profile_10_products//ProfileProducts';
+import ProfileBusiness from './profile_11_business/ProfileBusiness';
+
 const Profile = (props) => {
   const dispatch = useDispatch();
   return (
@@ -70,9 +75,9 @@ const Profile = (props) => {
               <Route path="/profile/news" render={() => <ProfileNews />} />
               <Route
                 path="/profile/settings"
-                render={() => <>/profile/settings</>}
+                render={() => <ProfileSettings />}
               />
-              <Route
+              {/* <Route
                 path="/profile/friends"
                 render={() => <>/profile/friends</>}
               />
@@ -81,15 +86,18 @@ const Profile = (props) => {
                 path="/profile/groups"
                 render={() => <>/profile/groups</>}
               />
-              <Route path="/profile/media" render={() => <>/profile/media</>} />
-              <Route path="/profile/posts" render={() => <>/profile/posts</>} />
+              <Route path="/profile/media" render={() => <>/profile/media</>} /> */}
+              <Route
+                path="/profile/posts"
+                render={() => <ProfilePosts location={props.location} />}
+              />
               <Route
                 path="/profile/products"
-                render={() => <>/profile/products</>}
+                render={() => <ProfileProducts location={props.location} />}
               />
               <Route
                 path="/profile/business"
-                render={() => <>/profile/business</>}
+                render={() => <ProfileBusiness location={props.location} />}
               />
             </Switch>
           </div>

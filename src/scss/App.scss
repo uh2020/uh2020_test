@@ -114,29 +114,34 @@ textarea {
     min-height: 101vh;
   }
 }
-input {
+input,
+textarea {
   font-weight: 600;
   font-size: 13px;
   color: #3f4548;
 }
 ::-webkit-input-placeholder {
   color: #adadad;
+  font-weight: normal;
   font-size: 13px;
   line-height: 140%;
 }
 ::-moz-placeholder {
   color: #adadad;
   font-size: 13px;
+  font-weight: normal;
   line-height: 140%;
 }
 :-moz-placeholder {
   color: #adadad;
   font-size: 13px;
+  font-weight: normal;
   line-height: 140%;
 }
 :-ms-input-placeholder {
   color: #adadad;
   font-size: 13px;
+  font-weight: normal;
   line-height: 140%;
 }
 

@@ -14,6 +14,7 @@
     border-bottom: 1px solid #f2f2f2;
     margin-bottom: 20px;
     justify-content: space-between;
+    min-height: 40px;
     &__item {
       min-height: 27px;
       transition: 0.3s;
@@ -46,6 +47,9 @@
       display: flex;
       flex-wrap: wrap;
     }
+    &-wrap {
+      flex-wrap: wrap;
+    }
   }
   &__item:last-child {
     margin-bottom: 0px;
@@ -63,7 +67,10 @@
     font-weight: 600;
   }
   &__item-right {
-    width: calc(100% - 150px - 20px);
+    // width: calc(100% - 150px - 20px);
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
     line-height: 1;
     &-social {
       display: flex;
@@ -77,17 +84,22 @@
       text-decoration: none;
     }
     &__hobby {
+      display: flex;
+      align-items: center;
+      justify-content: center;
       font-size: 12px;
       line-height: 1.1;
       font-weight: 600;
       color: #7c7474;
-      display: inline-block;
       background-color: #f5f4f2;
-
       border-radius: 5px;
-      margin-right: 4px;
-      margin-bottom: 4px;
+      margin-right: 5px;
+      margin-bottom: 5px;
       padding: 6px 10px;
+      height: 25px;
+      svg {
+        margin-right: 5px;
+      }
     }
     &__hobby:last-child {
       margin-right: 0px;

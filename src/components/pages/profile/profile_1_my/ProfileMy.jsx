@@ -28,6 +28,7 @@ import TagIcon from '../../../icons/profile/TagIcon';
 import { FriendMainPageArticle } from '../../friend/friend_1_main/FriendMain';
 import { FriendInviteIcon } from '../../friends/friends_10_Invite/FriendsInvite';
 import PlusIcon from '../../../icons/bar/PlusIcon';
+import FArrowIcon from '../../../icons/friend/FArrowIcon';
 
 const ProfileMy = (props) => {
   const hide = false;
@@ -45,10 +46,43 @@ const ProfileMy = (props) => {
         <div className="f-info__header-left">
           <div className="fr__media-ln-inn">
             <div className="f-info__header-left">
-              <div className="f-info__svg">
-                <InfoIcon />
-              </div>
-              <p className="f-info__title">Информация</p>
+              <NavLink
+                exact
+                to="/profile"
+                activeClassName="active"
+                className="f-info__header__item"
+              >
+                <div className="f-info__svg">
+                  <InfoIcon />
+                </div>
+                <p className="f-info__title">Информация</p>
+              </NavLink>
+              {!props.location.pathname.includes('/profile/edit') ? null : (
+                <div className="fr__pets-ln">
+                  <NavLink
+                    exact
+                    to="/profile/edit"
+                    activeClassName="active"
+                    className="f-info__header__item"
+                    style={
+                      props.location.pathname.includes('/profile/edit')
+                        ? null
+                        : { marginLeft: '20px' }
+                    }
+                  >
+                    <p className="f-info__title">
+                      <span className="fr__pets-ln-arr">
+                        <FArrowIcon />
+                      </span>
+                      Редактирование
+                    </p>
+                    <span
+                      style={{ backgroundColor: '#7c7474' }}
+                      className="f-info__line"
+                    ></span>
+                  </NavLink>
+                </div>
+              )}
             </div>
           </div>
         </div>
@@ -101,44 +135,38 @@ export const ProfileMyEdit = () => {
             />
           </div>
         </div>
-        <div className="pr__my-item">
+        <div className="pr__my-item pr__my-item-st">
           <p className="pr__my-item-title">Место работы</p>
-          <div className="pr__my-item-right">
+          <div className="pr__my-item-right pr__my-wrap-col">
             <ProfileSelectIcon />
+            <div className="pr__my-wrap">
+              <span className="f-info__item-right__hobby">
+                <ItalySmallFlag /> #Рыбалка
+              </span>
+              <span className="f-info__item-right__hobby">#Рыбалка</span>
+              <span className="f-info__item-right__hobby">#Рыбалка</span>
+            </div>
+          </div>
+        </div>
+        <div className="pr__my-item pr__my-item-st">
+          <p className="pr__my-item-title">Место работы</p>
+          <div className="pr__my-item-right pr__my-wrap-col">
+            <ProfileSelect />
+            <div className="pr__my-wrap">
+              <span className="f-info__item-right__hobby">#Рыбалка</span>
+              <span className="f-info__item-right__hobby">#Рыбалка</span>
+              <span className="f-info__item-right__hobby">#Рыбалка</span>
+            </div>
           </div>
         </div>
         <div className="pr__my-item">
-          <p className="pr__my-item-title">Место работы</p>
+          <p className="pr__my-item-title">Обо мне</p>
           <div className="pr__my-item-right">
-            {/* <div className="pr__my-item-select">
-              <div className="pr__my-item-select-top">
-                <div className="pr__my-item-select-body">
-                  <input
-                    placeholder="Выберите образование"
-                    className="pr__my-item-select-input"
-                  />
-                  <DownIcon />
-                </div>
-              </div>
-              <div className="pr__my-item-select-list">
-                <div className="pr__my-item-select-option">Олени</div>
-                <div className="pr__my-item-select-option">Олени</div>
-                <div className="pr__my-item-select-option">Олени</div>
-                <div className="pr__my-item-select-option">Олени</div>
-                <div className="pr__my-item-select-option">Олени</div>
-                <div className="pr__my-item-select-option">Олени</div>
-                <div className="pr__my-item-select-option">Олени</div>
-                <div className="pr__my-item-select-option">Олени</div>
-                <div className="pr__my-item-select-option">Олени</div>
-                <div className="pr__my-item-select-option">Олени</div>
-                <div className="pr__my-item-select-option">Олени</div>
-                <div className="pr__my-item-select-option">Олени</div>
-                <div className="pr__my-item-select-option">Олени</div>
-                <div className="pr__my-item-select-option">Олени</div>
-                <div className="pr__my-item-select-option">Олени</div>
-              </div>
-            </div> */}
-            <ProfileSelect />
+            <textarea
+              className="pr__my-item-textarea"
+              type="text"
+              placeholder="Введите о себе"
+            />
           </div>
         </div>
       </div>
