@@ -8,16 +8,21 @@ import { AmericanFlag } from '../../icons/flags/Flags';
 import { Weather } from '../../icons/weather/Weather';
 import FriendInfo from '../friend/friend_2_info/FriendInfo';
 import SideBarProfile from '../../sideBars/SideBarProfile';
-import ProfileMy, { ProfileMyEdit } from './profile_1_my/ProfileMy';
+import ProfileMy from './profile_1_my/ProfileMy';
 import ProfileNews from './profile_2_news/ProfileNews';
 import './profile.scss';
 import ProfileSettings from './profile_5_settings/ProfileSettings';
 import ProfilePosts from './profile_9_posts/ProfilePosts';
 import ProfileProducts from './profile_10_products//ProfileProducts';
 import ProfileBusiness from './profile_11_business/ProfileBusiness';
+import ProfileMyEdit from './profile_1_my/ProfileMyEdit';
 
 const Profile = (props) => {
   const dispatch = useDispatch();
+  debugger;
+  const logo =
+    props.location.pathname === '/profile' ||
+    props.location.pathname === '/profile/edit';
   return (
     <div>
       {/* {props.location.pathname === '/profile' ? (
@@ -26,12 +31,14 @@ const Profile = (props) => {
       <div
         className="app__main"
         style={
-          props.location.pathname.includes('/profile')
+          props.location.pathname === '/profile' ||
+          props.location.pathname === '/profile/edit'
             ? { paddingTop: '72px' }
             : null
         }
       >
-        {props.location.pathname.includes('/profile') ? (
+        {props.location.pathname === '/profile' ||
+        props.location.pathname === '/profile/edit' ? (
           <div
             className="fr__fixed-img"
             style={{
@@ -40,12 +47,19 @@ const Profile = (props) => {
           ></div>
         ) : null}
         <div className="fr__left-inner">
-          {props.location.pathname.includes('/profile') ? <Online /> : null}
-          <LogoBig />
+          {props.location.pathname === '/profile' ||
+          props.location.pathname === '/profile/edit' ? (
+            <>
+              <Online />
+              <LogoBig />
+            </>
+          ) : null}
+
           <SideBarProfile location={props.location} />
         </div>
         <div className="fr__right">
-          {props.location.pathname.includes('/profile') ? (
+          {props.location.pathname === '/profile' ||
+          props.location.pathname === '/profile/edit' ? (
             <div className="fr__right-top">
               <Location />
             </div>

@@ -111,7 +111,9 @@ const LogoStatic = (props) => {
       <div
         className="logo__static"
         style={
-          props.location.includes('/id/main')
+          props.location.includes('/id/main') ||
+          props.location === '/profile' ||
+          props.location.includes('/profile/edit')
             ? {
                 height: '70%',
                 top: '420px',

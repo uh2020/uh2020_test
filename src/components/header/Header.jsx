@@ -23,7 +23,9 @@ const Header = (props) => {
   const SearchColor = '#fff';
 
   const transparent =
-    props.location.includes('/id/main') || props.location.includes('/profile');
+    props.location.includes('/id/main') ||
+    props.location === '/profile' ||
+    props.location.includes('/profile/edit');
   return (
     <div className="header__inner" style={{ position: 'fixed' }}>
       <header

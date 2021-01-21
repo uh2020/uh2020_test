@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink, Route, Switch } from 'react-router-dom';
 import SettingsIcon from '../../../icons/bar/SettingsIcon';
+import ProfileSettingsPersonal from './ProfileSettingsPersonal';
 
 const ProfileSettings = (props) => {
   return (
@@ -85,7 +86,11 @@ const ProfileSettings = (props) => {
         </div>
       </div>
       <Switch>
-        <Route exact path="/profile/settings" render={() => <> settings</>} />
+        <Route
+          exact
+          path="/profile/settings"
+          render={() => <ProfileSettingsPersonal />}
+        />
         <Route path="/profile/settings/privacy" render={() => <> privacy</>} />
         <Route path="/profile/settings/safety" render={() => <> safety</>} />
         <Route

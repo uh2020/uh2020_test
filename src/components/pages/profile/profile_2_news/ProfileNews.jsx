@@ -35,8 +35,8 @@ const ProfileNews = () => {
                 <div className="f-info__svg">
                   <NewsIcon />
                 </div>
-                <p className="f-info__title">Все медиа</p>
-                <span className="f-info__count">4578</span>
+                <p className="f-info__title">новости</p>
+                <span className="f-info__count"></span>
                 <span
                   className="f-info__line"
                   style={{ backgroundColor: `#7C7474` }}
@@ -73,7 +73,7 @@ const ProfileNews = () => {
       ) : (
         <Switch>
           <Route
-            // exact
+            exact
             path="/profile/news"
             render={() => <ProfileNewsMain />}
           />
@@ -104,7 +104,6 @@ const ProfileNewsMain = () => {
       <div className="pr__news">
         <FriendMainPageArticle />
       </div>
-
       <>
         <div className="pr__news">
           <ProfileNewsFriends />
@@ -117,19 +116,26 @@ const ProfileNewsMain = () => {
   );
 };
 const ProfileNewsMy = () => {
+  const hide = true;
   return (
     <>
-      <div className="pr__news">
-        <FriendMainPageArticle />
-      </div>
-      <>
-        <div className="pr__news">
-          <ProfileNewsFriends />
-        </div>
-        <div className="pr__news">
-          <ProfileNewsGroups />
-        </div>
-      </>
+      {hide ? (
+        <FriendMainNone />
+      ) : (
+        <>
+          <div className="pr__news">
+            <FriendMainPageArticle />
+          </div>
+          <>
+            <div className="pr__news">
+              <ProfileNewsFriends />
+            </div>
+            <div className="pr__news">
+              <ProfileNewsGroups />
+            </div>
+          </>
+        </>
+      )}
     </>
   );
 };
