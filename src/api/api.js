@@ -77,7 +77,6 @@ export const auth = {
         { data }
       )
       .then((data) => {
-        debugger;
         return data;
       });
   },

@@ -24,8 +24,8 @@ const ProfileSettingsPersonal = () => {
             <p className="pr__personal-left-item-title">Ваше имя</p>
             <input
               type="text"
-              value="Ваше имя"
-              name="Ваше иswrfмя"
+              // value="Ваше имя"
+              name="Ваше имя"
               className="pr__personal-left-input"
             />
           </div>
@@ -33,8 +33,8 @@ const ProfileSettingsPersonal = () => {
             <p className="pr__personal-left-item-title">Ваша фамилия</p>
             <input
               type="text"
-              value={'Петров'}
-              name="Петwerров"
+              // value={'Петров'}
+              name="Петров"
               className="pr__personal-left-input"
             />
           </div>
@@ -51,19 +51,19 @@ const ProfileSettingsPersonal = () => {
             <ProfileSelect text="26.09.1980" />
           </div>
           <div className="pr__personal-left-check">
-            <input type="checkbox" />
-            <p>Не отображать возраст</p>
+            <input type="checkbox" id="age" />
+            <label for="age">Не отображать возраст</label>
           </div>
           <div className="pr__personal-left-item">
             <p className="pr__personal-left-item-title">Пол</p>
             <div className="pr__personal-left-item-check-inn">
               <div className="pr__personal-left-item-check">
-                <input type="checkbox" />
-                <p>Мужской</p>
+                <input id="male" name="gender" type="radio" />
+                <label for="male">Мужской</label>
               </div>
               <div className="pr__personal-left-item-check">
-                <input type="checkbox" />
-                <p>Женский</p>
+                <input id="female" name="gender" type="radio" />
+                <label for="female">Женский</label>
               </div>
             </div>
           </div>

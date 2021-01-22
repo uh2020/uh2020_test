@@ -19,7 +19,6 @@ import ProfileMyEdit from './profile_1_my/ProfileMyEdit';
 
 const Profile = (props) => {
   const dispatch = useDispatch();
-  debugger;
   const logo =
     props.location.pathname === '/profile' ||
     props.location.pathname === '/profile/edit';
