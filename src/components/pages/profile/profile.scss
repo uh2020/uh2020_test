@@ -469,6 +469,11 @@
       span {
         font-weight: 500;
         color: #7c7474;
+        cursor: pointer;
+        position: relative;
+        &:hover {
+          text-decoration: underline;
+        }
       }
       &-flip {
         // width: 17px;
@@ -485,7 +490,8 @@
           position: absolute;
           // bottom: 0;
           top: 35px;
-          left: -92px;
+          // left: -92px;
+          left: calc(50% - 100px);
           transition: 0.3s;
           width: 200px;
           display: flex;
