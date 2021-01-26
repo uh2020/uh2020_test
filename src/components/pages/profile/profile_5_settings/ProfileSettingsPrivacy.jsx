@@ -2,7 +2,6 @@ import React from 'react';
 import PArrRightIcon from '../../../icons/profile/PArrRightIcon';
 
 const ProfileSettingsPrivacy = (props) => {
-  const [active, setActive] = React.useState();
   return (
     <div className="pr__privacy">
       <div className="pr__privacy-block pr__privacy-block-fr">
@@ -15,30 +14,22 @@ const ProfileSettingsPrivacy = (props) => {
             type="blue"
             text="Все"
             id={'1'}
-            active={active}
-            setActive={setActive}
           />
           <Item
             title="Кто может оставлять записи на моей странице"
             text="Пользователи Uhunt"
             id={'2'}
-            active={active}
-            setActive={setActive}
           />
           <Item
             title="Кто может видеть комментарии к записям"
             type="blue"
             text="Все"
             id={'3'}
-            active={active}
-            setActive={setActive}
           />
           <Item
             title="Кто может оставлять комментарии к записям"
             text="Пользователи Uhunt"
             id={'4'}
-            active={active}
-            setActive={setActive}
           />
         </div>
       </div>
@@ -52,37 +43,27 @@ const ProfileSettingsPrivacy = (props) => {
             title="Кто может писать мне личные сообщения"
             text="Пользователи Uhunt"
             id={'5'}
-            active={active}
-            setActive={setActive}
           />
           <Item
             title="Кто может приглашать меня в группы"
             text="Пользователи Uhunt"
             id={'6'}
-            active={active}
-            setActive={setActive}
           />
           <Item
             title="Кто может приглашать меня в беседы"
             text="Пользователи Uhunt"
             id={'7'}
-            active={active}
-            setActive={setActive}
           />
           <Item
             title="Кто может отмечать меня на фотографии"
             text="Пользователи Uhunt"
             id={'8'}
-            active={active}
-            setActive={setActive}
           />
           <Item
             title="Кто может найти меня по номеру телефона"
             text="Все"
             type="blue"
             id={'9'}
-            active={active}
-            setActive={setActive}
           />
         </div>
       </div>
@@ -96,16 +77,12 @@ const ProfileSettingsPrivacy = (props) => {
             text="Все"
             type="blue"
             id={'10'}
-            active={active}
-            setActive={setActive}
           />
           <Item
             title="Кто видит моих друзй и подписчиков "
             text="Все"
             type="blue"
             id={'11'}
-            active={active}
-            setActive={setActive}
           />
           <Item title="Кто видит моих питомцев" text="Все" type="blue" />
           <Item
@@ -113,54 +90,30 @@ const ProfileSettingsPrivacy = (props) => {
             text="Все"
             type="blue"
             id={'12'}
-            active={active}
-            setActive={setActive}
           />
-          <Item
-            title="Кто видит мои группы"
-            id={'13'}
-            active={active}
-            setActive={setActive}
-            text="Все"
-            type="blue"
-          />
-          <Item
-            title="Кто видит мои медиа"
-            id={'14'}
-            active={active}
-            setActive={setActive}
-            text="Все"
-            type="blue"
-          />
+          <Item title="Кто видит мои группы" id={'13'} text="Все" type="blue" />
+          <Item title="Кто видит мои медиа" id={'14'} text="Все" type="blue" />
           <Item
             title="Кто видит мои объявления на букинге"
             text="Все"
             type="blue"
             id={'15'}
-            active={active}
-            setActive={setActive}
           />
           <Item
             title="Кто видит мои товары на маркете"
             text="Все"
             type="blue"
             id={'16'}
-            active={active}
-            setActive={setActive}
           />
           <Item
             title="Кто видит мои публикации"
             id={'17'}
-            active={active}
-            setActive={setActive}
             text="Все"
             type="blue"
           />
           <Item
             title="Кто видит мой бизнес-страницы"
             id={'18'}
-            active={active}
-            setActive={setActive}
             text="Все"
             type="blue"
           />
@@ -200,10 +153,8 @@ const Item = (props) => {
     } else {
       setvisible(true);
     }
-    // visible ? setvisible(false) : setvisible(true);
   };
-  const test = (e) => {
-    console.log('test');
+  const IsActive = (e) => {
     if (typeof e.target.className != 'string') {
       return true;
     }
@@ -212,8 +163,6 @@ const Item = (props) => {
       !e.target.className.includes('pr__privacy-item-flip-options') ||
       !e.target.className.includes('pr__privacy-item-flip-option')
     ) {
-      debugger;
-      // visible ? setvisible(false) : setvisible(true);
       setvisible(false);
     } else setvisible(true);
     if (e.target.className === 'pr__privacy-item-flip-span' + ' ' + props.id) {
@@ -228,17 +177,12 @@ const Item = (props) => {
 
   React.useEffect(() => {
     if (checked) {
-      document.addEventListener('click', test);
+      document.addEventListener('click', IsActive);
     }
     if (!visible) {
-      document.removeEventListener('click', test);
+      document.removeEventListener('click', IsActive);
     }
   }, [checked, visible]);
-  // switch (props.type) {
-  //   case 'red':
-  //   case 'blue':
-  //   default:
-  // }
   return (
     <div className="pr__privacy-item">
       <div className="pr__privacy-item-left">

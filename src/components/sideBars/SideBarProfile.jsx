@@ -40,7 +40,7 @@ const SideBarProfile = (props) => {
           new={''}
           all={''}
           Icon={MessageIcon}
-          to="/profile/messages"
+          to="/messenger"
         />
         <SideBarItem
           location={props.location.pathname}

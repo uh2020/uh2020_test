@@ -44,7 +44,7 @@ const Auth = () => {
 const AuthForm = (props) => {
   const [pass, setPass] = React.useState('password');
   const checkPass = (val, state) => {
-    const g = val === 'password' ? state('text') : state('password');
+    val === 'password' ? state('text') : state('password');
   };
   return (
     <form onSubmit={props.handleSubmit} className="auth-form__form">

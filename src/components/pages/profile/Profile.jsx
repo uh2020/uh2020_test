@@ -80,15 +80,15 @@ const Profile = (props) => {
                 path="/profile/edit"
                 render={() => <ProfileMy location={props.location} />}
               />
-              <Route
+              {/* <Route
                 exact
                 path="/profile/messages"
                 render={() => <>/profile/messages</>}
-              />
+              /> */}
               <Route path="/profile/news" render={() => <ProfileNews />} />
               <Route
                 path="/profile/settings"
-                render={() => <ProfileSettings />}
+                render={() => <ProfileSettings location={props.location} />}
               />
               {/* <Route
                 path="/profile/friends"

@@ -1,8 +1,10 @@
 import React from 'react';
 import { NavLink, Route, Switch } from 'react-router-dom';
 import SettingsIcon from '../../../icons/bar/SettingsIcon';
+import ProfileSettingsNotifications from './ProfileSettingsNotifications';
 import ProfileSettingsPersonal from './ProfileSettingsPersonal';
 import ProfileSettingsPrivacy from './ProfileSettingsPrivacy';
+import ProfileSettingsSafety from './ProfileSettingsSafety';
 
 const ProfileSettings = (props) => {
   return (
@@ -118,10 +120,15 @@ const ProfileSettings = (props) => {
           path="/profile/settings/privacy"
           render={() => <ProfileSettingsPrivacy />}
         />
-        <Route path="/profile/settings/safety" render={() => <> safety</>} />
+        <Route
+          path="/profile/settings/safety"
+          render={() => <ProfileSettingsSafety location={props.location} />}
+        />
         <Route
           path="/profile/settings/notifications"
-          render={() => <> notifications</>}
+          render={() => (
+            <ProfileSettingsNotifications location={props.location} />
+          )}
         />
         <Route
           path="/profile/settings/payment_services"

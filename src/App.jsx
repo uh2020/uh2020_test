@@ -61,9 +61,9 @@ function App(props) {
     console.log(props.location.pathname);
   }, [props.location.pathname]);
   React.useEffect(() => {
-    // TestApi.testApi();
-    // auth.sesId();
-    // setAuthData();
+    TestApi.testApi();
+    auth.sesId();
+    setAuthData();
   }, []);
 
   return (
